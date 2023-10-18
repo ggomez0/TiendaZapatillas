@@ -4,20 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ShopGaspar.Models;
-using ShopGaspar.Logic;
+using TiendaZapatillas.Models;
+using TiendaZapatillas.Logic;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Web.Services;
 using System.Web.Script.Services;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class DepositosAdmin : System.Web.UI.Page
     {
         private ProductContext _db = new ProductContext();
-        string connectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -188,7 +188,7 @@ namespace ShopGaspar.Admin
 
         public IQueryable GetDepositos()
         {
-            var _db = new ShopGaspar.Models.ProductContext();
+            var _db = new TiendaZapatillas.Models.ProductContext();
             IQueryable query = _db.depositos;
             return query;
         }

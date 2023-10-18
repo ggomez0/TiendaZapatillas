@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="pagodetalles.aspx.cs" Inherits="ShopGaspar.Admin.pagodetalles" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="pagodetalles.aspx.cs" Inherits="TiendaZapatillas.Admin.pagodetalles" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-           <asp:FormView ID="pagoID" runat="server" ItemType="ShopGaspar.Models.comprobantes" SelectMethod ="GetPago" RenderOuterTable="false" >
+           <asp:FormView ID="pagoID" runat="server" ItemType="TiendaZapatillas.Models.comprobantes" SelectMethod ="GetPago" RenderOuterTable="false" >
                             <ItemTemplate>
                                 <div>
                                     <h1>Detalle del pago N° <%#:Item.idcomp %></h1>

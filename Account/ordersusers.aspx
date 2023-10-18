@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ordenes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ordersusers.aspx.cs" Inherits="ShopGaspar.Account.WebForm1" %>
+﻿<%@ Page Title="Ordenes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ordersusers.aspx.cs" Inherits="TiendaZapatillas.Account.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <div class="container">
          <h1>Ordenes realizadas</h1>

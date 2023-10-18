@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Reportes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="ShopGaspar.Admin.Reportes" %>
+﻿<%@ Page Title="Reportes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="TiendaZapatillas.Admin.Reportes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

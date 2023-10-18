@@ -1,5 +1,5 @@
-﻿using ShopGaspar.Logic;
-using ShopGaspar.Models;
+﻿using TiendaZapatillas.Logic;
+using TiendaZapatillas.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,12 +10,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class CategoriaAdmin : System.Web.UI.Page
     {
         private ProductContext _db = new ProductContext();
-        string connectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {

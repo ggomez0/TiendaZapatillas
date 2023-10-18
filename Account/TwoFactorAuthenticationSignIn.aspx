@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Autenticación de dos factores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TwoFactorAuthenticationSignIn.aspx.cs" Inherits="ShopGaspar.Account.TwoFactorAuthenticationSignIn" %>
+﻿<%@ Page Title="Autenticación de dos factores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TwoFactorAuthenticationSignIn.aspx.cs" Inherits="TiendaZapatillas.Account.TwoFactorAuthenticationSignIn" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
           <div style="margin:20px 500px 30px 500px;">

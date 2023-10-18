@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
     public partial class VerifyPhoneNumber : System.Web.UI.Page
     {

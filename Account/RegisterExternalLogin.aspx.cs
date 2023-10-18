@@ -4,9 +4,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
     public partial class RegisterExternalLogin : System.Web.UI.Page
     {

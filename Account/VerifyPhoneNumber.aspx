@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Comprobar número de teléfono" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VerifyPhoneNumber.aspx.cs" Inherits="ShopGaspar.Account.VerifyPhoneNumber" %>
+﻿<%@ Page Title="Comprobar número de teléfono" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VerifyPhoneNumber.aspx.cs" Inherits="TiendaZapatillas.Account.VerifyPhoneNumber" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
           <div style="margin:20px 500px 30px 500px;">

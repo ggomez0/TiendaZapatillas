@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(ShopGaspar.Startup))]
-namespace ShopGaspar
+[assembly: OwinStartupAttribute(typeof(TiendaZapatillas.Startup))]
+namespace TiendaZapatillas
 {
     public partial class Startup {
         public void Configuration(IAppBuilder app) {

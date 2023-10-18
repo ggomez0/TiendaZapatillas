@@ -4,15 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ShopGaspar.Models;
-using ShopGaspar.Logic;
+using TiendaZapatillas.Models;
+using TiendaZapatillas.Logic;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Web.Services;
 using System.Web.Script.Services;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class TransaccionesAdmin : System.Web.UI.Page
     {
@@ -20,7 +20,7 @@ namespace ShopGaspar.Admin
         {
             if(!IsPostBack)
             {
-                this.SearchCustomers("ShopGaspar", "SELECT * from Orders", tablatrans);
+                this.SearchCustomers("TiendaZapatillas", "SELECT * from Orders", tablatrans);
 
             }
         }

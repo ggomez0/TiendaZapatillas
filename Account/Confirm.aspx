@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Confirmación de la cuenta" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Confirm.aspx.cs" Inherits="ShopGaspar.Account.Confirm" Async="true" %>
+﻿<%@ Page Title="Confirmación de la cuenta" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Confirm.aspx.cs" Inherits="TiendaZapatillas.Account.Confirm" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
        <div style="margin:20px 500px 5px 500px;">

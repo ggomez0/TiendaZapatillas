@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductosAdmin.aspx.cs" Inherits="ShopGaspar.Admin.ProductosAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductosAdmin.aspx.cs" Inherits="TiendaZapatillas.Admin.ProductosAdmin" %>
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -24,7 +24,7 @@
                                                             </td>
                                                             <td>
                                                                 <asp:DropDownList ID="DropDownAddCategory"
-                                                                    runat="server" ItemType="ShopGaspar.Models.Category"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.Category"
                                                                     SelectMethod="GetCategories"
                                                                     DataTextField="CategoryName"
                                                                     DataValueField="CategoryID">

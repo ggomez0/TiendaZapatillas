@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Bloqueado" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lockout.aspx.cs" Inherits="ShopGaspar.Account.Lockout" %>
+﻿<%@ Page Title="Bloqueado" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lockout.aspx.cs" Inherits="TiendaZapatillas.Account.Lockout" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
        <div class="container">

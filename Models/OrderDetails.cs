@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ShopGaspar.Models
+namespace TiendaZapatillas.Models
 {
     public class OrderDetail
     {

@@ -7,9 +7,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 
-namespace ShopGaspar
+namespace TiendaZapatillas
 {
     public partial class Startup {
 

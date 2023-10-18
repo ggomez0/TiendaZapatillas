@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace ShopGaspar
+namespace TiendaZapatillas
 {
     public static class RouteConfig
     {

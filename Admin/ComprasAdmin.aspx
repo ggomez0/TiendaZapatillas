@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Compras" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="ComprasAdmin.aspx.cs" Inherits="ShopGaspar.Admin.ComprasAdmin" %>
+    CodeBehind="ComprasAdmin.aspx.cs" Inherits="TiendaZapatillas.Admin.ComprasAdmin" %>
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
         <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">

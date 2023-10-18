@@ -4,15 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ShopGaspar.Models;
-using ShopGaspar.Logic;
+using TiendaZapatillas.Models;
+using TiendaZapatillas.Logic;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Web.Services;
 using System.Web.Script.Services;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class ClientesAdmin : System.Web.UI.Page
     {

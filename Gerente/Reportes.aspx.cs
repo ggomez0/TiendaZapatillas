@@ -6,17 +6,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Script.Services;
 using System.Web.Services;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class Reportes : System.Web.UI.Page
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pagos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PagoComprobantes.aspx.cs" Inherits="ShopGaspar.Admin.PagoComprobantes"%>
+﻿<%@ Page Title="Pagos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PagoComprobantes.aspx.cs" Inherits="TiendaZapatillas.Admin.PagoComprobantes"%>
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 

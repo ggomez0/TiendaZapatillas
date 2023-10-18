@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Script.Services;
 using System.Web.Services;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     /// <summary>
     /// Descripción breve de dropdownlist
@@ -25,7 +25,7 @@ namespace ShopGaspar.Admin
         {
             using (SqlConnection conn = new SqlConnection())
             {
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandText = "select CategoryID, CategoryName from Categories where CategoryName like @SearchText + '%'";
@@ -52,7 +52,7 @@ namespace ShopGaspar.Admin
         {
             using (SqlConnection conn = new SqlConnection())
             {
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandText = "select ProductID, ProductName from Products where ProductName like @SearchText + '%'";
@@ -79,7 +79,7 @@ namespace ShopGaspar.Admin
         {
             using (SqlConnection conn = new SqlConnection())
             {
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandText = "select ProvID, ProvName from proveedores where ProvName like @SearchText + '%'";

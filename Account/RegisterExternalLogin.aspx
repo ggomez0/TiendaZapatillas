@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Registrar un inicio de sesión externo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterExternalLogin.aspx.cs" Inherits="ShopGaspar.Account.RegisterExternalLogin" Async="true" %>
+﻿<%@ Page Title="Registrar un inicio de sesión externo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterExternalLogin.aspx.cs" Inherits="TiendaZapatillas.Account.RegisterExternalLogin" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
       <div class="container">

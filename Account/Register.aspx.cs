@@ -5,9 +5,9 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
     public partial class Register : Page
     {
@@ -31,7 +31,7 @@ namespace ShopGaspar.Account
 
                 signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
 
-                using (ShopGaspar.Logic.ShoppingCartActions usersShoppingCart = new ShopGaspar.Logic.ShoppingCartActions())
+                using (TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions())
                 {
                     String cartId = usersShoppingCart.GetCartId();
                     usersShoppingCart.MigrateCart(cartId, user.Id);

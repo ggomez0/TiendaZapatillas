@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
 
 

@@ -6,7 +6,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
     public partial class OpenAuthProviders : System.Web.UI.UserControl
     {

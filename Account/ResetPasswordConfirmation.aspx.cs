@@ -1,6 +1,6 @@
 ﻿using System.Web.UI;
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
     public partial class ResetPasswordConfirmation : Page
     {

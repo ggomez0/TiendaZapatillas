@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="prodendep.aspx.cs" Inherits="ShopGaspar.Admin.prodendep" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="prodendep.aspx.cs" Inherits="TiendaZapatillas.Admin.prodendep" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-         <asp:FormView ID="pedidoid" runat="server" ItemType="ShopGaspar.Models.depositos" SelectMethod ="GetDeposito" RenderOuterTable="false" >
+         <asp:FormView ID="pedidoid" runat="server" ItemType="TiendaZapatillas.Models.depositos" SelectMethod ="GetDeposito" RenderOuterTable="false" >
                             <ItemTemplate>
                                 <div>
                                     <h1>Detalle del deposito N° <%#:Item.DepID %></h1>

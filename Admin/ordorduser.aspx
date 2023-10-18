@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ordorduser.aspx.cs" Inherits="ShopGaspar.Admin.ordorduser" %>
+﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ordorduser.aspx.cs" Inherits="TiendaZapatillas.Admin.ordorduser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <asp:Label runat="server" Font-Size="2em" Font-Bold="true" ForeColor="Black" ID="lblord">DETALLE DE LA ORDEN N°</asp:Label>

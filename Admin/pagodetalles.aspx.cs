@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ShopGaspar.Models;
-using ShopGaspar.Logic;
+using TiendaZapatillas.Models;
+using TiendaZapatillas.Logic;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
@@ -18,12 +18,12 @@ using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using System.Web.ModelBinding;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class pagodetalles : System.Web.UI.Page
     {
         private ProductContext _db = new ProductContext();
-        string connectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -40,7 +40,7 @@ namespace ShopGaspar.Admin
 
         public IQueryable<comprobantes> GetPago([QueryString("id")] int? idcomp)
         {
-            var _db = new ShopGaspar.Models.ProductContext();
+            var _db = new TiendaZapatillas.Models.ProductContext();
             IQueryable<comprobantes> query = _db.comprobantes;
             if (idcomp.HasValue && idcomp > 0)
             {

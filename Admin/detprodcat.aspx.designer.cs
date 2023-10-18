@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
 
 

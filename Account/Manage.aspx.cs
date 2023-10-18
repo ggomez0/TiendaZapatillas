@@ -8,9 +8,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
     public partial class Manage : System.Web.UI.Page
     {

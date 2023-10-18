@@ -1,4 +1,4 @@
-namespace ShopGaspar.Migrations
+namespace TiendaZapatillas.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

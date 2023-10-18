@@ -7,10 +7,10 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Data.Entity;
-using ShopGaspar.Models;
-using ShopGaspar.Logic;
+using TiendaZapatillas.Models;
+using TiendaZapatillas.Logic;
 
-namespace ShopGaspar
+namespace TiendaZapatillas
 {
     public class Global : HttpApplication
     {

@@ -4,9 +4,9 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
     public partial class Login : Page
     {
@@ -40,7 +40,7 @@ namespace ShopGaspar.Account
                 {
                     case SignInStatus.Success:
                         //migra el carro de anonimo a un usuario
-                        ShopGaspar.Logic.ShoppingCartActions usersShoppingCart = new ShopGaspar.Logic.ShoppingCartActions();
+                        TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions();
                         String cartId = usersShoppingCart.GetCartId();
                         usersShoppingCart.MigrateCart(cartId, Email.Text);
 

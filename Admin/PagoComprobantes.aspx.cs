@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Web.UI.WebControls;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Linq;
-using ShopGaspar.Logic;
+using TiendaZapatillas.Logic;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class PagoComprobantes : System.Web.UI.Page
     {
         private ProductContext _db = new ProductContext();
-        string connectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             

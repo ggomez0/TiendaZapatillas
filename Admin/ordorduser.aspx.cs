@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class ordorduser : System.Web.UI.Page
     {
@@ -24,7 +24,7 @@ namespace ShopGaspar.Admin
 
         private void mostrarorder(string ido)
         {
-            SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["ShopGaspar"].ToString());
+            SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ToString());
             SqlCommand cmd = new SqlCommand();
             DataTable dataTable = new DataTable();
             SqlDataAdapter sqlDA; cnn.Open();

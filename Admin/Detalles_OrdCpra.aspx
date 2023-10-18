@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Detalles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Detalles_OrdCpra.aspx.cs" Inherits="ShopGaspar.Admin.Detalles_OrdCpra" %>
+﻿<%@ Page Title="Detalles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Detalles_OrdCpra.aspx.cs" Inherits="TiendaZapatillas.Admin.Detalles_OrdCpra" %>
 
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
       <div class="container">
-           <asp:FormView ID="OrdID" runat="server" ItemType="ShopGaspar.Models.comprobantes" SelectMethod ="GetOrd" RenderOuterTable="false" >
+           <asp:FormView ID="OrdID" runat="server" ItemType="TiendaZapatillas.Models.comprobantes" SelectMethod ="GetOrd" RenderOuterTable="false" >
                             <ItemTemplate>
                                 <div>
                                     <h1>Detalle de la Orden de Compra N° <%#:Item.idcomp %></h1>

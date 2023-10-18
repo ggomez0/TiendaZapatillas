@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
-namespace ShopGaspar.Models
+namespace TiendaZapatillas.Models
 {
     public class ProductContext : DbContext
     {
-        public ProductContext() : base("ShopGaspar")
+        public ProductContext() : base("TiendaZapatillas")
         {
         }
 

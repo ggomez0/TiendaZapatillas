@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Estadisticas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EstadisticasAdmin.aspx.cs" Inherits="ShopGaspar.Admin.EstadisticasAdmin" %>
+﻿<%@ Page Title="Estadisticas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EstadisticasAdmin.aspx.cs" Inherits="TiendaZapatillas.Admin.EstadisticasAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
   
         <div class="container">

@@ -1,10 +1,10 @@
-﻿using ShopGaspar.Models;
+﻿using TiendaZapatillas.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ShopGaspar.Logic
+namespace TiendaZapatillas.Logic
 {
     public class addrepoes
     {

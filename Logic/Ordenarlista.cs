@@ -4,15 +4,15 @@
 //using System.Web;
 //using System.Web.Mvc;
 //using PagedList;
-//using ShopGaspar.Models;
+//using TiendaZapatillas.Models;
 
-//namespace ShopGaspar.Logic
+//namespace TiendaZapatillas.Logic
 //{
 //    public class Ordenarlista
 //    {
 //        public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
 //        {
-//            using (var _db = new ShopGaspar.Models.ProductContext())
+//            using (var _db = new TiendaZapatillas.Models.ProductContext())
 //            {
 //                ViewBag.CurrentSort = sortOrder;
 //                ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";

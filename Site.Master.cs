@@ -8,10 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Linq;
-using ShopGaspar.Models;
-using ShopGaspar.Logic;
+using TiendaZapatillas.Models;
+using TiendaZapatillas.Logic;
 
-namespace ShopGaspar
+namespace TiendaZapatillas
 {
     public partial class SiteMaster : MasterPage
     {
@@ -100,7 +100,7 @@ namespace ShopGaspar
         }
         public IQueryable<Category> GetCategories()
         {
-            var _db = new ShopGaspar.Models.ProductContext();
+            var _db = new TiendaZapatillas.Models.ProductContext();
             IQueryable<Category> query = _db.Categories;
             return query;
         }

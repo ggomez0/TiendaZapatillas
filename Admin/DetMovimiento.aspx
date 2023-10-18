@@ -1,7 +1,7 @@
-﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetMovimiento.aspx.cs" Inherits="ShopGaspar.Admin.DetMovimiento" %>
+﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetMovimiento.aspx.cs" Inherits="TiendaZapatillas.Admin.DetMovimiento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-         <asp:FormView ID="movID" runat="server" ItemType="ShopGaspar.Models.comprobantes" SelectMethod ="GetMovimiento" RenderOuterTable="false" >
+         <asp:FormView ID="movID" runat="server" ItemType="TiendaZapatillas.Models.comprobantes" SelectMethod ="GetMovimiento" RenderOuterTable="false" >
                             <ItemTemplate>
                                 <div>
                                     <h1>Detalle del movimiento N° <%#:Item.idcomp %></h1>

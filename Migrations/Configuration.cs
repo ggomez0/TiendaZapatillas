@@ -1,18 +1,18 @@
-namespace ShopGaspar.Migrations
+namespace TiendaZapatillas.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ShopGaspar.Models.ProductContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<TiendaZapatillas.Models.ProductContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ShopGaspar.Models.ProductContext context)
+        protected override void Seed(TiendaZapatillas.Models.ProductContext context)
         {
             //  This method will be called after migrating to the latest version.
 

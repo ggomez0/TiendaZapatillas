@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace ShopGaspar.Models
+namespace TiendaZapatillas.Models
 {
     public class Order
     {

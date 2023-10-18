@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Contraseña cambiada" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ResetPasswordConfirmation.aspx.cs" Inherits="ShopGaspar.Account.ResetPasswordConfirmation" Async="true" %>
+﻿<%@ Page Title="Contraseña cambiada" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ResetPasswordConfirmation.aspx.cs" Inherits="TiendaZapatillas.Account.ResetPasswordConfirmation" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
       <div style="margin:20px 500px 30px 500px;">

@@ -1,4 +1,4 @@
-﻿using ShopGaspar.Models;
+﻿using TiendaZapatillas.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,12 +11,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class Detalles_OrdCpra : System.Web.UI.Page
     {
         private ProductContext _db = new ProductContext();
-        string connectionString = ConfigurationManager.ConnectionStrings["ShopGaspar"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -66,7 +66,7 @@ namespace ShopGaspar.Admin
 
         public IQueryable<comprobantes> GetOrd([QueryString("id")] int? idcomp)
         {
-            var _db = new ShopGaspar.Models.ProductContext();
+            var _db = new TiendaZapatillas.Models.ProductContext();
             IQueryable<comprobantes> query = _db.comprobantes;
             if (idcomp.HasValue && idcomp > 0)
             {

@@ -6,9 +6,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 
-namespace ShopGaspar.Models
+namespace TiendaZapatillas.Models
 {
     // Para agregar datos del usuario, agregue más propiedades a su clase de usuario. Visite https://go.microsoft.com/fwlink/?LinkID=317594 para obtener más información.
     public class ApplicationUser : IdentityUser
@@ -42,7 +42,7 @@ namespace ShopGaspar.Models
 }
 
 #region Aplicaciones auxiliares
-namespace ShopGaspar
+namespace TiendaZapatillas
 {
     public static class IdentityHelper
     {

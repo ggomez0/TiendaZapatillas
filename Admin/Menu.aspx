@@ -1,4 +1,4 @@
-﻿    <%@ Page Title="Bienvenido" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="ShopGaspar._Default" %>
+﻿    <%@ Page Title="Bienvenido" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="TiendaZapatillas._Default" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server" >
                     <style>

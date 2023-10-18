@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace ShopGaspar.Logic
+namespace TiendaZapatillas.Logic
 {
     internal class RoleActions
     {

@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Detalle Factura" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="~/Admin/factdet.aspx.cs" Inherits="ShopGaspar.Admin.factdet" %>
+﻿<%@ Page Title="Detalle Factura" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="~/Admin/factdet.aspx.cs" Inherits="TiendaZapatillas.Admin.factdet" %>
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
       <div class="container">
-           <asp:FormView ID="factid" runat="server" ItemType="ShopGaspar.Models.comprobantes" SelectMethod ="GetFactura" RenderOuterTable="false" >
+           <asp:FormView ID="factid" runat="server" ItemType="TiendaZapatillas.Models.comprobantes" SelectMethod ="GetFactura" RenderOuterTable="false" >
                             <ItemTemplate>
                                 <div>
                                     <h1>Detalle de la factura N° <%#:Item.idcomp %></h1>

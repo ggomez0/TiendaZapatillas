@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 
-namespace ShopGaspar.Logic
+namespace TiendaZapatillas.Logic
 {
     public class ShoppingCartActions : IDisposable
     {
@@ -108,7 +108,7 @@ namespace ShopGaspar.Logic
 
         public void UpdateShoppingCartDatabase(String cartId, ShoppingCartUpdates[] CartItemUpdates)
         {
-            using (var db = new ShopGaspar.Models.ProductContext())
+            using (var db = new TiendaZapatillas.Models.ProductContext())
             {
                 try
                 {
@@ -142,7 +142,7 @@ namespace ShopGaspar.Logic
 
         public void RemoveItem(string removeCartID, int removeProductID)
         {
-            using (var _db = new ShopGaspar.Models.ProductContext())
+            using (var _db = new TiendaZapatillas.Models.ProductContext())
             {
                 try
                 {
@@ -163,7 +163,7 @@ namespace ShopGaspar.Logic
 
         public void UpdateItem(string updateCartID, int updateProductID, int quantity)
         {
-            using (var _db = new ShopGaspar.Models.ProductContext())
+            using (var _db = new TiendaZapatillas.Models.ProductContext())
             {
                 try
                 {

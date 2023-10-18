@@ -8,9 +8,9 @@ using System.Web;
 using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ShopGaspar.Models;
+using TiendaZapatillas.Models;
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Admin
 {
     public partial class prodendep : System.Web.UI.Page
     {
@@ -25,7 +25,7 @@ namespace ShopGaspar.Admin
 
         public IQueryable<depositos> GetDeposito([QueryString("id")] int? pedidoid)
         {
-            var _db = new ShopGaspar.Models.ProductContext();
+            var _db = new TiendaZapatillas.Models.ProductContext();
             IQueryable<depositos> query = _db.depositos;
             if (pedidoid.HasValue && pedidoid > 0)
             {
@@ -40,7 +40,7 @@ namespace ShopGaspar.Admin
 
         private void mostrarorder(string ido)
         {
-            SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["ShopGaspar"].ToString());
+            SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ToString());
             SqlCommand cmd = new SqlCommand();
             DataTable dataTable = new DataTable();
             SqlDataAdapter sqlDA; cnn.Open();

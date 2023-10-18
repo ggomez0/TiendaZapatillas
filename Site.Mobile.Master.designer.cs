@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ShopGaspar
+namespace TiendaZapatillas
 {
 
 

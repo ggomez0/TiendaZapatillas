@@ -10,7 +10,7 @@ using System.Drawing;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace ShopGaspar.Account
+namespace TiendaZapatillas.Account
 {
     public partial class passrecov : System.Web.UI.Page
     {
