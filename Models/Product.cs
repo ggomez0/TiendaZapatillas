@@ -19,7 +19,9 @@ namespace TiendaZapatillas.Models
         [Required, Display(Name = "Precio")]
         public double? UnitPrice { get; set; }
 
-        public int? CategoryID { get; set; }
+        public int CategoryID { get; set; }
+        public int GenCategoryID { get; set; }
+        public int TypeCategoryID { get; set; }
 
         public int? stock { get; set; }
         public int? vendido { get; set; }        

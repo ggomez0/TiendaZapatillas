@@ -8,7 +8,7 @@ namespace TiendaZapatillas.Logic
 {
     public class AddProducts
     {
-        public bool AddProduct(string ProductName, string ProductDesc, string ProductPrice, string ProductCategory, string ProductImagePath)
+        public bool AddProduct(string ProductName, string ProductDesc, string ProductPrice, string ProductCategory, string ProductImagePath, string GeneroCategory, string TypeCategory)
         {
             var myProduct = new Product();
             myProduct.ProductName = ProductName;
@@ -18,6 +18,9 @@ namespace TiendaZapatillas.Logic
             myProduct.CategoryID = Convert.ToInt32(ProductCategory);
             //myProduct.stock = Convert.ToInt32(stock);
             //myProduct.vendido = Convert.ToInt32(vendido);
+            myProduct.GenCategoryID = Convert.ToInt32(GeneroCategory);
+            myProduct.TypeCategoryID = Convert.ToInt32(TypeCategory);
+
 
 
             using (ProductContext _db = new ProductContext())

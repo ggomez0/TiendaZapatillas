@@ -31,6 +31,34 @@
                                                                 </asp:DropDownList>
                                                             </td>
                                                         </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <asp:Label ID="lbltipocat" runat="server">
+                                                                    Tipo:</asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="DropDowntipocat"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.TypeCategory"
+                                                                    SelectMethod="GetTipoCategories"
+                                                                    DataTextField="TypeCategoryName"
+                                                                    DataValueField="TypeCategoryID">
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <asp:Label ID="Label2" runat="server">
+                                                                    Genero:</asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="DropDownGeneroCat"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.GeneroCategory"
+                                                                    SelectMethod="GetGeneroCategories"
+                                                                    DataTextField="GeneroName"
+                                                                    DataValueField="GenCategoryID">
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
                                                         <tr>
                                                             <td>
                                                                 <asp:Label ID="LabelAddName" runat="server">Nombre:

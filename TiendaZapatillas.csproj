@@ -232,9 +232,7 @@
     <Content Include="Account\passrecov.aspx" />
     <Content Include="Admin\CategoriaTipo.aspx" />
     <Content Include="Admin\CategoriaAdmin.aspx" />
-    <Content Include="Admin\CategoriasMain.aspx" />
     <Content Include="Admin\detprodcat.aspx" />
-    <Content Include="Admin\dropdownlist.asmx" />
     <Content Include="Admin\ProductosAdmin.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Content\bootstrap-icons.css" />
@@ -526,23 +524,12 @@
     <Compile Include="Admin\CategoriaAdmin.aspx.designer.cs">
       <DependentUpon>CategoriaAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\CategoriasMain.aspx.cs">
-      <DependentUpon>CategoriasMain.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\CategoriasMain.aspx.designer.cs">
-      <DependentUpon>CategoriasMain.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\detprodcat.aspx.cs">
       <DependentUpon>detprodcat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\detprodcat.aspx.designer.cs">
       <DependentUpon>detprodcat.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\dropdownlist.asmx.cs">
-      <DependentUpon>dropdownlist.asmx</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Admin\ProductosAdmin.aspx.cs">
       <DependentUpon>ProductosAdmin.aspx</DependentUpon>
@@ -575,9 +562,9 @@
     </Compile>
     <Compile Include="Logic\Addtipocat.cs" />
     <Compile Include="Logic\AddCategories.cs" />
-    <Compile Include="Migrations\202310190413559_gegfwg.cs" />
-    <Compile Include="Migrations\202310190413559_gegfwg.Designer.cs">
-      <DependentUpon>202310190413559_gegfwg.cs</DependentUpon>
+    <Compile Include="Migrations\202310190533322_jisjodff.cs" />
+    <Compile Include="Migrations\202310190533322_jisjodff.Designer.cs">
+      <DependentUpon>202310190533322_jisjodff.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GeneroCategory.cs" />
@@ -633,8 +620,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310190413559_gegfwg.resx">
-      <DependentUpon>202310190413559_gegfwg.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310190533322_jisjodff.resx">
+      <DependentUpon>202310190533322_jisjodff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

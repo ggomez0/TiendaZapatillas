@@ -34,12 +34,19 @@ namespace TiendaZapatillas.Admin
             return query;
         }
 
-        //public IQueryable GetProveedores()
-        //{
-        //    var _db = new TiendaZapatillas.Models.ProductContext();
-        //    IQueryable query = _db.proveedores;
-        //    return query;
-        //}
+        public IQueryable GetGeneroCategories()
+        {
+            var _db = new TiendaZapatillas.Models.ProductContext();
+            IQueryable query = _db.GeneroCategories;
+            return query;
+        }
+
+        public IQueryable GetTipoCategories()
+        {
+            var _db = new TiendaZapatillas.Models.ProductContext();
+            IQueryable query = _db.TypeCategories;
+            return query;
+        }
 
 
         protected void gridproductos_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -203,7 +210,7 @@ namespace TiendaZapatillas.Admin
                 // Add product data to DB.
                 AddProducts products = new AddProducts();
                 bool addSuccess = products.AddProduct(AddProductName.Text, AddProductDescription.Text,
-                    AddProductPrice.Text, DropDownAddCategory.SelectedValue, imgprodadd.FileName);
+                    AddProductPrice.Text, DropDownAddCategory.SelectedValue, imgprodadd.FileName, DropDownGeneroCat.SelectedValue, DropDowntipocat.SelectedValue);
 
                 if (addSuccess)
                 {
