@@ -45,9 +45,3 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local:
 
 6. **Ejecutar el Proyecto:** Ahora estás listo para ejecutar el proyecto. Presiona el botón de ejecución (IIS Express) en la barra de herramientas de Visual Studio.
 
-![proyecto1](Images/proyecto1.png)
-
-![proyecto2](Images/proyecto2.png)
-
-![proyecto3](Images/proyecto3.png)
-
