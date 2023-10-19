@@ -31,11 +31,11 @@ namespace TiendaZapatillas.Account
 
                 signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
 
-                using (TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions())
-                {
-                    String cartId = usersShoppingCart.GetCartId();
-                    usersShoppingCart.MigrateCart(cartId, user.Id);
-                }
+                //using (TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions())
+                //{
+                //    String cartId = usersShoppingCart.GetCartId();
+                //    usersShoppingCart.MigrateCart(cartId, user.Id);
+                //}
 
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }

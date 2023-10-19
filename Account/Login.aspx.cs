@@ -40,9 +40,9 @@ namespace TiendaZapatillas.Account
                 {
                     case SignInStatus.Success:
                         //migra el carro de anonimo a un usuario
-                        TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions();
-                        String cartId = usersShoppingCart.GetCartId();
-                        usersShoppingCart.MigrateCart(cartId, Email.Text);
+                        //TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions();
+                        //String cartId = usersShoppingCart.GetCartId();
+                        //usersShoppingCart.MigrateCart(cartId, Email.Text);
 
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         break;

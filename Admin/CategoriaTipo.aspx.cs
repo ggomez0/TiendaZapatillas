@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 
 namespace TiendaZapatillas.Admin
 {
-    public partial class CategoriaAdmin : System.Web.UI.Page
+    public partial class CategoriaTipo : System.Web.UI.Page
     {
         private ProductContext _db = new ProductContext();
         string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
@@ -21,16 +21,17 @@ namespace TiendaZapatillas.Admin
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
+                this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
 
             }
 
         }
 
-        protected void AddCat_Click(object sender, EventArgs e)
+        protected void Addtipo_Click(object sender, EventArgs e)
         {
-            AddCategories categorias = new AddCategories();
-            bool addSucces = categorias.AddCategory(AddCategoria.Text);
+            AddTypeCategory typeCategory = new AddTypeCategory();
+            
+            bool addSucces = typeCategory.AddTypeCat(lblAddTipo.Text);
 
             if (addSucces)
             {
@@ -40,36 +41,36 @@ namespace TiendaZapatillas.Admin
             }
             else
             {
-                lbladdcatstatus.Text = "No se pudo agregar la categoria a la base de datos";
+                lbladdtipostatus.Text = "No se pudo agregar la categoria a la base de datos";
             }
         }
 
-        protected void gvcattab_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void gvtipotab_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            gvcattab.EditIndex = e.NewEditIndex;
-            this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
+            gvtipotab.EditIndex = e.NewEditIndex;
+            this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
         }
 
-        protected void gvcattab_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        protected void gvtipotab_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            gvcattab.EditIndex = -1;
-            this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
+            gvtipotab.EditIndex = -1;
+            this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
         }
 
-        protected void gvcattab_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void gvtipotab_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             try
             {
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "UPDATE Categories SET CategoryName=@ProductName WHERE CategoryID = @ProductID";
+                    string query = "UPDATE TypeCategories SET TypeCategoryName=@ProductName WHERE TypeCategoryID = @ProductID";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                    sqlCmd.Parameters.AddWithValue("@ProductName", (gvcattab.Rows[e.RowIndex].FindControl("txtCategoryNameedit") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
+                    sqlCmd.Parameters.AddWithValue("@ProductName", (gvtipotab.Rows[e.RowIndex].FindControl("txttipoNameedit") as TextBox).Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvtipotab.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
-                    gvcattab.EditIndex = -1;
-                    this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
+                    gvtipotab.EditIndex = -1;
+                    this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
                     lblSuccessMessage.Text = "Categoria actualizado con exito";
                     lblErrorMessage.Text = "";
                 }
@@ -79,22 +80,22 @@ namespace TiendaZapatillas.Admin
                 lblSuccessMessage.Text = "";
                 lblErrorMessage.Text = ex.Message;
             }
-            Response.Redirect("~/Admin/CategoriaAdmin.aspx");
+            Response.Redirect("~/Admin/CategoriaTipo.aspx");
 
         }
 
-        protected void gvcattab_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void gvtipotab_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             try
             {
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "DELETE FROM Categories WHERE CategoryID = @ProductID";
+                    string query = "DELETE FROM TypeCategories WHERE TypeCategoryID = @ProductID";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
+                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvtipotab.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
-                    this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
+                    this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeategoryName from TypeCategories", gvtipotab);
                     lblSuccessMessage.Text = "Categoria eliminado con exito";
                     lblErrorMessage.Text = "";
 
@@ -106,16 +107,16 @@ namespace TiendaZapatillas.Admin
                 lblErrorMessage.Text = ex.Message;
 
             }
-            Response.Redirect("~/Admin/CategoriaAdmin.aspx");
+            Response.Redirect("~/Admin/CategoriaTipo.aspx");
 
         }
 
-        protected void gvcattab_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvtipotab_RowCommand(object sender, GridViewCommandEventArgs e)
         {
            
         }
 
-        protected void btndetcat_Click(object sender, ImageClickEventArgs e)
+        protected void btndettipo_Click(object sender, ImageClickEventArgs e)
         {
             int id4 = Convert.ToInt32((sender as ImageButton).CommandArgument);
             Response.Redirect("~/Admin/detprodcat.aspx?id4=" + id4);

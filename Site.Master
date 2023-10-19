@@ -92,12 +92,12 @@
           
            <%--carrito--%>
              <li class="nav-item">
-                <a class="btn btn-success rounded-3" runat="server" id="adminLink" visible="false" href="~/Admin/Menu.aspx">Admin</a>
+                <a class="btn btn-success rounded-3" runat="server" id="adminLink" visible="false" href="~/Admin/Menu.aspx">Personal de Venta</a>
             </li>
 
           <%--Gerente--%>
           <li class="nav-item">
-            <a class="btn btn-success rounded-3" runat="server" id="gerenteLink" visible="false" href="~/Gerente/Reportes.aspx">Reportes</a>
+            <a class="btn btn-success rounded-3" runat="server" id="gerenteLink" visible="false" href="~/Gerente/MenuGerente.aspx">Gerente</a>
         </li>
           
          

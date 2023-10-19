@@ -11,7 +11,7 @@ namespace TiendaZapatillas.Admin
 {
 
 
-    public partial class CategoriaAdmin
+    public partial class CategoriaTipo
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace TiendaZapatillas.Admin
         protected global::System.Web.UI.WebControls.Label lblSuccessMessage;
 
         /// <summary>
-        /// Control Button1.
+        /// Control btnopentipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnopentipo;
 
         /// <summary>
         /// Control ModalPopupExtender1.
@@ -69,13 +69,13 @@ namespace TiendaZapatillas.Admin
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
 
         /// <summary>
-        /// Control AddCategoria.
+        /// Control lblAddTipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddCategoria;
+        protected global::System.Web.UI.WebControls.TextBox lblAddTipo;
 
         /// <summary>
         /// Control RequiredFieldValidator5.
@@ -87,39 +87,39 @@ namespace TiendaZapatillas.Admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
-        /// Control lbladdcatstatus.
+        /// Control lbladdtipostatus.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbladdcatstatus;
+        protected global::System.Web.UI.WebControls.Label lbladdtipostatus;
 
         /// <summary>
-        /// Control AddCat.
+        /// Control btnaddtipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddCat;
+        protected global::System.Web.UI.WebControls.Button btnaddtipo;
 
         /// <summary>
-        /// Control Button2.
+        /// Control btnclosetipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnclosetipo;
 
         /// <summary>
-        /// Control gvcattab.
+        /// Control gvtipotab.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvcattab;
+        protected global::System.Web.UI.WebControls.GridView gvtipotab;
     }
 }

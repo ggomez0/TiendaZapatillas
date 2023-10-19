@@ -90,14 +90,14 @@ namespace TiendaZapatillas
 
             }
         }
-        protected void Page_PreRender(object sender, EventArgs e)
-        {
-            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
-            {
-                string cartStr = string.Format("{0}", usersShoppingCart.GetCount());
-                cartCount.InnerText = cartStr;
-            }
-        }
+        //protected void Page_PreRender(object sender, EventArgs e)
+        //{
+        //    using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+        //    {
+        //        string cartStr = string.Format("{0}", usersShoppingCart.GetCount());
+        //        cartCount.InnerText = cartStr;
+        //    }
+        //}
         public IQueryable<Category> GetCategories()
         {
             var _db = new TiendaZapatillas.Models.ProductContext();

@@ -23,5 +23,25 @@ namespace TiendaZapatillas.Logic
             // Success.
             return true;
         }
+
+        public bool AddGenCat(string GeneroCategoryName)
+        {
+            var myCategory = new GeneroCategory();
+            myCategory.GeneroName = GeneroCategoryName;
+
+
+            using (ProductContext _db = new ProductContext())
+            {
+                // Add product to DB.
+                _db.GeneroCategories.Add(myCategory);
+                _db.SaveChanges();
+            }
+            // Success.
+            return true;
+        }
+
+   
+
+
     }
 }
