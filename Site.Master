@@ -97,7 +97,7 @@
 
           <%--Gerente--%>
           <li class="nav-item">
-            <a class="btn btn-success rounded-3" runat="server" id="gerenteLink" visible="false" href="~/Gerente/MenuGerente.aspx">Gerente</a>
+            <a class="btn btn-success rounded-3" runat="server" id="gerenteLink" visible="false" href="~/Gerente/ProductosGerente.aspx">Gerente</a>
         </li>
           
          

@@ -15,12 +15,21 @@ namespace TiendaZapatillas.Gerente
     {
 
         /// <summary>
-        /// Control wer123.
+        /// Control wer1yy23.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel wer123;
+        protected global::System.Web.UI.UpdatePanel wer1yy23;
+
+        /// <summary>
+        /// Control gridproductos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridproductos;
     }
 }

@@ -192,25 +192,26 @@
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Stock">
-                                                            <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("stock") %>' runat="server" />
-                                                            </ItemTemplate>
-
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Vendido">
-                                                            <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("vendido") %>'
-                                                                    runat="server" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
                                                         <asp:TemplateField HeaderText="Categoria">
                                                             <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("CategoryID") %>'
+                                                                <asp:Label Text='<%# Eval("CategoryName") %>'
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
-                                                        <asp:TemplateField>
+
+                                                        <asp:TemplateField HeaderText="Genero">
+                                                            <ItemTemplate>
+                                                                <asp:Label Text='<%# Eval("GeneroName") %>'
+                                                                    runat="server" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+
+                                                        <asp:TemplateField HeaderText="Tipo">
+                                                            <ItemTemplate>
+                                                                <asp:Label Text='<%# Eval("TypeCategoryName") %>'
+                                                                    runat="server" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
                                                             <ItemTemplate>
 
 

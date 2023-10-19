@@ -22,7 +22,9 @@ namespace TiendaZapatillas.Gerente
         {
             if (!IsPostBack)
             {
-                //this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
+                this.databasecrud(connectionString, "SELECT * FROM Products p INNER JOIN GeneroCategories g ON" +
+                    " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
+                    " inner join Categories ca on ca.CategoryID=p.CategoryID", gridproductos);
 
             }
         }
