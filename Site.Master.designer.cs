@@ -15,40 +15,13 @@ namespace TiendaZapatillas
     {
 
         /// <summary>
-        /// Control cartCountimg.
+        /// Control inicionav.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage cartCountimg;
-
-        /// <summary>
-        /// Control cartCount.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor cartCount;
-
-        /// <summary>
-        /// Control adminLink.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminLink;
-
-        /// <summary>
-        /// Control gerenteLink.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor gerenteLink;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor inicionav;
 
         /// <summary>
         /// Control SiteMapDataSource1.

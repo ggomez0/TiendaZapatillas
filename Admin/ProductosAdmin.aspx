@@ -7,7 +7,7 @@
          <asp:Button ID="btnShow" runat="server" CssClass="btn btn-success rounded-3"
                                         Text="Agregar Producto" ValidationGroup="VG4" />
                                     <!-- ModalPopupExtender -->
-                                    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panel1"
+                                    <cc1:ModalPopupExtender ID="mp111" runat="server" PopupControlID="Panel1"
                                         TargetControlID="btnShow" CancelControlID="btnClose"
                                         BackgroundCssClass="modalBackground ">
                                     </cc1:ModalPopupExtender>
@@ -180,12 +180,12 @@
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="ImagePath">
+                                                       <%-- <asp:TemplateField HeaderText="ImagePath">
                                                             <ItemTemplate>
                                                                 <asp:Label Text='<%# Eval("ImagePath") %>'
                                                                     runat="server" />
                                                             </ItemTemplate>
-                                                        </asp:TemplateField>
+                                                        </asp:TemplateField>--%>
                                                         <asp:TemplateField HeaderText="Precio">
                                                             <ItemTemplate>
                                                                 <asp:Label Text='<%# Eval("UnitPrice") %>'
@@ -212,9 +212,8 @@
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
+                                                         <asp:TemplateField HeaderText="">
                                                             <ItemTemplate>
-
-
                                                                 <%------------------------------------------------------------------------------------------------------------------------------------------%>
 
 
@@ -237,24 +236,48 @@
                                                                                 <ContentTemplate>
                                                                                     <h3>Editar producto</h3>
                                                                                     <table>
-                                                                                        <tr>
-                                                                                            <td>
-                                                                                                <asp:Label
-                                                                                                    ID="lbleditcatprod"
-                                                                                                    runat="server">
-                                                                                                    Categoria:
-                                                                                                </asp:Label>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <asp:TextBox
-                                                                                                    ID="txtctid"
-                                                                                                    Text='<%# Eval("CategoryID") %>'
-                                                                                                    Width="50%"
-                                                                                                    runat="server" ValidationGroup="VG8" />
-
-
-                                                                                            </td>
-                                                                                        </tr>
+                                                                                           <tr>
+                                                            <td>
+                                                                <asp:Label runat="server">
+                                                                    Categoria:</asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="DropDowneditCategory"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.Category"
+                                                                    SelectMethod="GetCategories"
+                                                                    DataTextField="CategoryName"
+                                                                    DataValueField="CategoryID">
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <asp:Label runat="server">
+                                                                    Tipo:</asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="DropDownedittipocat"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.TypeCategory"
+                                                                    SelectMethod="GetTipoCategories"
+                                                                    DataTextField="TypeCategoryName"
+                                                                    DataValueField="TypeCategoryID">
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <asp:Label runat="server">
+                                                                    Genero:</asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="DropDowneditGeneroCat"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.GeneroCategory"
+                                                                    SelectMethod="GetGeneroCategories"
+                                                                    DataTextField="GeneroName"
+                                                                    DataValueField="GenCategoryID">
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
                                                                                         <tr>
                                                                                             <td>
                                                                                                 <asp:Label

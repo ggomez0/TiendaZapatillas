@@ -28,12 +28,12 @@
                                     runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="ImagePath">
+                        <%--<asp:TemplateField HeaderText="ImagePath">
                             <ItemTemplate>
                                 <asp:Label Text='<%# Eval("ImagePath") %>'
                                     runat="server" />
                             </ItemTemplate>
-                        </asp:TemplateField>
+                        </asp:TemplateField>--%>
                         <asp:TemplateField HeaderText="Precio">
                             <ItemTemplate>
                                 <asp:Label Text='<%# Eval("UnitPrice") %>'

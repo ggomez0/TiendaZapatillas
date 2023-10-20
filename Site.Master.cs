@@ -77,17 +77,30 @@ namespace TiendaZapatillas
         {
             if (HttpContext.Current.User.IsInRole("ADMIN"))
             {
-                adminLink.Visible = true;
-                cartCount.Visible = false;
-                cartCountimg.Visible = false;
+                if (Session["RedirectedToAdmin"] == null)
+                {
+                    Session["RedirectedToAdmin"] = true;
+                    Response.Redirect("/Admin/Menu.aspx");
+                }
+
+                //adminLink.Visible = true;
+                //cartCount.Visible = false;
+                //cartCountimg.Visible = false;
+                inicionav.Visible = false;
 
             }
             if (HttpContext.Current.User.IsInRole("GERENTE"))
             {
-                gerenteLink.Visible = true;
-                cartCount.Visible = false;
-                cartCountimg.Visible = false;
+                if (Session["RedirectedToGerente"] == null)
+                {
+                    Session["RedirectedToGerente"] = true;
+                    Response.Redirect("/Gerente/ProductosGerente.aspx");
+                }
 
+                //gerenteLink.Visible = true;
+                //cartCount.Visible = false;
+                //cartCountimg.Visible = false;
+                inicionav.Visible = false;
             }
         }
         //protected void Page_PreRender(object sender, EventArgs e)
@@ -108,6 +121,8 @@ namespace TiendaZapatillas
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session["RedirectedToAdmin"] = null;
+            Session["RedirectedToGerente"] = null;
         }
     }
 

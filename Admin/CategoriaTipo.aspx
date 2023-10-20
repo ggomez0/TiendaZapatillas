@@ -19,7 +19,7 @@
                                         <div style="padding:20px">
                                             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                                 <ContentTemplate>
-                                                    <h3>Agregar Tipo de zapatillas</h3>
+                                                    <h3>Agregar Tipo de calzado</h3>
                                                     <table>
                                                         <tr>
                                                             <td>
@@ -127,6 +127,15 @@
                                                                                                     runat="server" />
                                                                                             </td>
                                                                                         </tr>
+                                                                                            <td>
+                                                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator516"
+                                                                                                runat="server" Font-Bold="true"
+                                                                                                Text="* Nombre tipo requerido"
+                                                                                                ControlToValidate="txttipoNameedit"
+                                                                                                SetFocusOnError="true" Display="Dynamic"
+                                                                                                ValidationGroup="VGedittipo"></asp:RequiredFieldValidator>
+                                                                                       </td>
+                                                                                        </tr>
                                                                                     </table>
                                                                                     <p></p>
                                                                                     <p></p>
@@ -135,7 +144,7 @@
                                                                                         runat="server"
                                                                                         Text="Editar tipo de zapatillas"
                                                                                         CommandName="Update"
-                                                                                        ValidationGroup="VG188885" />
+                                                                                        ValidationGroup="VGedittipo" CausesValidation="true" />
                                                                                       <asp:Button ID="btncerraredittipo" CssClass="btn btn-danger rounded-3" runat="server"
                                                                             Text="Cerrar"
                                                                             ValidationGroup="VG16" />

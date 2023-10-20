@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Categoria" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CategoriaAdmin.aspx.cs" Inherits="TiendaZapatillas.Admin.CategoriaAdmin" %>
+﻿<%@ Page Title="Marcas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CategoriaAdmin.aspx.cs" Inherits="TiendaZapatillas.Admin.CategoriaAdmin" %>
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -8,7 +8,7 @@
         <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
         <asp:Label ID="lblSuccessMessage" runat="server"></asp:Label>
 
-         <asp:Button ID="Button1" CssClass="btn btn-success rounded-3"  runat="server" Text="Agregar Categoria" />
+         <asp:Button ID="Button1" CssClass="btn btn-success rounded-3"  runat="server" Text="Agregar Marca" />
                                     <!-- ModalPopupExtender --->
                                     <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
                                         PopupControlID="Panel2" TargetControlID="Button1" CancelControlID="Button2"
@@ -19,7 +19,7 @@
                                         <div style="padding:20px">
                                             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                                 <ContentTemplate>
-                                                    <h3>Agregar Categoria</h3>
+                                                    <h3>Agregar Marca</h3>
                                                     <table>
                                                         <tr>
                                                             <td>
@@ -113,7 +113,7 @@
                                                                             <asp:UpdatePanel ID="UpdatePanel2"
                                                                                 runat="server">
                                                                                 <ContentTemplate>
-                                                                                    <h3>Editar categoria</h3>
+                                                                                    <h3>Editar Marca</h3>
                                                                                     <table>                                                                                     
                                                                                         <tr>
                                                                                             <td>
@@ -127,7 +127,16 @@
                                                                                                     ID="txtCategoryNameedit"
                                                                                                     Text='<%# Eval("CategoryName") %>'
                                                                                                     runat="server" />
-                                                                                            </td>
+                                                                                                     </td></tr><tr></tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator515"
+                                                                    runat="server" Font-Bold="true"
+                                                                    Text="* Nombre de marca requerida"
+                                                                    ControlToValidate="txtCategoryNameedit"
+                                                                    SetFocusOnError="true" Display="Dynamic"
+                                                                    ValidationGroup="VG2"></asp:RequiredFieldValidator>
+                                                                                       </td>
                                                                                         </tr>
                                                                                     </table>
                                                                                     <p></p>
@@ -137,7 +146,7 @@
                                                                                         runat="server"
                                                                                         Text="Editar categoria"
                                                                                         CommandName="Update"
-                                                                                        ValidationGroup="VG188885" />
+                                                                                        ValidationGroup="VG2" CausesValidation="true" />
                                                                                       <asp:Button ID="btncerrareditcat" CssClass="btn btn-danger rounded-3" runat="server"
                                                                             Text="Cerrar"
                                                                             ValidationGroup="VG16" />

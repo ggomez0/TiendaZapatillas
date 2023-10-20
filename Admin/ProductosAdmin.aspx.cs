@@ -104,13 +104,16 @@ namespace TiendaZapatillas.Admin
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,CategoryID=@CategoryID WHERE ProductID = @ProductID";
+                    string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,CategoryID=@CategoryID,GenCategoryID=@GenCategoryID, TypeCategoryID=@TypeCategoryID WHERE ProductID = @ProductID";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@ProductName", (gridproductos.Rows[e.RowIndex].FindControl("txtProductName") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Description", (gridproductos.Rows[e.RowIndex].FindControl("txtDescription") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@ImagePath", (gridproductos.Rows[e.RowIndex].FindControl("txtImagePath") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@UnitPrice", (gridproductos.Rows[e.RowIndex].FindControl("txtUnitPrice") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@CategoryID", (gridproductos.Rows[e.RowIndex].FindControl("txtctid") as TextBox).Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@CategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditCategory") as DropDownList).SelectedValue.Trim());
+                    sqlCmd.Parameters.AddWithValue("@TypeCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDownedittipocat") as DropDownList).SelectedValue.Trim());
+                    sqlCmd.Parameters.AddWithValue("@GenCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditGeneroCat") as DropDownList).SelectedValue.Trim());
+
                     sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gridproductos.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
                     gridproductos.EditIndex = -1;
@@ -253,7 +256,7 @@ namespace TiendaZapatillas.Admin
                 tablag.Rows[0].Cells.Clear();
                 tablag.Rows[0].Cells.Add(new TableCell());
                 tablag.Rows[0].Cells[0].ColumnSpan = dtbl.Columns.Count;
-                tablag.Rows[0].Cells[0].Text = "No se encontraron categorias..!";
+                tablag.Rows[0].Cells[0].Text = "No se encontraron productos..!";
                 tablag.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
             }
             tablag.UseAccessibleHeader = true;

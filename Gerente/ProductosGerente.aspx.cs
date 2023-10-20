@@ -66,7 +66,7 @@ namespace TiendaZapatillas.Gerente
                 tablag.Rows[0].Cells.Clear();
                 tablag.Rows[0].Cells.Add(new TableCell());
                 tablag.Rows[0].Cells[0].ColumnSpan = dtbl.Columns.Count;
-                tablag.Rows[0].Cells[0].Text = "No se encontraron categorias..!";
+                tablag.Rows[0].Cells[0].Text = "No se encontraron productos..!";
                 tablag.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
             }
             tablag.UseAccessibleHeader = true;
