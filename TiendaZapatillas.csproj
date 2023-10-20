@@ -554,9 +554,21 @@
     </Compile>
     <Compile Include="Logic\Addtipocat.cs" />
     <Compile Include="Logic\AddCategories.cs" />
-    <Compile Include="Migrations\202310190533322_jisjodff.cs" />
-    <Compile Include="Migrations\202310190533322_jisjodff.Designer.cs">
-      <DependentUpon>202310190533322_jisjodff.cs</DependentUpon>
+    <Compile Include="Migrations\202310200252151_fdvwefvf.cs" />
+    <Compile Include="Migrations\202310200252151_fdvwefvf.Designer.cs">
+      <DependentUpon>202310200252151_fdvwefvf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310200252500_fdvwefvfg.cs" />
+    <Compile Include="Migrations\202310200252500_fdvwefvfg.Designer.cs">
+      <DependentUpon>202310200252500_fdvwefvfg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310200254260_fdvwefvfv.cs" />
+    <Compile Include="Migrations\202310200254260_fdvwefvfv.Designer.cs">
+      <DependentUpon>202310200254260_fdvwefvfv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310200309396_fdvwefvfvddd.cs" />
+    <Compile Include="Migrations\202310200309396_fdvwefvfvddd.Designer.cs">
+      <DependentUpon>202310200309396_fdvwefvfvddd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GeneroCategory.cs" />
@@ -612,8 +624,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310190533322_jisjodff.resx">
-      <DependentUpon>202310190533322_jisjodff.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310200252151_fdvwefvf.resx">
+      <DependentUpon>202310200252151_fdvwefvf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310200252500_fdvwefvfg.resx">
+      <DependentUpon>202310200252500_fdvwefvfg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310200254260_fdvwefvfv.resx">
+      <DependentUpon>202310200254260_fdvwefvfv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310200309396_fdvwefvfvddd.resx">
+      <DependentUpon>202310200309396_fdvwefvfvddd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

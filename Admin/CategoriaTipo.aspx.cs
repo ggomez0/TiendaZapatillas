@@ -29,19 +29,26 @@ namespace TiendaZapatillas.Admin
 
         protected void Addtipo_Click(object sender, EventArgs e)
         {
-            AddTypeCategory typeCategory = new AddTypeCategory();
-            
-            bool addSucces = typeCategory.AddTypeCat(lblAddTipo.Text);
+            using (ProductContext _db = new ProductContext())
+            {
+                // Verificar si ya existe una categoría con el mismo nombre.
+                if (!_db.TypeCategories.Any(c => c.TypeCategoryName == lblAddTipo.Text))
+                {
+                    AddTypeCategory typeCategory = new AddTypeCategory();
 
-            if (addSucces)
-            {
-                // Reload the page.
-                string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
-                Response.Redirect(pageUrl + "?ProductAction=addcat");
-            }
-            else
-            {
-                lbladdtipostatus.Text = "No se pudo agregar la categoria a la base de datos";
+                    bool addSucces = typeCategory.AddTypeCat(lblAddTipo.Text);
+
+                    if (addSucces)
+                    {
+                        // Reload the page.
+                        string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
+                        Response.Redirect(pageUrl + "?ProductAction=addcat");
+                    }
+                    else
+                    {
+                        lbladdtipostatus.Text = "No se pudo agregar la categoria a la base de datos";
+                    }
+                }
             }
         }
 
@@ -61,18 +68,30 @@ namespace TiendaZapatillas.Admin
         {
             try
             {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                using (ProductContext _db = new ProductContext())
                 {
-                    sqlCon.Open();
-                    string query = "UPDATE TypeCategories SET TypeCategoryName=@ProductName WHERE TypeCategoryID = @ProductID";
-                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                    sqlCmd.Parameters.AddWithValue("@ProductName", (gvtipotab.Rows[e.RowIndex].FindControl("txttipoNameedit") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvtipotab.DataKeys[e.RowIndex].Value.ToString()));
-                    sqlCmd.ExecuteNonQuery();
-                    gvtipotab.EditIndex = -1;
-                    this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
-                    lblSuccessMessage.Text = "Categoria actualizado con exito";
-                    lblErrorMessage.Text = "";
+                    // Verificar si ya existe una categoría con el mismo nombre.
+                    TextBox txttipoNameedit = gvtipotab.Rows[e.RowIndex].FindControl("txttipoNameedit") as TextBox;
+                    if (!_db.TypeCategories.Any(c => c.TypeCategoryName == txttipoNameedit.Text))
+                    {
+                        using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                        {
+                            sqlCon.Open();
+                            string query = "UPDATE TypeCategories SET TypeCategoryName=@ProductName WHERE TypeCategoryID = @ProductID";
+                            SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                            sqlCmd.Parameters.AddWithValue("@ProductName", (gvtipotab.Rows[e.RowIndex].FindControl("txttipoNameedit") as TextBox).Text.Trim());
+                            sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvtipotab.DataKeys[e.RowIndex].Value.ToString()));
+                            sqlCmd.ExecuteNonQuery();
+                            gvtipotab.EditIndex = -1;
+                            this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
+                            lblSuccessMessage.Text = "Categoria actualizado con exito";
+                            lblErrorMessage.Text = "";
+                        }
+                    }
+                    else
+                    {
+                        lblErrorMessage.Text = "Categoria ya existente";
+                    }
                 }
             }
             catch (Exception ex)

@@ -33,6 +33,7 @@
                                                                     ControlToValidate="lblAddTipo"
                                                                     SetFocusOnError="true" Display="Dynamic"
                                                                     ValidationGroup="VG1"></asp:RequiredFieldValidator>
+                                                           
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -134,6 +135,7 @@
                                                                                                 ControlToValidate="txttipoNameedit"
                                                                                                 SetFocusOnError="true" Display="Dynamic"
                                                                                                 ValidationGroup="VGedittipo"></asp:RequiredFieldValidator>
+                                                                                             
                                                                                        </td>
                                                                                         </tr>
                                                                                     </table>

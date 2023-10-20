@@ -101,25 +101,37 @@ namespace TiendaZapatillas.Admin
         {
             try
             {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                using (ProductContext _db = new ProductContext())
                 {
-                    sqlCon.Open();
-                    string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,CategoryID=@CategoryID,GenCategoryID=@GenCategoryID, TypeCategoryID=@TypeCategoryID WHERE ProductID = @ProductID";
-                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                    sqlCmd.Parameters.AddWithValue("@ProductName", (gridproductos.Rows[e.RowIndex].FindControl("txtProductName") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Description", (gridproductos.Rows[e.RowIndex].FindControl("txtDescription") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@ImagePath", (gridproductos.Rows[e.RowIndex].FindControl("txtImagePath") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@UnitPrice", (gridproductos.Rows[e.RowIndex].FindControl("txtUnitPrice") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@CategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditCategory") as DropDownList).SelectedValue.Trim());
-                    sqlCmd.Parameters.AddWithValue("@TypeCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDownedittipocat") as DropDownList).SelectedValue.Trim());
-                    sqlCmd.Parameters.AddWithValue("@GenCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditGeneroCat") as DropDownList).SelectedValue.Trim());
+                    // Verificar si ya existe una categoría con el mismo nombre.
+                    TextBox txtproducto = gridproductos.Rows[e.RowIndex].FindControl("txtproductName") as TextBox;
+                    if (!_db.Products.Any(c => c.ProductName == txtproducto.Text))
+                    {
+                        using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                        {
+                            sqlCon.Open();
+                            string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,CategoryID=@CategoryID,GenCategoryID=@GenCategoryID, TypeCategoryID=@TypeCategoryID WHERE ProductID = @ProductID";
+                            SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                            sqlCmd.Parameters.AddWithValue("@ProductName", (gridproductos.Rows[e.RowIndex].FindControl("txtProductName") as TextBox).Text.Trim());
+                            sqlCmd.Parameters.AddWithValue("@Description", (gridproductos.Rows[e.RowIndex].FindControl("txtDescription") as TextBox).Text.Trim());
+                            sqlCmd.Parameters.AddWithValue("@ImagePath", (gridproductos.Rows[e.RowIndex].FindControl("txtImagePath") as TextBox).Text.Trim());
+                            sqlCmd.Parameters.AddWithValue("@UnitPrice", (gridproductos.Rows[e.RowIndex].FindControl("txtUnitPrice") as TextBox).Text.Trim());
+                            sqlCmd.Parameters.AddWithValue("@CategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditCategory") as DropDownList).SelectedValue.Trim());
+                            sqlCmd.Parameters.AddWithValue("@TypeCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDownedittipocat") as DropDownList).SelectedValue.Trim());
+                            sqlCmd.Parameters.AddWithValue("@GenCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditGeneroCat") as DropDownList).SelectedValue.Trim());
 
-                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gridproductos.DataKeys[e.RowIndex].Value.ToString()));
-                    sqlCmd.ExecuteNonQuery();
-                    gridproductos.EditIndex = -1;
-                    this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
-                    lblSuccessMessage.Text = "Producto actualizado con exito";
-                    lblErrorMessage.Text = "";
+                            sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gridproductos.DataKeys[e.RowIndex].Value.ToString()));
+                            sqlCmd.ExecuteNonQuery();
+                            gridproductos.EditIndex = -1;
+                            this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
+                            lblSuccessMessage.Text = "Producto actualizado con exito";
+                            lblErrorMessage.Text = "";
+                        }
+                    }
+                    else
+                    {
+                        lblErrorMessage.Text = "El nombre del producto ya existe";
+                    }
                 }
             }
             catch (Exception ex)
@@ -212,20 +224,27 @@ namespace TiendaZapatillas.Admin
                     lblconfirmardep.Text = ex.Message;
                 }
 
-                // Add product data to DB.
-                AddProducts products = new AddProducts();
-                bool addSuccess = products.AddProduct(AddProductName.Text, AddProductDescription.Text,
-                    AddProductPrice.Text, DropDownAddCategory.SelectedValue, imgprodadd.FileName, DropDownGeneroCat.SelectedValue, DropDowntipocat.SelectedValue);
+                using (ProductContext _db = new ProductContext())
+                {
+                    // Verificar si ya existe una categoría con el mismo nombre.
+                    if (!_db.Products.Any(c => c.ProductName == AddProductName.Text))
+                    {
+                        // Add product data to DB.
+                        AddProducts products = new AddProducts();
+                        bool addSuccess = products.AddProduct(AddProductName.Text, AddProductDescription.Text,
+                            AddProductPrice.Text, DropDownAddCategory.SelectedValue, imgprodadd.FileName, DropDownGeneroCat.SelectedValue, DropDowntipocat.SelectedValue);
 
-                if (addSuccess)
-                {
-                    // Reload the page.
-                    string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
-                    Response.Redirect(pageUrl + "?ProductAction=add");
-                }
-                else
-                {
-                    LabelAddStatus.Text = "No se pudo agregar el producto";
+                        if (addSuccess)
+                        {
+                            // Reload the page.
+                            string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
+                            Response.Redirect(pageUrl + "?ProductAction=add");
+                        }
+                        else
+                        {
+                            LabelAddStatus.Text = "No se pudo agregar el producto";
+                        }
+                    }
                 }
             }
             else

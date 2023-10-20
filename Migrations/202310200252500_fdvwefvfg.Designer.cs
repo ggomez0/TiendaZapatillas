@@ -7,13 +7,13 @@ namespace TiendaZapatillas.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class jisjodff : IMigrationMetadata
+    public sealed partial class fdvwefvfg : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(jisjodff));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fdvwefvfg));
         
         string IMigrationMetadata.Id
         {
-            get { return "202310190533322_jisjodff"; }
+            get { return "202310200252500_fdvwefvfg"; }
         }
         
         string IMigrationMetadata.Source

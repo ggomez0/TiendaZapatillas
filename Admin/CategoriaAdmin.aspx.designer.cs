@@ -60,13 +60,13 @@ namespace TiendaZapatillas.Admin
         protected global::System.Web.UI.WebControls.Panel Panel2;
 
         /// <summary>
-        /// Control UpdatePanel2.
+        /// Control UpdatePanel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
         /// Control AddCategoria.

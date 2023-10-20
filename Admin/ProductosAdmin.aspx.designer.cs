@@ -186,6 +186,15 @@ namespace TiendaZapatillas.Admin
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
+        /// Control RangeValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+
+        /// <summary>
         /// Control imgprodadd.
         /// </summary>
         /// <remarks>
@@ -204,15 +213,6 @@ namespace TiendaZapatillas.Admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator440;
 
         /// <summary>
-        /// Control AddProductButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddProductButton;
-
-        /// <summary>
         /// Control LabelAddStatus.
         /// </summary>
         /// <remarks>
@@ -220,6 +220,15 @@ namespace TiendaZapatillas.Admin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelAddStatus;
+
+        /// <summary>
+        /// Control AddProductButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddProductButton;
 
         /// <summary>
         /// Control btnClose.

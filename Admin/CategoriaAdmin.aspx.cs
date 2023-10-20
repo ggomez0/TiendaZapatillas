@@ -29,20 +29,40 @@ namespace TiendaZapatillas.Admin
 
         protected void AddCat_Click(object sender, EventArgs e)
         {
-            AddCategories categorias = new AddCategories();
-            bool addSucces = categorias.AddCategory(AddCategoria.Text);
+            
+            using (ProductContext _db = new ProductContext())
+            {
+                // Verificar si ya existe una categoría con el mismo nombre.
+                if (!_db.Categories.Any(c => c.CategoryName == AddCategoria.Text))
+                {
+                    // La categoría no existe, así que puedes agregarla.
+                    AddCategories categorias = new AddCategories();
+                    bool addSuccess = categorias.AddCategory(AddCategoria.Text);
 
-            if (addSucces)
-            {
-                // Reload the page.
-                string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
-                Response.Redirect(pageUrl + "?ProductAction=addcat");
-            }
-            else
-            {
-                lbladdcatstatus.Text = "No se pudo agregar la categoria a la base de datos";
+                    if (addSuccess)
+                    {
+                        lbladdcatstatus.Text = "La categoría se agregó exitosamente.";
+                    }
+                    else
+                    {
+                        lbladdcatstatus.Text = "No se pudo agregar la categoría a la base de datos";
+                    }
+
+                    // Luego, redirige la página.
+                    string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
+                    Response.Redirect(pageUrl + "?ProductAction=addcat");
+                }
+                else
+                {
+                    // La categoría ya existe, muestra un mensaje de error.
+                    lbladdcatstatus.Text = "La categoría ya existe en la base de datos y no se puede agregar nuevamente.";
+                }
             }
         }
+        
+
+
+
 
         protected void gvcattab_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -58,30 +78,34 @@ namespace TiendaZapatillas.Admin
 
         protected void gvcattab_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            try
+            using (ProductContext _db = new ProductContext())
             {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                // Verificar si ya existe una categoría con el mismo nombre.
+                TextBox txtCategoryNameedit = gvcattab.Rows[e.RowIndex].FindControl("txtCategoryNameedit") as TextBox;
+                if (!_db.Categories.Any(c => c.CategoryName == txtCategoryNameedit.Text))
                 {
-                    sqlCon.Open();
-                    string query = "UPDATE Categories SET CategoryName=@ProductName WHERE CategoryID = @ProductID";
-                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                    sqlCmd.Parameters.AddWithValue("@ProductName", (gvcattab.Rows[e.RowIndex].FindControl("txtCategoryNameedit") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
-                    sqlCmd.ExecuteNonQuery();
-                    gvcattab.EditIndex = -1;
-                    this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
-                    lblSuccessMessage.Text = "Categoria actualizado con exito";
-                    lblErrorMessage.Text = "";
+                    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                    {
+                        sqlCon.Open();
+                        string query = "UPDATE Categories SET CategoryName=@ProductName WHERE CategoryID = @ProductID";
+                        SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                        sqlCmd.Parameters.AddWithValue("@ProductName", txtCategoryNameedit.Text.Trim());
+                        sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
+                        sqlCmd.ExecuteNonQuery();
+                        gvcattab.EditIndex = -1;
+                        this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
+                        lblSuccessMessage.Text = "Categoría actualizada con éxito";
+                        lblErrorMessage.Text = "";
+                    }
+                }
+                else
+                {
+                    lblErrorMessage.Text = "Ya existe una categoría con el mismo nombre.";
                 }
             }
-            catch (Exception ex)
-            {
-                lblSuccessMessage.Text = "";
-                lblErrorMessage.Text = ex.Message;
-            }
-            Response.Redirect("~/Admin/CategoriaAdmin.aspx");
-
         }
+        
+
 
         protected void gvcattab_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {

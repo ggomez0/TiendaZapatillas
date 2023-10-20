@@ -5,7 +5,7 @@ namespace TiendaZapatillas.Models
 {
     public class Product
     {
-        [ScaffoldColumn(false)]
+        [ScaffoldColumn(false), Key]
         public int ProductID { get; set; }
 
         [Required, StringLength(100), Display(Name = "Nombre")]
@@ -19,12 +19,12 @@ namespace TiendaZapatillas.Models
         [Required, Display(Name = "Precio")]
         public double? UnitPrice { get; set; }
 
-        public int CategoryID { get; set; }
-        public int GenCategoryID { get; set; }
-        public int TypeCategoryID { get; set; }
+        public int? CategoryID { get; set; }
+        public int? GenCategoryID { get; set; }
+        public int? TypeCategoryID { get; set; }
 
-        public int? stock { get; set; }
-        public int? vendido { get; set; }        
+        //public int? stock { get; set; }
+        //public int? vendido { get; set; }        
 
         //Categorias
         public virtual Category Category { get; set; }

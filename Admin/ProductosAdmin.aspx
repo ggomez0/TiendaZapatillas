@@ -107,11 +107,16 @@
                                                                 <asp:RegularExpressionValidator
                                                                     ValidationGroup="VG5"
                                                                     ID="RegularExpressionValidator1" runat="server"
-                                                                    Text="* Valor numerico sin $"
+                                                                    Text="* Valor numerico"
                                                                     ControlToValidate="AddProductPrice"
                                                                     SetFocusOnError="True" Display="Dynamic"
                                                                     ValidationExpression="^[0-9]*(\.)?[0-9]?[0-9]?$">
                                                                 </asp:RegularExpressionValidator>
+                                                                <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="AddProductPrice" Type="Double" 
+                                                                        MinimumValue="0.01" MaximumValue="1000000" 
+                                                                        Text="El precio debe ser mayor que 0" Display="Dynamic" 
+                                                                        ForeColor="Red" ValidationGroup="VG5" />
+
                                                             </td>
                                                         </tr>
                                                      
@@ -131,13 +136,14 @@
                                                             </td>
                                                         </tr>
                                                     </table>
+                                            <asp:Label ID="LabelAddStatus" runat="server"></asp:Label>
                                                     <p></p>
                                                     <p></p>
+
 
                                                     <asp:Button ID="AddProductButton" CssClass="btn btn-success rounded-3" runat="server"
                                                         Text="Agregar Producto" OnClick="AddProductButton_Click"
                                                         CausesValidation="true" ValidationGroup="VG5" />
-                                                    <asp:Label ID="LabelAddStatus" runat="server" Text=""></asp:Label>
                                                     <asp:Button ID="btnClose" CssClass="btn btn-danger rounded-3" runat="server" Text="Cancelar"
                                                         ValidationGroup="VG6" />
                                                     <p></p>
@@ -192,7 +198,7 @@
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Categoria">
+                                                        <asp:TemplateField HeaderText="Marca">
                                                             <ItemTemplate>
                                                                 <asp:Label Text='<%# Eval("CategoryName") %>'
                                                                     runat="server" />

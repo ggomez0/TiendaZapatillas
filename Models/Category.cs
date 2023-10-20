@@ -5,7 +5,7 @@ namespace TiendaZapatillas.Models
 {
     public class Category
     {
-        [ScaffoldColumn(false)]
+        [ScaffoldColumn(false), Key]
         public int CategoryID { get; set; }
 
         [Required, StringLength(100), Display(Name = "Nombre")]

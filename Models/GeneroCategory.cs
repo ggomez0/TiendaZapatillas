@@ -5,7 +5,7 @@ namespace TiendaZapatillas.Models
 {
     public class GeneroCategory
     {
-        [ScaffoldColumn(false), Key]
+        [ScaffoldColumn(false), Key ]
         public int GenCategoryID { get; set; }
 
         [Required, StringLength(100), Display(Name = "Nombre")]

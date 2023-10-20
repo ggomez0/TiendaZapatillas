@@ -5,8 +5,9 @@
 
     <div class="container">
 
-        <asp:Label ID="lblErrorMessage" runat="server"></asp:Label>
+        <asp:Label ID="lblErrorMessage" runat="server" Font-Bold="true" ForeColor="DarkRed"></asp:Label>
         <asp:Label ID="lblSuccessMessage" runat="server"></asp:Label>
+        <p></p>
 
          <asp:Button ID="Button1" CssClass="btn btn-success rounded-3"  runat="server" Text="Agregar Marca" />
                                     <!-- ModalPopupExtender --->
@@ -17,7 +18,7 @@
                                     <asp:Panel ID="Panel2" runat="server" CssClass="modalPopup" align="center"
                                         Style="background-color:white; border:solid; border-color:black;" >
                                         <div style="padding:20px">
-                                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                                 <ContentTemplate>
                                                     <h3>Agregar Marca</h3>
                                                     <table>
@@ -25,31 +26,37 @@
                                                             <td>
                                                                 <asp:TextBox ID="AddCategoria" runat="server">
                                                                 </asp:TextBox>
-                                                                
-
+                                                          
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5"
                                                                     runat="server" Font-Bold="true"
                                                                     Text="*Nombre de Categoria requerida"
                                                                     ControlToValidate="AddCategoria"
                                                                     SetFocusOnError="true" Display="Dynamic"
                                                                     ValidationGroup="VG1"></asp:RequiredFieldValidator>
+                                                              <%--  <asp:RegularExpressionValidator ID="RegexValidator" runat="server" ControlToValidate="AddCategoria"
+                                                                ValidationExpression="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+$" 
+                                                                Text="Solo se permiten letras" 
+                                                                Display="Dynamic" 
+                                                                ForeColor="Red" 
+                                                                ValidationGroup="VG1" />--%>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:Label ID="lbladdcatstatus" runat="server" Text="">
-                                                                </asp:Label>
+                                                                        <asp:Label ID="lbladdcatstatus" Font-Bold="true" ForeColor="DarkRed" runat="server">        </asp:Label>
 
                                                             </td>
                                                         </tr>
+                                                     
 
                                                     </table>
 
 
 
-                                                </ContentTemplate>
-                                            </asp:UpdatePanel>
+                                                
                                         </div>
+                                                     </ContentTemplate>
+                                            </asp:UpdatePanel>
                                         <asp:Button ID="AddCat" runat="server" Text="Agregar"
                                                                     OnClick="AddCat_Click" CssClass="btn btn-success rounded-3" CausesValidation="true"
                                                                     ValidationGroup="VG1" />
@@ -57,7 +64,9 @@
                                         <br />
                                         <p>  </p>
                                         <p></p>
-                                    </asp:Panel>
+                                   
+       
+                                             </asp:Panel>
 
                               
                                     <asp:GridView ID="gvcattab" runat="server" CssClass="grid"
@@ -136,6 +145,7 @@
                                                                     ControlToValidate="txtCategoryNameedit"
                                                                     SetFocusOnError="true" Display="Dynamic"
                                                                     ValidationGroup="VG2"></asp:RequiredFieldValidator>
+                                                                                               
                                                                                        </td>
                                                                                         </tr>
                                                                                     </table>
@@ -148,8 +158,7 @@
                                                                                         CommandName="Update"
                                                                                         ValidationGroup="VG2" CausesValidation="true" />
                                                                                       <asp:Button ID="btncerrareditcat" CssClass="btn btn-danger rounded-3" runat="server"
-                                                                            Text="Cerrar"
-                                                                            ValidationGroup="VG16" />
+                                                                            Text="Cerrar" />
                                                                                 </ContentTemplate>
                                                                             </asp:UpdatePanel>
                                                                         </div>
