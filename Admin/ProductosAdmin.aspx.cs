@@ -22,7 +22,8 @@ namespace TiendaZapatillas.Admin
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "SELECT * FROM Products p INNER JOIN GeneroCategories g ON" +
+                this.databasecrud(connectionString, "SELECT p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName,p.Description as Description,p.UnitPrice as" +
+                    " UnitPrice, ca.CategoryName as CategoryName, g.GeneroName as GeneroName, t.TypeCategoryName as TypeCategoryName FROM Products p INNER JOIN GeneroCategories g ON" +
                     " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
                     " inner join Categories ca on ca.CategoryID=p.CategoryID", gridproductos);
 
@@ -101,39 +102,31 @@ namespace TiendaZapatillas.Admin
         {
             try
             {
-                using (ProductContext _db = new ProductContext())
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
-                    // Verificar si ya existe una categoría con el mismo nombre.
-                    TextBox txtproducto = gridproductos.Rows[e.RowIndex].FindControl("txtproductName") as TextBox;
-                    if (!_db.Products.Any(c => c.ProductName == txtproducto.Text))
-                    {
-                        using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                        {
-                            sqlCon.Open();
-                            string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,CategoryID=@CategoryID,GenCategoryID=@GenCategoryID, TypeCategoryID=@TypeCategoryID WHERE ProductID = @ProductID";
-                            SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                            sqlCmd.Parameters.AddWithValue("@ProductName", (gridproductos.Rows[e.RowIndex].FindControl("txtProductName") as TextBox).Text.Trim());
-                            sqlCmd.Parameters.AddWithValue("@Description", (gridproductos.Rows[e.RowIndex].FindControl("txtDescription") as TextBox).Text.Trim());
-                            sqlCmd.Parameters.AddWithValue("@ImagePath", (gridproductos.Rows[e.RowIndex].FindControl("txtImagePath") as TextBox).Text.Trim());
-                            sqlCmd.Parameters.AddWithValue("@UnitPrice", (gridproductos.Rows[e.RowIndex].FindControl("txtUnitPrice") as TextBox).Text.Trim());
-                            sqlCmd.Parameters.AddWithValue("@CategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditCategory") as DropDownList).SelectedValue.Trim());
-                            sqlCmd.Parameters.AddWithValue("@TypeCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDownedittipocat") as DropDownList).SelectedValue.Trim());
-                            sqlCmd.Parameters.AddWithValue("@GenCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditGeneroCat") as DropDownList).SelectedValue.Trim());
+                    sqlCon.Open();
+                    string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,CategoryID=@CategoryID,GenCategoryID=@GenCategoryID, TypeCategoryID=@TypeCategoryID WHERE ProductID = @ProductID";
+                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                    sqlCmd.Parameters.AddWithValue("@ProductName", (gridproductos.Rows[e.RowIndex].FindControl("txtProductName") as TextBox).Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Description", (gridproductos.Rows[e.RowIndex].FindControl("txtDescription") as TextBox).Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@ImagePath", (gridproductos.Rows[e.RowIndex].FindControl("txtImagePath") as TextBox).Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@UnitPrice", (gridproductos.Rows[e.RowIndex].FindControl("txtUnitPrice") as TextBox).Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@CategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditCategory") as DropDownList).SelectedValue.Trim());
+                    sqlCmd.Parameters.AddWithValue("@TypeCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDownedittipocat") as DropDownList).SelectedValue.Trim());
+                    sqlCmd.Parameters.AddWithValue("@GenCategoryID", (gridproductos.Rows[e.RowIndex].FindControl("DropDowneditGeneroCat") as DropDownList).SelectedValue.Trim());
 
-                            sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gridproductos.DataKeys[e.RowIndex].Value.ToString()));
-                            sqlCmd.ExecuteNonQuery();
-                            gridproductos.EditIndex = -1;
-                            this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
-                            lblSuccessMessage.Text = "Producto actualizado con exito";
-                            lblErrorMessage.Text = "";
-                        }
-                    }
-                    else
-                    {
-                        lblErrorMessage.Text = "El nombre del producto ya existe";
-                    }
+                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gridproductos.DataKeys[e.RowIndex].Value.ToString()));
+                    sqlCmd.ExecuteNonQuery();
+                    gridproductos.EditIndex = -1;
+                    //Cambiar esto tambien para q actualice la tabla
+                    this.databasecrud(connectionString, "SELECT p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName, p.Description as Description, p.UnitPrice as" +
+                    " UnitPrice, ca.CategoryName as CategoryName, g.GeneroName as GeneroName, t.TypeCategoryName as TypeCategoryName FROM Products p INNER JOIN GeneroCategories g ON" +
+                    " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
+                    " inner join Categories ca on ca.CategoryID=p.CategoryID", gridproductos);
+                    lblSuccessMessage.Text = "Producto actualizado con exito";
+                    lblErrorMessage.Text = "";
                 }
-            }
+            }     
             catch (Exception ex)
             {
                 lblSuccessMessage.Text = "";

@@ -68,32 +68,23 @@ namespace TiendaZapatillas.Admin
         {
             try
             {
-                using (ProductContext _db = new ProductContext())
+
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
-                    // Verificar si ya existe una categoría con el mismo nombre.
-                    TextBox txttipoNameedit = gvtipotab.Rows[e.RowIndex].FindControl("txttipoNameedit") as TextBox;
-                    if (!_db.TypeCategories.Any(c => c.TypeCategoryName == txttipoNameedit.Text))
-                    {
-                        using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                        {
-                            sqlCon.Open();
-                            string query = "UPDATE TypeCategories SET TypeCategoryName=@ProductName WHERE TypeCategoryID = @ProductID";
-                            SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                            sqlCmd.Parameters.AddWithValue("@ProductName", (gvtipotab.Rows[e.RowIndex].FindControl("txttipoNameedit") as TextBox).Text.Trim());
-                            sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvtipotab.DataKeys[e.RowIndex].Value.ToString()));
-                            sqlCmd.ExecuteNonQuery();
-                            gvtipotab.EditIndex = -1;
-                            this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
-                            lblSuccessMessage.Text = "Categoria actualizado con exito";
-                            lblErrorMessage.Text = "";
-                        }
-                    }
-                    else
-                    {
-                        lblErrorMessage.Text = "Categoria ya existente";
-                    }
+                    sqlCon.Open();
+                    string query = "UPDATE TypeCategories SET TypeCategoryName=@ProductName WHERE TypeCategoryID = @ProductID";
+                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                    sqlCmd.Parameters.AddWithValue("@ProductName", (gvtipotab.Rows[e.RowIndex].FindControl("txttipoNameedit") as TextBox).Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvtipotab.DataKeys[e.RowIndex].Value.ToString()));
+                    sqlCmd.ExecuteNonQuery();
+                    gvtipotab.EditIndex = -1;
+                    this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
+                    lblSuccessMessage.Text = "Categoria actualizado con exito";
+                    lblErrorMessage.Text = "";
                 }
+
             }
+            
             catch (Exception ex)
             {
                 lblSuccessMessage.Text = "";

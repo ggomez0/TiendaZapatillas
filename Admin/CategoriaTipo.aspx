@@ -129,24 +129,25 @@
                                                                                             </td>
                                                                                         </tr>
                                                                                             <td>
-                                                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator516"
+                                                                                                <asp:RequiredFieldValidator ID="Retor516"
                                                                                                 runat="server" Font-Bold="true"
                                                                                                 Text="* Nombre tipo requerido"
                                                                                                 ControlToValidate="txttipoNameedit"
                                                                                                 SetFocusOnError="true" Display="Dynamic"
-                                                                                                ValidationGroup="VGedittipo"></asp:RequiredFieldValidator>
+                                                                                                ValidationGroup="VGedittipoo" ></asp:RequiredFieldValidator>
                                                                                              
                                                                                        </td>
                                                                                         </tr>
-                                                                                    </table>
+                                                                                  
                                                                                     <p></p>
                                                                                     <p></p>
-
+                                                                                        </table>
+                                                                                    <%-- causesvalidation false porque no edita --%>
                                                                                     <asp:Button CssClass="btn btn-success rounded-3" ID="Editcat"
                                                                                         runat="server"
-                                                                                        Text="Editar tipo de zapatillas"
+                                                                                        Text="Editar"
                                                                                         CommandName="Update"
-                                                                                        ValidationGroup="VGedittipo" CausesValidation="true" />
+                                                                                        ValidationGroup="VGedittipoo" CausesValidation="false" />
                                                                                       <asp:Button ID="btncerraredittipo" CssClass="btn btn-danger rounded-3" runat="server"
                                                                             Text="Cerrar"
                                                                             ValidationGroup="VG16" />

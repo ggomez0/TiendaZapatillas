@@ -99,7 +99,7 @@
                                               <asp:TemplateField HeaderStyle-Width="10px" >
                                                             <ItemTemplate>
                                                                     <asp:ImageButton ImageUrl="~/Images/lupa.png"
-                                                                        runat="server" ValidationGroup="VG2" ID="btndetcat" Width="20px"
+                                                                        runat="server" ValidationGroup="VGlupa" ID="btndetcat" Width="20px"
                                                                         Height="20px" OnClick="btndetcat_Click" CommandArgument='<%#Eval("CategoryID") %>' />
                                                                
                                                             </ItemTemplate>
@@ -151,12 +151,12 @@
                                                                                     </table>
                                                                                     <p></p>
                                                                                     <p></p>
-
+                                                                                    <%-- causesvalidation false --%>
                                                                                     <asp:Button CssClass="btn btn-success rounded-3" ID="Editcat"
                                                                                         runat="server"
-                                                                                        Text="Editar categoria"
+                                                                                        Text="Editar"
                                                                                         CommandName="Update"
-                                                                                        ValidationGroup="VG2" CausesValidation="true" />
+                                                                                        ValidationGroup="VG2" CausesValidation="false" />
                                                                                       <asp:Button ID="btncerrareditcat" CssClass="btn btn-danger rounded-3" runat="server"
                                                                             Text="Cerrar" />
                                                                                 </ContentTemplate>

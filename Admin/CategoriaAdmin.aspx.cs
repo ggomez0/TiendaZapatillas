@@ -78,33 +78,24 @@ namespace TiendaZapatillas.Admin
 
         protected void gvcattab_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            using (ProductContext _db = new ProductContext())
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                // Verificar si ya existe una categoría con el mismo nombre.
-                TextBox txtCategoryNameedit = gvcattab.Rows[e.RowIndex].FindControl("txtCategoryNameedit") as TextBox;
-                if (!_db.Categories.Any(c => c.CategoryName == txtCategoryNameedit.Text))
-                {
-                    using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                    {
-                        sqlCon.Open();
-                        string query = "UPDATE Categories SET CategoryName=@ProductName WHERE CategoryID = @ProductID";
-                        SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                        sqlCmd.Parameters.AddWithValue("@ProductName", txtCategoryNameedit.Text.Trim());
-                        sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
-                        sqlCmd.ExecuteNonQuery();
-                        gvcattab.EditIndex = -1;
-                        this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
-                        lblSuccessMessage.Text = "Categoría actualizada con éxito";
-                        lblErrorMessage.Text = "";
-                    }
-                }
-                else
-                {
-                    lblErrorMessage.Text = "Ya existe una categoría con el mismo nombre.";
-                }
+                sqlCon.Open();
+                string query = "UPDATE Categories SET CategoryName=@ProductName WHERE CategoryID = @ProductID";
+                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                sqlCmd.Parameters.AddWithValue("@ProductName", (gvcattab.Rows[e.RowIndex].FindControl("txtCategoryNameedit") as TextBox).Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
+                sqlCmd.ExecuteNonQuery();
+                gvcattab.EditIndex = -1;
+                this.databasecrud(connectionString, "SELECT CategoryID, CategoryName from Categories", gvcattab);
+                lblSuccessMessage.Text = "Categoría actualizada con éxito";
+                lblErrorMessage.Text = "";  
             }
+            Response.Redirect("~/Admin/CategoriaAdmin.aspx");
+
+
         }
-        
+
 
 
         protected void gvcattab_RowDeleting(object sender, GridViewDeleteEventArgs e)
