@@ -655,6 +655,10 @@
     <Compile Include="Migrations\202310200309396_fdvwefvfvddd.Designer.cs">
       <DependentUpon>202310200309396_fdvwefvfvddd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310250558417_jidejo.cs" />
+    <Compile Include="Migrations\202310250558417_jidejo.Designer.cs">
+      <DependentUpon>202310250558417_jidejo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cards.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -752,6 +756,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310200309396_fdvwefvfvddd.resx">
       <DependentUpon>202310200309396_fdvwefvfvddd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310250558417_jidejo.resx">
+      <DependentUpon>202310250558417_jidejo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

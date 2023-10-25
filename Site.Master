@@ -64,8 +64,8 @@
 
       
             
-             <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" 
+             <li class="nav-item dropdown" id="navnavdd" runat="server">
+        <a class="nav-link dropdown-toggle active" role="button" 
             data-toggle="dropdown">
           Productos
         </a>
@@ -75,7 +75,7 @@
       </li>
      
           <li class="nav-item">
-             <a class="nav-link active" runat="server" href="~/Contact/Contact">Contacto</a>
+             <a class="nav-link active" id="contactnav" runat="server" href="~/Contact/Contact">Contacto</a>
           </li>
 
           <%--carrito--%>

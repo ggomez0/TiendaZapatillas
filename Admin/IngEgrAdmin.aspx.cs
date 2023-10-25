@@ -63,7 +63,7 @@ namespace TiendaZapatillas.Admin
         protected void btnmov_Click(object sender, EventArgs e)
         {
             addcomprobante addmov = new addcomprobante();
-            bool addSuccess = addmov.addcomprobantes(null, null, 0, 5, null, null, null);
+            bool addSuccess = addmov.addcomprobantes(null, null, 0, null, null, null);
 
 
             if (addSuccess)

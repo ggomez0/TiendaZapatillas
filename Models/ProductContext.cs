@@ -17,7 +17,6 @@ namespace TiendaZapatillas.Models
         public DbSet<comprobantes> comprobantes { get; set; }
         public DbSet<depositos> depositos { get; set; }
         public DbSet<Cards> Card { get; set; }
-        public DbSet<CartItem> cartItems { get; set; }
         public DbSet<historial> historials { get; set; }
         public DbSet<Order> Orders { get; set; }
 

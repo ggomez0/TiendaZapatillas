@@ -86,6 +86,8 @@ namespace TiendaZapatillas
                 cartCount.Visible = false;
                 cartCountimg.Visible = false;
                 inicionav.Visible = false;
+                navnavdd.Visible = false;
+                contactnav.Visible = false;
 
             }
             if (HttpContext.Current.User.IsInRole("GERENTE"))
@@ -99,6 +101,8 @@ namespace TiendaZapatillas
                 cartCount.Visible = false;
                 cartCountimg.Visible = false;
                 inicionav.Visible = false;
+                contactnav.Visible = false;
+
             }
         }
         protected void Page_PreRender(object sender, EventArgs e)

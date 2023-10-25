@@ -24,6 +24,24 @@ namespace TiendaZapatillas
         protected global::System.Web.UI.HtmlControls.HtmlAnchor inicionav;
 
         /// <summary>
+        /// Control navnavdd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl navnavdd;
+
+        /// <summary>
+        /// Control contactnav.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor contactnav;
+
+        /// <summary>
         /// Control cartCountimg.
         /// </summary>
         /// <remarks>
