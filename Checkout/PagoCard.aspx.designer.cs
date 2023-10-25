@@ -7,164 +7,128 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ShopGaspar.Admin
+namespace TiendaZapatillas.Checkout
 {
 
 
-    public partial class Nueva_factura
+    public partial class PagoCard
     {
 
         /// <summary>
-        /// Control txtidfact.
+        /// Control OrderItemList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtidfact;
+        protected global::System.Web.UI.WebControls.GridView OrderItemList;
 
         /// <summary>
-        /// Control txtsucursal.
+        /// Control lblTotalca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsucursal;
+        protected global::System.Web.UI.WebControls.Label lblTotalca;
 
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control firstName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.TextBox firstName;
 
         /// <summary>
-        /// Control CompareValidator2.
+        /// Control lastName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
+        protected global::System.Web.UI.WebControls.TextBox lastName;
 
         /// <summary>
-        /// Control ddlistprov.
+        /// Control email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlistprov;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// Control txttipo.
+        /// Control address.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txttipo;
+        protected global::System.Web.UI.WebControls.TextBox address;
 
         /// <summary>
-        /// Control txtcalendar.
+        /// Control phone.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcalendar;
+        protected global::System.Web.UI.WebControls.TextBox phone;
 
         /// <summary>
-        /// Control btnagregarprodfact.
+        /// Control ccname.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnagregarprodfact;
+        protected global::System.Web.UI.WebControls.TextBox ccname;
 
         /// <summary>
-        /// Control ModalPopupExtender3.
+        /// Control ccnumber.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtender3;
+        protected global::System.Web.UI.WebControls.TextBox ccnumber;
 
         /// <summary>
-        /// Control Panel21.
+        /// Control ccexpiration.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel21;
+        protected global::System.Web.UI.WebControls.TextBox ccexpiration;
 
         /// <summary>
-        /// Control gvproductoslista.
+        /// Control cccvv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvproductoslista;
+        protected global::System.Web.UI.WebControls.TextBox cccvv;
 
         /// <summary>
-        /// Control btncerrarprodfact.
+        /// Control cardbtn0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncerrarprodfact;
+        protected global::System.Web.UI.WebControls.Button cardbtn0;
 
         /// <summary>
-        /// Control gvprodfact.
+        /// Control lblcard.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvprodfact;
-
-        /// <summary>
-        /// Control btnguardarfact.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnguardarfact;
-
-        /// <summary>
-        /// Control lblSuccessMessage.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSuccessMessage;
-
-        /// <summary>
-        /// Control lblErrorMessage.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
-
-        /// <summary>
-        /// Control lblInvisible.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInvisible;
+        protected global::System.Web.UI.WebControls.Label lblcard;
     }
 }

@@ -64,7 +64,7 @@
 
       
             
-          <%--   <li class="nav-item dropdown">
+             <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" 
             data-toggle="dropdown">
           Productos
@@ -76,11 +76,11 @@
      
           <li class="nav-item">
              <a class="nav-link active" runat="server" href="~/Contact/Contact">Contacto</a>
-          </li>--%>
+          </li>
 
           <%--carrito--%>
 
-    <%--      <li>    
+          <li>    
               <a href="~/ShoppingCart" runat="server">
                 <img src="Images/shopping-cart.png" runat="server" id="cartCountimg" style="height:40px; width:40px;"/>
              </a>
@@ -88,17 +88,9 @@
 
           <li class="nav-item">
             <a class="nav-link active" runat="server" href="~/ShoppingCart" ID="cartCount"/>          
-          </li>--%>
+          </li>
           
-          <%-- <%--carrito--%>
-        <%--     <li class="nav-item">
-                <a class="btn btn-success rounded-3" runat="server" id="adminLink" visible="false" href="~/Admin/Menu.aspx">Personal de Venta</a>
-            </li>--%>
-
-          <%--Gerente--%>
-        <%--  <li class="nav-item">
-            <a class="btn btn-success rounded-3" runat="server" id="gerenteLink" visible="false" href="~/Gerente/ProductosGerente.aspx">Gerente</a>
-        </li>--%>
+    
          
       </ul>
         
@@ -122,7 +114,7 @@
                                   </button>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" runat="server" href="~/Account/Manage">Ajustes</a>
-<%--                                    <a class="dropdown-item" runat="server" href="~/Account/ordersusers.aspx">Ordenes</a>--%>
+                                    <a class="dropdown-item" runat="server" href="~/Account/ordersusers.aspx">Ordenes</a>
                                     <asp:LoginStatus class="dropdown-item" BackColor="#ff8a8d" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesion" Font-Italic="true" LogoutPageUrl="~/Account/Login" OnLoggingOut="Unnamed_LoggingOut" />
                                   </div>
                                 </div>                          

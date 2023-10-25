@@ -21,28 +21,28 @@ namespace TiendaZapatillas.Admin
             if(!IsPostBack)
             {
                 string nID = Request.QueryString["id"];
-                this.databasecrud(connectionString, "SELECT * from comprobantesdets cd inner join products p on p.ProductID=cd.Product_ProductID" +
-                    " where Comprobantes_idcomp=" + nID, gv_detmov);
+                //this.databasecrud(connectionString, "SELECT * from comprobantesdets cd inner join products p on p.ProductID=cd.Product_ProductID" +
+                //    " where Comprobantes_idcomp=" + nID, gv_detmov);
 
         
             }
 
         }
 
-        public IQueryable<comprobantes> GetMovimiento([QueryString("id")] int? idcomp)
-        {
-            var _db = new TiendaZapatillas.Models.ProductContext();
-            IQueryable<comprobantes> query = _db.comprobantes;
-            if (idcomp.HasValue && idcomp > 0)
-            {
-                query = query.Where(p => p.idcomp == idcomp);
-            }
-            else
-            {
-                query = null;
-            }
-            return query;
-        }
+        //public IQueryable<comprobantes> GetMovimiento([QueryString("id")] int? idcomp)
+        //{
+        //    var _db = new TiendaZapatillas.Models.ProductContext();
+        //    IQueryable<comprobantes> query = _db.comprobantes;
+        //    if (idcomp.HasValue && idcomp > 0)
+        //    {
+        //        query = query.Where(p => p.idcomp == idcomp);
+        //    }
+        //    else
+        //    {
+        //        query = null;
+        //    }
+        //    return query;
+        //}
 
 
         void databasecrud(string conexion, string sqlcomando, GridView tablag)

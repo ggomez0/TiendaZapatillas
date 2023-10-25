@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Movimiento" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Nuevo_Movimiento.aspx.cs" Inherits="ShopGaspar.Admin.Nuevo_Movimiento" %>
+﻿<%@ Page Title="Movimiento" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Nuevo_Movimiento.aspx.cs" Inherits="TiendaZapatillas.Admin.Nuevo_Movimiento" %>
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -26,7 +26,7 @@
                                                             <asp:Label Font-Bold="true" runat="server">Deposito:</asp:Label>
                                                    </td><td>
                                                             <asp:DropDownList ID="ddlistdep" runat="server"
-                                                                ItemType="ShopGaspar.Models.depositos"
+                                                                ItemType="TiendaZapatillas.Models.depositos"
                                                                 SelectMethod="GetDepositos" DataTextField="DepName"
                                                                 DataValueField="DepID">
                                                             </asp:DropDownList>

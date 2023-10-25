@@ -83,9 +83,8 @@ namespace TiendaZapatillas
                     Response.Redirect("/Admin/Menu.aspx");
                 }
 
-                //adminLink.Visible = true;
-                //cartCount.Visible = false;
-                //cartCountimg.Visible = false;
+                cartCount.Visible = false;
+                cartCountimg.Visible = false;
                 inicionav.Visible = false;
 
             }
@@ -97,20 +96,19 @@ namespace TiendaZapatillas
                     Response.Redirect("/Gerente/ProductosGerente.aspx");
                 }
 
-                //gerenteLink.Visible = true;
-                //cartCount.Visible = false;
-                //cartCountimg.Visible = false;
+                cartCount.Visible = false;
+                cartCountimg.Visible = false;
                 inicionav.Visible = false;
             }
         }
-        //protected void Page_PreRender(object sender, EventArgs e)
-        //{
-        //    using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
-        //    {
-        //        string cartStr = string.Format("{0}", usersShoppingCart.GetCount());
-        //        cartCount.InnerText = cartStr;
-        //    }
-        //}
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+            {
+                string cartStr = string.Format("{0}", usersShoppingCart.GetCount());
+                cartCount.InnerText = cartStr;
+            }
+        }
         public IQueryable<Category> GetCategories()
         {
             var _db = new TiendaZapatillas.Models.ProductContext();

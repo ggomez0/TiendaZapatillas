@@ -7,29 +7,29 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Checkout
 {
 
 
-    public partial class IngEgrAdmin
+    public partial class CheckoutComplete
     {
 
         /// <summary>
-        /// Control btnmov.
+        /// Control ordencompra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnmov;
+        protected global::System.Web.UI.WebControls.Label ordencompra;
 
         /// <summary>
-        /// Control gvhistorial.
+        /// Control Continue.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvhistorial;
+        protected global::System.Web.UI.WebControls.Button Continue;
     }
 }

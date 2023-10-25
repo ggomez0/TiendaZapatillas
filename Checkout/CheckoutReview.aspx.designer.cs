@@ -7,29 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Checkout
 {
 
 
-    public partial class pagodetalles
+    public partial class CheckoutReview
     {
 
         /// <summary>
-        /// Control pagoID.
+        /// Control OrderItemList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView pagoID;
-
-        /// <summary>
-        /// Control gvfactdet.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvfactdet;
+        protected global::System.Web.UI.WebControls.GridView OrderItemList;
     }
 }
