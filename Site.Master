@@ -44,9 +44,15 @@
 
 
  <nav class="navbar navbar-expand-lg navbar-light"> 
-      <a class="navbar-brand" runat="server" href="~/"  title="Zapas" style="font-size:2em; 
+      <a class="navbar-brand" runat="server" href="~/" id="titlenav"  title="Zapas" style="font-size:2em; 
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">ALTAS LLANTAS       
           
+ <%--     <img style="height:70px" runat="server" src="~/Images/logoh.png">--%>
+        </a>
+
+      <a class="navbar-brand" runat="server" href="~/Admin/Menu.aspx" id="rolnav"  title="Zapas" style="font-size:2em; 
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">ALTAS LLANTAS       
+           
  <%--     <img style="height:70px" runat="server" src="~/Images/logoh.png">--%>
         </a>
 

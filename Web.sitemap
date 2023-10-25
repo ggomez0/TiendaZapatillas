@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode url="~/Admin/Menu" title="Menu"  description="Menu">
+  <siteMapNode url="~/Admin/Menu" title=""  description="">
     <siteMapNode url="~/Admin/ProductosAdmin" title="Productos" />
     <siteMapNode url="~/Admin/Pagomovimientos" title="Pago" />
     <siteMapNode url="~/Admin/IngEgrAdmin" title="Stock" />
+    <siteMapNode url="~/Admin/GestionMarcas" title="Marcas" />
+	 
 	  <siteMapNode url="~/Admin/CategoriaAdmin" title="Categoria">
 		 <siteMapNode url="~/Admin/detprodcat" title="Detalles"/>
 		  
 	  </siteMapNode>
+	  
     <siteMapNode url="~/Admin/DepositosAdmin" title="Depositos">
 		<siteMapNode url="~/Admin/historial" title="Historial"></siteMapNode>
 		<siteMapNode url="~/Admin/prodendep" title="Detalles"></siteMapNode>

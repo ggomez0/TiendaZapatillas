@@ -75,6 +75,7 @@ namespace TiendaZapatillas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            rolnav.Visible = false;
             if (HttpContext.Current.User.IsInRole("ADMIN"))
             {
                 if (Session["RedirectedToAdmin"] == null)
@@ -88,6 +89,8 @@ namespace TiendaZapatillas
                 inicionav.Visible = false;
                 navnavdd.Visible = false;
                 contactnav.Visible = false;
+                titlenav.Visible = false;
+                rolnav.Visible = true;
 
             }
             if (HttpContext.Current.User.IsInRole("GERENTE"))
@@ -102,7 +105,8 @@ namespace TiendaZapatillas
                 cartCountimg.Visible = false;
                 inicionav.Visible = false;
                 contactnav.Visible = false;
-
+                titlenav.Visible = false;
+                rolnav.Visible = true;
             }
         }
         protected void Page_PreRender(object sender, EventArgs e)

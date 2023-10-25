@@ -23,9 +23,9 @@ namespace TiendaZapatillas.Admin
             if (!IsPostBack)
             {
                 this.databasecrud(connectionString, "SELECT p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName,p.Description as Description,p.UnitPrice as" +
-                    " UnitPrice, ca.CategoryName as CategoryName, g.GeneroName as GeneroName, t.TypeCategoryName as TypeCategoryName FROM Products p INNER JOIN GeneroCategories g ON" +
+                    " UnitPrice, ca.MarcaName as CategoryName, g.GeneroName as GeneroName, t.TypeCategoryName as TypeCategoryName FROM Products p INNER JOIN GeneroCategories g ON" +
                     " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
-                    " inner join Categories ca on ca.CategoryID=p.CategoryID", gridproductos);
+                    " inner join Marcas ca on ca.MarcaID=p.MarcaID", gridproductos);
 
             }
         }
@@ -61,7 +61,7 @@ namespace TiendaZapatillas.Admin
                     using (SqlConnection sqlCon = new SqlConnection(connectionString))
                     {
                         sqlCon.Open();
-                        string query = "INSERT INTO Products (ProductName,Description,ImagePath,UnitPrice,CategoryID,stock) VALUES (@ProductName,@Description,@ImagePath,@UnitPrice,@CategoryID,@stock)";
+                        string query = "INSERT INTO Products (ProductName,Description,ImagePath,UnitPrice,MarcaID,stock) VALUES (@ProductName,@Description,@ImagePath,@UnitPrice,@CategoryID,@stock)";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                         sqlCmd.Parameters.AddWithValue("@ProductName", (gridproductos.FooterRow.FindControl("txtProductNameFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Description", (gridproductos.FooterRow.FindControl("txtDescriptionFooter") as TextBox).Text.Trim());
@@ -105,7 +105,7 @@ namespace TiendaZapatillas.Admin
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,CategoryID=@CategoryID,GenCategoryID=@GenCategoryID, TypeCategoryID=@TypeCategoryID WHERE ProductID = @ProductID";
+                    string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,MarcaID=@CategoryID,GenCategoryID=@GenCategoryID, TypeCategoryID=@TypeCategoryID WHERE ProductID = @ProductID";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@ProductName", (gridproductos.Rows[e.RowIndex].FindControl("txtProductName") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Description", (gridproductos.Rows[e.RowIndex].FindControl("txtDescription") as TextBox).Text.Trim());
@@ -122,7 +122,7 @@ namespace TiendaZapatillas.Admin
                     this.databasecrud(connectionString, "SELECT p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName, p.Description as Description, p.UnitPrice as" +
                     " UnitPrice, ca.CategoryName as CategoryName, g.GeneroName as GeneroName, t.TypeCategoryName as TypeCategoryName FROM Products p INNER JOIN GeneroCategories g ON" +
                     " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
-                    " inner join Categories ca on ca.CategoryID=p.CategoryID", gridproductos);
+                    " inner join Marcas ca on ca.MarcaID=p.MarcaID", gridproductos);
                     lblSuccessMessage.Text = "Producto actualizado con exito";
                     lblErrorMessage.Text = "";
                 }
@@ -169,7 +169,7 @@ namespace TiendaZapatillas.Admin
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,CategoryID=@CategoryID WHERE ProductID = @ProductID";
+                string query = "UPDATE Products SET ProductName=@ProductName,Description=@Description,ImagePath=@ImagePath,UnitPrice=@UnitPrice,MarcaID=@CategoryID WHERE ProductID = @ProductID";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                 sqlCmd.Parameters.AddWithValue("@ProductName", (gridproductos.Rows[e.RowIndex].FindControl("txtProductName") as TextBox).Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Description", (gridproductos.Rows[e.RowIndex].FindControl("txtDescription") as TextBox).Text.Trim());

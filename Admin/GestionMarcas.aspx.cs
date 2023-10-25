@@ -21,7 +21,7 @@ namespace TiendaZapatillas.Admin
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "SELECT MarcasID, MarcasName from Marcas", gvcattab);
+                this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
 
             }
 
@@ -37,7 +37,7 @@ namespace TiendaZapatillas.Admin
                 {
                     // La categoría no existe, así que puedes agregarla.
                     AddMarca marca = new AddMarca();
-                    bool addSuccess = marca.AddMarcas(AddCategoria.Text,"a","Argentina","google.png","www.google.com");
+                    bool addSuccess = marca.AddMarcas(AddCategoria.Text,"a","Argentina","google.png","https://www.google.com");
 
                     if (addSuccess)
                     {
@@ -67,13 +67,13 @@ namespace TiendaZapatillas.Admin
         protected void gvcattab_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvcattab.EditIndex = e.NewEditIndex;
-            this.databasecrud(connectionString, "SELECT MarcasID, MarcasName from Marcas", gvcattab);
+            this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
         }
 
         protected void gvcattab_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvcattab.EditIndex = -1;
-            this.databasecrud(connectionString, "SELECT MarcasID, MarcasName from Marcas", gvcattab);
+            this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
         }
 
         protected void gvcattab_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -81,13 +81,13 @@ namespace TiendaZapatillas.Admin
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                string query = "UPDATE Marcas SET MarcasName=@ProductName WHERE MarcasID = @ProductID";
+                string query = "UPDATE Marcas SET MarcaName=@ProductName WHERE MarcaID = @ProductID";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                 sqlCmd.Parameters.AddWithValue("@ProductName", (gvcattab.Rows[e.RowIndex].FindControl("txtCategoryNameedit") as TextBox).Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
                 sqlCmd.ExecuteNonQuery();
                 gvcattab.EditIndex = -1;
-                this.databasecrud(connectionString, "SELECT MarcasID, MarcasName from Marcas", gvcattab);
+                this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
                 lblSuccessMessage.Text = "Marcas actualizada con éxito";
                 lblErrorMessage.Text = "";  
             }
@@ -105,11 +105,11 @@ namespace TiendaZapatillas.Admin
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "DELETE FROM Marcas WHERE MarcasID = @ProductID";
+                    string query = "DELETE FROM Marcas WHERE MarcaID = @ProductID";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
-                    this.databasecrud(connectionString, "SELECT MarcasID, MarcasName from Marcas", gvcattab);
+                    this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
                     lblSuccessMessage.Text = "Marcas eliminado con exito";
                     lblErrorMessage.Text = "";
 

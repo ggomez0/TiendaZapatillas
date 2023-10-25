@@ -26,7 +26,7 @@
                   </div>
                 </div>
 
-                <div class="row" style="margin-right:15%;">
+                <div class="row">
                   <div class="col-md-12 form-group" >
                      <asp:TextBox  runat="server" class="form-control" name="txtmessage" id="txtmessage" cols="30" rows="7" placeholder="Escriba su mensaje" TextMode="MultiLine"/>
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Requerido" ControlToValidate="txtmessage"/><br>
@@ -42,7 +42,7 @@
              
 
             </div>
-            <div class="col-lg-4 ml-auto " >
+            <div class="col-lg-4" style="margin-left:6%" >
               <h3 class="mb-4">Otras formas de contactarnos...</h3>
                 <a href="https://wa.me/3876291369" style="text-decoration:none">
                     <img src="../Images/whatsapp.png" style="height:60px; width:60px;" />
@@ -55,7 +55,7 @@
                  <p></p>
                 
                     <img src="../Images/email.png" style="height:70px; width:70px;" />
-                 admin@gamersalta.com
+                 admin@altasllantas.com
              
             </div>
           </div>

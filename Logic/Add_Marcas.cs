@@ -8,10 +8,10 @@ namespace TiendaZapatillas.Logic
 {
     public class AddMarca
     {
-        public bool AddMarcas(string MarcasName, string Description, string paisorigen, string Imagen_marca, string paginaweb_marca)
+        public bool AddMarcas(string MarcaName, string Description, string paisorigen, string Imagen_marca, string paginaweb_marca)
         {
             var myCategory = new Marca();
-            myCategory.MarcaName = MarcasName;
+            myCategory.MarcaName = MarcaName;
             myCategory.Description = Description;
             myCategory.paisorigen = paisorigen;
             myCategory.Imagen_marca = Imagen_marca;

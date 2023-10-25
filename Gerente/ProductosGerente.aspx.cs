@@ -24,7 +24,7 @@ namespace TiendaZapatillas.Gerente
             {
                 this.databasecrud(connectionString, "SELECT * FROM Products p INNER JOIN GeneroCategories g ON" +
                     " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
-                    " inner join Marcas ca on ca.MarcasID=p.CategoryID", gridproductos);
+                    " inner join Marcas ca on ca.MarcaID=p.MarcaID", gridproductos);
 
             }
         }

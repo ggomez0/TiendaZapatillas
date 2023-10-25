@@ -21,42 +21,75 @@
                                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                                 <ContentTemplate>
                                                     <h3>Agregar Marca</h3>
-                                                    <table>
-                                                        <tr>
-                                                            <td>
-                                                                <asp:TextBox ID="AddCategoria" runat="server">
-                                                                </asp:TextBox>
-                                                          
-                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5"
-                                                                    runat="server" Font-Bold="true"
-                                                                    Text="*Nombre de Categoria requerida"
-                                                                    ControlToValidate="AddCategoria"
-                                                                    SetFocusOnError="true" Display="Dynamic"
-                                                                    ValidationGroup="VG1"></asp:RequiredFieldValidator>
-                                                              <%--  <asp:RegularExpressionValidator ID="RegexValidator" runat="server" ControlToValidate="AddCategoria"
-                                                                ValidationExpression="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+$" 
-                                                                Text="Solo se permiten letras" 
-                                                                Display="Dynamic" 
-                                                                ForeColor="Red" 
-                                                                ValidationGroup="VG1" />--%>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                        <asp:Label ID="lbladdcatstatus" Font-Bold="true" ForeColor="DarkRed" runat="server">        </asp:Label>
-
-                                                            </td>
-                                                        </tr>
-                                                     
-
-                                                    </table>
-
+                                                  <table>
+    <tr>
+        <td>
+            <asp:Label runat="server">Nombre:</asp:Label>
+        </td>
+        <td>
+            <asp:TextBox ID="AddCategoria" runat="server"></asp:TextBox>
+        </td>
+        <td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Font-Bold="true" Text="*Nombre de Marca requerida" ControlToValidate="AddCategoria" SetFocusOnError="true" Display="Dynamic" ValidationGroup="VG1"></asp:RequiredFieldValidator>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <asp:Label runat="server">Descripcion:</asp:Label>
+        </td>
+        <td>
+            <asp:TextBox ID="txtdescmarca" runat="server"></asp:TextBox>
+        </td>
+        <td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Font-Bold="true" Text="Descripcion requerida" ControlToValidate="txtdescmarca" SetFocusOnError="true" Display="Dynamic" ValidationGroup="VG1"></asp:RequiredFieldValidator>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <asp:Label runat="server">Pais de origen:</asp:Label>
+        </td>
+        <td>
+            <asp:TextBox ID="txtpaismarca" runat="server"></asp:TextBox>
+        </td>
+        <td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Font-Bold="true" Text="*Pais Requerida" ControlToValidate="txtpaismarca" SetFocusOnError="true" Display="Dynamic" ValidationGroup="VG1"></asp:RequiredFieldValidator>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <asp:Label runat="server">Logotipo:</asp:Label>
+        </td>
+        <td>
+            <asp:FileUpload ID="imgaddmarca" runat="server" />
+        </td>
+        <td>
+            <asp:RequiredFieldValidator ValidationGroup="VG1" ID="RequiredFieldValidator440" runat="server" Text="* Imagen requerida." ControlToValidate="imgaddmarca" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <asp:Label runat="server">URL:</asp:Label>
+        </td>
+        <td>
+            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+        </td>
+        <td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Font-Bold="true" Text="*Nombre de Marca requerida" ControlToValidate="AddCategoria" SetFocusOnError="true" Display="Dynamic" ValidationGroup="VG1"></asp:RequiredFieldValidator>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <asp:Label ID="lbladdcatstatus" Font-Bold="true" ForeColor="DarkRed" runat="server"></asp:Label>
+        </td>
+    </tr>
+</table>
 
 
                                                 
-                                        </div>
+                                    
                                                      </ContentTemplate>
                                             </asp:UpdatePanel>
+                                            </div>
                                         <asp:Button ID="AddCat" runat="server" Text="Agregar"
                                                                     OnClick="AddCat_Click" CssClass="btn btn-success rounded-3" CausesValidation="true"
                                                                     ValidationGroup="VG1" />
@@ -72,7 +105,7 @@
                                     <asp:GridView ID="gvcattab" runat="server" CssClass="grid"
                                         ShowHeaderWhenEmpty="true" class="table thead-dark" AutoGenerateColumns="false"
                                         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
-                                        CellPadding="3" DataKeyNames="CategoryID" OnRowCommand="gvcattab_RowCommand"
+                                        CellPadding="3" DataKeyNames="MarcaID" OnRowCommand="gvcattab_RowCommand"
                                                     OnRowEditing="gvcattab_RowEditing"
                                                     OnRowCancelingEdit="gvcattab_RowCancelingEdit"
                                                     OnRowUpdating="gvcattab_RowUpdating"
@@ -86,13 +119,37 @@
 
                                               <asp:TemplateField HeaderText="ID">
                                                             <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("CategoryID") %>'
+                                                                <asp:Label Text='<%# Eval("MarcaID") %>'
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField HeaderText="Nombre">
                                                             <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("CategoryName") %>'
+                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
+                                                                    runat="server" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Descripcion">
+                                                            <ItemTemplate>
+                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
+                                                                    runat="server" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Pais Origen">
+                                                            <ItemTemplate>
+                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
+                                                                    runat="server" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Logo">
+                                                            <ItemTemplate>
+                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
+                                                                    runat="server" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Web">
+                                                            <ItemTemplate>
+                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
@@ -100,7 +157,7 @@
                                                             <ItemTemplate>
                                                                     <asp:ImageButton ImageUrl="~/Images/lupa.png"
                                                                         runat="server" ValidationGroup="VGlupa" ID="btndetcat" Width="20px"
-                                                                        Height="20px" OnClick="btndetcat_Click" CommandArgument='<%#Eval("CategoryID") %>' />
+                                                                        Height="20px" OnClick="btndetcat_Click" CommandArgument='<%#Eval("MarcaID") %>' />
                                                                
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
@@ -134,7 +191,7 @@
                                                                                             <td>
                                                                                                 <asp:TextBox
                                                                                                     ID="txtCategoryNameedit"
-                                                                                                    Text='<%# Eval("CategoryName") %>'
+                                                                                                    Text='<%# Eval("MarcaName") %>'
                                                                                                     runat="server" />
                                                                                                      </td></tr><tr></tr>
                                                                                         <tr>

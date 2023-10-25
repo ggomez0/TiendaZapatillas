@@ -4323,7 +4323,20 @@ fieldset:disabled .btn {
   align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;  
-  padding:1rem;
+  padding:0 1rem;
+}
+
+.navbarall {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
 .navbar > .container,

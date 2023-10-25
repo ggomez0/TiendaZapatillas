@@ -17,49 +17,7 @@
                                        
                                                     <h3>Agregar producto</h3>
                                                     <table>
-                                                        <tr>
-                                                            <td>
-                                                                <asp:Label ID="LabelAddCategory" runat="server">
-                                                                    Categoria:</asp:Label>
-                                                            </td>
-                                                            <td>
-                                                                <asp:DropDownList ID="DropDownAddCategory"
-                                                                    runat="server" ItemType="TiendaZapatillas.Models.Category"
-                                                                    SelectMethod="GetCategories"
-                                                                    DataTextField="CategoryName"
-                                                                    DataValueField="CategoryID">
-                                                                </asp:DropDownList>
-                                                            </td>
-                                                        </tr>
                                                          <tr>
-                                                            <td>
-                                                                <asp:Label ID="lbltipocat" runat="server">
-                                                                    Tipo:</asp:Label>
-                                                            </td>
-                                                            <td>
-                                                                <asp:DropDownList ID="DropDowntipocat"
-                                                                    runat="server" ItemType="TiendaZapatillas.Models.TypeCategory"
-                                                                    SelectMethod="GetTipoCategories"
-                                                                    DataTextField="TypeCategoryName"
-                                                                    DataValueField="TypeCategoryID">
-                                                                </asp:DropDownList>
-                                                            </td>
-                                                        </tr>
-                                                         <tr>
-                                                            <td>
-                                                                <asp:Label ID="Label2" runat="server">
-                                                                    Genero:</asp:Label>
-                                                            </td>
-                                                            <td>
-                                                                <asp:DropDownList ID="DropDownGeneroCat"
-                                                                    runat="server" ItemType="TiendaZapatillas.Models.GeneroCategory"
-                                                                    SelectMethod="GetGeneroCategories"
-                                                                    DataTextField="GeneroName"
-                                                                    DataValueField="GenCategoryID">
-                                                                </asp:DropDownList>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
                                                             <td>
                                                                 <asp:Label ID="LabelAddName" runat="server">Nombre:
                                                                 </asp:Label>
@@ -91,6 +49,49 @@
                                                                 </asp:RequiredFieldValidator>
                                                             </td>
                                                         </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label ID="LabelAddCategory" runat="server">
+                                                                    Marca:</asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="DropDownAddCategory"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.Marca"
+                                                                    SelectMethod="GetMarcas"
+                                                                    DataTextField="MarcaName"
+                                                                    DataValueField="MarcaID">
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <asp:Label ID="lbltipocat" runat="server">
+                                                                    Tipo:</asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="DropDowntipocat"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.TypeCategory"
+                                                                    SelectMethod="GetTipoCategories"
+                                                                    DataTextField="TypeCategoryName"
+                                                                    DataValueField="TypeCategoryID">
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <asp:Label ID="Label2" runat="server">
+                                                                    Genero:</asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:DropDownList ID="DropDownGeneroCat"
+                                                                    runat="server" ItemType="TiendaZapatillas.Models.GeneroCategory"
+                                                                    SelectMethod="GetGeneroCategories"
+                                                                    DataTextField="GeneroName"
+                                                                    DataValueField="GenCategoryID">
+                                                                </asp:DropDownList>
+                                                            </td>
+                                                        </tr>
+                                                       
                                                         <tr>
                                                             <td>
                                                                 <asp:Label ID="LabelAddPrice" runat="server">Precio:
@@ -239,14 +240,14 @@
                                                                                            <tr>
                                                             <td>
                                                                 <asp:Label runat="server">
-                                                                    Categoria:</asp:Label>
+                                                                    Marca:</asp:Label>
                                                             </td>
                                                             <td>
                                                                 <asp:DropDownList ID="DropDowneditCategory"
-                                                                    runat="server" ItemType="TiendaZapatillas.Models.Category"
-                                                                    SelectMethod="GetCategories"
-                                                                    DataTextField="CategoryName"
-                                                                    DataValueField="CategoryID">
+                                                                    runat="server" ItemType="TiendaZapatillas.models.marca"
+                                                                    SelectMethod="GetMarcas"
+                                                                    DataTextField="MarcaName"
+                                                                    DataValueField="MarcaID">
                                                                 </asp:DropDownList>
                                                             </td>
                                                         </tr>
