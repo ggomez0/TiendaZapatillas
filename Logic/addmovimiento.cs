@@ -6,24 +6,24 @@ using System.Web;
 
 namespace TiendaZapatillas.Logic
 {
-    public class addcomprobante
+    public class addmovimiento
     {
-        public bool addcomprobantes(string nombre, string descripcion, int importe, int idc, string prov, string noom, string calendar)
+        public bool addmovimientos(string nombre, string descripcion, int importe, int IDMovimiento, string prov, string noom, string calendar)
         {
-            var mylstcpra = new comprobantes();
+            var mylstcpra = new movimientos();
             mylstcpra.Nombre = nombre;
             mylstcpra.descripcion = descripcion;
             mylstcpra.importe =importe;
             mylstcpra.dateTime = DateTime.Now;
             mylstcpra.ProvID = Convert.ToInt32(prov);
-            mylstcpra.idcomprobante = idc;
+            mylstcpra.ID_Movimiento = IDMovimiento;
             mylstcpra.stringn = noom;
-            mylstcpra.fechacomprobante = calendar;
+            mylstcpra.fechamovimiento = calendar;
 
             using (ProductContext _db = new ProductContext())
             {
                 // Add product to DB.
-                _db.comprobantes.Add(mylstcpra);
+                _db.movimientos.Add(mylstcpra);
                 _db.SaveChanges();
             }
             // Success.

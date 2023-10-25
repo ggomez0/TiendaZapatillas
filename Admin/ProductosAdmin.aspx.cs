@@ -30,10 +30,10 @@ namespace TiendaZapatillas.Admin
             }
         }
 
-        public IQueryable GetCategories()
+        public IQueryable GetMarcas()
         {
             var _db = new TiendaZapatillas.Models.ProductContext();
-            IQueryable query = _db.Categories;
+            IQueryable query = _db.Marcas;
             return query;
         }
 

@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetMovimiento.aspx.cs" Inherits="TiendaZapatillas.Admin.DetMovimiento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-         <asp:FormView ID="movID" runat="server" ItemType="TiendaZapatillas.Models.comprobantes" SelectMethod ="GetMovimiento" RenderOuterTable="false" >
+         <asp:FormView ID="movID" runat="server" ItemType="TiendaZapatillas.Models.movimientos" SelectMethod ="GetMovimiento" RenderOuterTable="false" >
                             <ItemTemplate>
                                 <div>
-                                    <h1>Detalle del movimiento N° <%#:Item.idcomp %></h1>
+                                    <h1>Detalle del movimiento N° <%#:Item.ID_Movimiento %></h1>
                                 </div>
                                 <br />
                                 <table>
@@ -48,7 +48,7 @@
             <Columns>
                          <asp:TemplateField HeaderText="#">
                     <ItemTemplate>
-                        <asp:Label Text='<%# Eval("idcomprdet") %>' runat="server" />
+                        <asp:Label Text='<%# Eval("ID_Det_Movimientos") %>' runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
              

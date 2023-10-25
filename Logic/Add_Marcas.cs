@@ -6,23 +6,28 @@ using System.Web;
 
 namespace TiendaZapatillas.Logic
 {
-    public class AddCategories
+    public class AddMarca
     {
-        public bool AddCategory(string CategoryName)
+        public bool AddMarcas(string MarcasName, string Description, string paisorigen, string Imagen_marca, string paginaweb_marca)
         {
-            var myCategory = new Category();
-            myCategory.CategoryName = CategoryName;
-           
+            var myCategory = new Marca();
+            myCategory.MarcaName = MarcasName;
+            myCategory.Description = Description;
+            myCategory.paisorigen = paisorigen;
+            myCategory.Imagen_marca = Imagen_marca;
+            myCategory.paginaweb_marca = paginaweb_marca;
 
             using (ProductContext _db = new ProductContext())
             {
                 // Add product to DB.
-                _db.Categories.Add(myCategory);
+                _db.Marcas.Add(myCategory);
                 _db.SaveChanges();
             }
             // Success.
             return true;
         }
+
+
 
         public bool AddGenCat(string GeneroCategoryName)
         {

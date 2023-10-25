@@ -19,7 +19,7 @@ namespace TiendaZapatillas.Models
         [Required, Display(Name = "Precio")]
         public double? UnitPrice { get; set; }
 
-        public int? CategoryID { get; set; }
+        public int? MarcaID { get; set; }
         public int? GenCategoryID { get; set; }
         public int? TypeCategoryID { get; set; }
 
@@ -27,16 +27,18 @@ namespace TiendaZapatillas.Models
         public int? vendido { get; set; }
 
         //Categorias
-        public virtual Category Category { get; set; }
+        public virtual Marca Marca { get; set; }
         public virtual GeneroCategory GeneroCategory { get; set; }
         public virtual TypeCategory TypeCategory { get; set; }
         // ----
 
         public virtual depositos Depositos { get; set; }
 
+        public bool Visible { get; set;}
+
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<prodendep> Prodendeps { get; set; }
-        public virtual ICollection<comprobantesdet> Comprobantesdet { get; set; }
+        public virtual ICollection<Detalles_Movimientos> detalles_Movimientos { get; set; }
 
 
     }

@@ -22,7 +22,7 @@ namespace TiendaZapatillas.Admin
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "select * from comprobantes c inner join depositos d on c.stringn=d.DepID where idcomprobante=5 and not Nombre='NULL' order by idcomp desc", gvhistorial);
+                this.databasecrud(connectionString, "select * from movimientos c inner join depositos d on c.stringn=d.DepID where not Nombre='NULL' order by ID_Movimiento desc", gvhistorial);
 
 
 
@@ -62,8 +62,8 @@ namespace TiendaZapatillas.Admin
 
         protected void btnmov_Click(object sender, EventArgs e)
         {
-            addcomprobante addmov = new addcomprobante();
-            bool addSuccess = addmov.addcomprobantes(null, null, 0, null, null, null);
+            addmovimiento addmov = new addmovimiento();
+            bool addSuccess = addmov.addmovimientos(null, null, 0, 0, null, null,null);
 
 
             if (addSuccess)

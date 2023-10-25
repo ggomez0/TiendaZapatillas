@@ -89,7 +89,7 @@
                         </asp:Panel>
 
         <asp:GridView runat="server" CssClass="grid" BorderStyle="None" 
-            ID="gvprodmov" ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" OnRowDeleting="gvprodmov_RowDeleting" DataKeyNames="idcomprdet">
+            ID="gvprodmov" ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" OnRowDeleting="gvprodmov_RowDeleting" DataKeyNames="ID_Det_Movimientoss">
              <HeaderStyle BackColor="black" Font-Bold="True" ForeColor="White"  /> 
             <Columns>
                   <asp:TemplateField>
@@ -99,7 +99,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="#">
                     <ItemTemplate>
-                        <asp:Label Text='<%# Eval("idcomprdet") %>' runat="server" />
+                        <asp:Label Text='<%# Eval("ID_Det_Movimientoss") %>' runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
              

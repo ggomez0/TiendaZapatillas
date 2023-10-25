@@ -17,13 +17,13 @@ namespace TiendaZapatillas.Admin
             if (!IsPostBack)
             {
                 this.databasecrud(connectionString, "SELECT ProductID as ID,ProductName as Producto,Description as " +
-                   "Descripcion,UnitPrice as Precio,CategoryID,Stock FROM Products", gvproductoslista);
+                   "Descripcion,UnitPrice as Precio,MarcaID,Stock FROM Products", gvproductoslista);
 
 
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string result = "select max(idcomp) from comprobantes";
+                    string result = "select max(ID_Movimiento) from movimientos";
                     SqlCommand showresult = new SqlCommand(result, conn);
 
                     conn.Open();
@@ -32,8 +32,8 @@ namespace TiendaZapatillas.Admin
                     conn.Close();
                 }
 
-                this.databasecrud(connectionString, "SELECT * from comprobantesdets cd inner join products p on p.ProductID=cd.Product_ProductID" +
-                    " where Comprobantes_idcomp=" + Convert.ToInt32(txtidmov.Text), gvprodmov);
+                this.databasecrud(connectionString, "SELECT * from Detalles_Movimientos cd inner join products p on p.ProductID=cd.Product_ProductID" +
+                    " where movimientos_ID_Movimiento=" + Convert.ToInt32(txtidmov.Text), gvprodmov);
 
             }
         }
@@ -52,7 +52,7 @@ namespace TiendaZapatillas.Admin
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "insert into comprobantesdets(cantidad,Product_ProductID,Comprobantes_idcomp) values (@cantped,@product,@idpedido);";
+                    string query = "insert into Detalles_Movimientos(cantidad,Product_ProductID,movimientos_ID_Movimientos) values (@cantped,@product,@idpedido);";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@cantped", Convert.ToInt32((gvproductoslista.Rows[e.RowIndex].FindControl("txtcantpedido") as TextBox).Text.Trim()));
                     sqlCmd.Parameters.AddWithValue("@idpedido", Convert.ToInt32((txtidmov.Text).ToString()));
@@ -110,10 +110,10 @@ namespace TiendaZapatillas.Admin
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "update comprobantes set Nombre='Ingreso', descripcion=@Observaciones, stringn=@Depositos where idcomp=@idcomp";
+                    string query = "update movimientos set Nombre='Ingreso', descripcion=@Observaciones, stringn=@Depositos where ID_Movimiento=@ID_Movimiento";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@Observaciones", txtobsmov.Text);
-                    sqlCmd.Parameters.AddWithValue("@idcomp", Convert.ToInt32((txtidmov.Text).ToString()));
+                    sqlCmd.Parameters.AddWithValue("@ID_Movimiento", Convert.ToInt32((txtidmov.Text).ToString()));
                     sqlCmd.Parameters.AddWithValue("@Depositos", ddlistdep.SelectedValue);
                     sqlCmd.ExecuteNonQuery();
                     sqlCon.Close();
@@ -158,10 +158,10 @@ namespace TiendaZapatillas.Admin
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "update comprobantes set Nombre='Egreso', descripcion=@Observaciones, stringn=@Depositos where idcomp=@idcomp";
+                    string query = "update movimientos set Nombre='Egreso', descripcion=@Observaciones, stringn=@Depositos where ID_Movimiento=@ID_Movimiento";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@Observaciones", txtobsmov.Text);
-                    sqlCmd.Parameters.AddWithValue("@idcomp", Convert.ToInt32((txtidmov.Text).ToString()));
+                    sqlCmd.Parameters.AddWithValue("@ID_Movimiento", Convert.ToInt32((txtidmov.Text).ToString()));
                     sqlCmd.Parameters.AddWithValue("@Depositos", ddlistdep.SelectedValue);
                     sqlCmd.ExecuteNonQuery();
                     sqlCon.Close();
@@ -210,7 +210,7 @@ namespace TiendaZapatillas.Admin
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "delete from comprobantesdets where idcomprdet=@id;";
+                    string query = "delete from Detalles_Movimientos where ID_Det_Movimientoss=@id;";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(gvprodmov.DataKeys[e.RowIndex].Value.ToString()));
 

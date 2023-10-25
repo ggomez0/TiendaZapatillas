@@ -11,7 +11,7 @@ namespace TiendaZapatillas.Admin
 {
 
 
-    public partial class CategoriaAdmin
+    public partial class GestionMarcas
     {
 
         /// <summary>

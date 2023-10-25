@@ -24,24 +24,17 @@ namespace TiendaZapatillas.Gerente
             {
                 this.databasecrud(connectionString, "SELECT * FROM Products p INNER JOIN GeneroCategories g ON" +
                     " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
-                    " inner join Categories ca on ca.CategoryID=p.CategoryID", gridproductos);
+                    " inner join Marcas ca on ca.MarcasID=p.CategoryID", gridproductos);
 
             }
         }
 
-        public IQueryable GetCategories()
+        public IQueryable GetMarcas()
         {
             var _db = new TiendaZapatillas.Models.ProductContext();
-            IQueryable query = _db.Categories;
+            IQueryable query = _db.Marcas;
             return query;
         }
-
-        //public IQueryable GetProveedores()
-        //{
-        //    var _db = new TiendaZapatillas.Models.ProductContext();
-        //    IQueryable query = _db.proveedores;
-        //    return query;
-        //}
 
 
         void databasecrud(string conexion, string sqlcomando, GridView tablag)

@@ -3,16 +3,21 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TiendaZapatillas.Models
 {
-    public class Category
+    public class Marca
     {
         [ScaffoldColumn(false), Key]
-        public int CategoryID { get; set; }
+        public int MarcaID { get; set; }
 
         [Required, StringLength(100), Display(Name = "Nombre")]
-        public string CategoryName { get; set; }
+        public string MarcaName { get; set; }
 
-        [Display(Name = "Descripcion Producto")]
+        [Display(Name = "Descripcion")]
         public string Description { get; set; }
+        public string paisorigen { get; set; }
+        public string Imagen_marca { get; set; }
+        
+        [Url]
+        public string paginaweb_marca { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

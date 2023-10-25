@@ -15,7 +15,7 @@ namespace TiendaZapatillas.Logic
             myProduct.Description = ProductDesc;
             myProduct.UnitPrice = Convert.ToDouble(ProductPrice);
             myProduct.ImagePath = ProductImagePath;
-            myProduct.CategoryID = Convert.ToInt32(ProductCategory);
+            myProduct.MarcaID = Convert.ToInt32(ProductCategory);
             //myProduct.stock = Convert.ToInt32(stock);
             //myProduct.vendido = Convert.ToInt32(vendido);
             myProduct.GenCategoryID = Convert.ToInt32(GeneroCategory);

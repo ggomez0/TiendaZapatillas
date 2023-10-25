@@ -3,7 +3,7 @@ namespace TiendaZapatillas.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class jidejo : DbMigration
+    public partial class djiwdnwovcdccdv : DbMigration
     {
         public override void Up()
         {
@@ -18,51 +18,6 @@ namespace TiendaZapatillas.Migrations
                         CVV = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.IDCARD);
-            
-            CreateTable(
-                "dbo.comprobantesdets",
-                c => new
-                    {
-                        idcomprdet = c.Int(nullable: false, identity: true),
-                        cantidad = c.Int(nullable: false),
-                        precio = c.Int(),
-                        factid = c.Int(),
-                        Comprobantes_idcomp = c.Int(),
-                        Product_ProductID = c.Int(),
-                    })
-                .PrimaryKey(t => t.idcomprdet)
-                .ForeignKey("dbo.comprobantes", t => t.Comprobantes_idcomp)
-                .ForeignKey("dbo.Products", t => t.Product_ProductID)
-                .Index(t => t.Comprobantes_idcomp)
-                .Index(t => t.Product_ProductID);
-            
-            CreateTable(
-                "dbo.comprobantes",
-                c => new
-                    {
-                        idcomp = c.Int(nullable: false, identity: true),
-                        Nombre = c.String(),
-                        stringn = c.String(),
-                        descripcion = c.String(),
-                        importe = c.Int(),
-                        fechacomprobante = c.String(),
-                        dateTime = c.DateTime(nullable: false),
-                        ProvID = c.Int(),
-                        Pagado = c.Boolean(),
-                        idcomprobante = c.Int(),
-                    })
-                .PrimaryKey(t => t.idcomp)
-                .ForeignKey("dbo.tipocomprobantes", t => t.idcomprobante)
-                .Index(t => t.idcomprobante);
-            
-            CreateTable(
-                "dbo.tipocomprobantes",
-                c => new
-                    {
-                        idcomprobante = c.Int(nullable: false, identity: true),
-                        nombre = c.String(),
-                    })
-                .PrimaryKey(t => t.idcomprobante);
             
             CreateTable(
                 "dbo.depositos",
@@ -91,6 +46,88 @@ namespace TiendaZapatillas.Migrations
                 .ForeignKey("dbo.Products", t => t.Product_ProductID)
                 .Index(t => t.Depositos_DepID)
                 .Index(t => t.Product_ProductID);
+            
+            CreateTable(
+                "dbo.Products",
+                c => new
+                    {
+                        ProductID = c.Int(nullable: false, identity: true),
+                        ProductName = c.String(nullable: false, maxLength: 100),
+                        Description = c.String(),
+                        ImagePath = c.String(),
+                        UnitPrice = c.Double(nullable: false),
+                        MarcaID = c.Int(),
+                        GenCategoryID = c.Int(),
+                        TypeCategoryID = c.Int(),
+                        stock = c.Int(),
+                        vendido = c.Int(),
+                        Visible = c.Boolean(nullable: false),
+                        Depositos_DepID = c.Int(),
+                    })
+                .PrimaryKey(t => t.ProductID)
+                .ForeignKey("dbo.depositos", t => t.Depositos_DepID)
+                .ForeignKey("dbo.GeneroCategories", t => t.GenCategoryID)
+                .ForeignKey("dbo.Marcas", t => t.MarcaID)
+                .ForeignKey("dbo.TypeCategories", t => t.TypeCategoryID)
+                .Index(t => t.MarcaID)
+                .Index(t => t.GenCategoryID)
+                .Index(t => t.TypeCategoryID)
+                .Index(t => t.Depositos_DepID);
+            
+            CreateTable(
+                "dbo.Detalles_Movimientos",
+                c => new
+                    {
+                        ID_Det_Movimientoss = c.Int(nullable: false, identity: true),
+                        cantidad = c.Int(nullable: false),
+                        precio = c.Int(),
+                        factid = c.Int(),
+                        movimientos_ID_Movimiento = c.Int(),
+                        Product_ProductID = c.Int(),
+                    })
+                .PrimaryKey(t => t.ID_Det_Movimientoss)
+                .ForeignKey("dbo.movimientos", t => t.movimientos_ID_Movimiento)
+                .ForeignKey("dbo.Products", t => t.Product_ProductID)
+                .Index(t => t.movimientos_ID_Movimiento)
+                .Index(t => t.Product_ProductID);
+            
+            CreateTable(
+                "dbo.movimientos",
+                c => new
+                    {
+                        ID_Movimiento = c.Int(nullable: false, identity: true),
+                        Nombre = c.String(),
+                        stringn = c.String(),
+                        descripcion = c.String(),
+                        importe = c.Int(),
+                        fechamovimiento = c.String(),
+                        dateTime = c.DateTime(nullable: false),
+                        ProvID = c.Int(),
+                        Pagado = c.Boolean(),
+                    })
+                .PrimaryKey(t => t.ID_Movimiento);
+            
+            CreateTable(
+                "dbo.GeneroCategories",
+                c => new
+                    {
+                        GenCategoryID = c.Int(nullable: false, identity: true),
+                        GeneroName = c.String(nullable: false, maxLength: 100),
+                    })
+                .PrimaryKey(t => t.GenCategoryID);
+            
+            CreateTable(
+                "dbo.Marcas",
+                c => new
+                    {
+                        MarcaID = c.Int(nullable: false, identity: true),
+                        MarcaName = c.String(nullable: false, maxLength: 100),
+                        Description = c.String(),
+                        paisorigen = c.String(),
+                        Imagen_marca = c.String(),
+                        paginaweb_marca = c.String(),
+                    })
+                .PrimaryKey(t => t.MarcaID);
             
             CreateTable(
                 "dbo.OrderDetails",
@@ -131,6 +168,16 @@ namespace TiendaZapatillas.Migrations
                 .PrimaryKey(t => t.OrderId);
             
             CreateTable(
+                "dbo.TypeCategories",
+                c => new
+                    {
+                        TypeCategoryID = c.Int(nullable: false, identity: true),
+                        TypeCategoryName = c.String(nullable: false, maxLength: 100),
+                        TypeDescription = c.String(),
+                    })
+                .PrimaryKey(t => t.TypeCategoryID);
+            
+            CreateTable(
                 "dbo.historials",
                 c => new
                     {
@@ -159,47 +206,46 @@ namespace TiendaZapatillas.Migrations
                 .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
                 .Index(t => t.ProductId);
             
-            AddColumn("dbo.Products", "stock", c => c.Int());
-            AddColumn("dbo.Products", "vendido", c => c.Int());
-            AddColumn("dbo.Products", "Depositos_DepID", c => c.Int());
-            CreateIndex("dbo.Products", "Depositos_DepID");
-            AddForeignKey("dbo.Products", "Depositos_DepID", "dbo.depositos", "DepID");
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.CartItems", "ProductId", "dbo.Products");
             DropForeignKey("dbo.historials", "DepID", "dbo.depositos");
+            DropForeignKey("dbo.Products", "TypeCategoryID", "dbo.TypeCategories");
+            DropForeignKey("dbo.prodendeps", "Product_ProductID", "dbo.Products");
             DropForeignKey("dbo.OrderDetails", "ProductId", "dbo.Products");
             DropForeignKey("dbo.OrderDetails", "OrderId", "dbo.Orders");
+            DropForeignKey("dbo.Products", "MarcaID", "dbo.Marcas");
+            DropForeignKey("dbo.Products", "GenCategoryID", "dbo.GeneroCategories");
+            DropForeignKey("dbo.Detalles_Movimientos", "Product_ProductID", "dbo.Products");
+            DropForeignKey("dbo.Detalles_Movimientos", "movimientos_ID_Movimiento", "dbo.movimientos");
             DropForeignKey("dbo.Products", "Depositos_DepID", "dbo.depositos");
-            DropForeignKey("dbo.prodendeps", "Product_ProductID", "dbo.Products");
             DropForeignKey("dbo.prodendeps", "Depositos_DepID", "dbo.depositos");
-            DropForeignKey("dbo.comprobantesdets", "Product_ProductID", "dbo.Products");
-            DropForeignKey("dbo.comprobantes", "idcomprobante", "dbo.tipocomprobantes");
-            DropForeignKey("dbo.comprobantesdets", "Comprobantes_idcomp", "dbo.comprobantes");
             DropIndex("dbo.CartItems", new[] { "ProductId" });
             DropIndex("dbo.historials", new[] { "DepID" });
             DropIndex("dbo.OrderDetails", new[] { "ProductId" });
             DropIndex("dbo.OrderDetails", new[] { "OrderId" });
+            DropIndex("dbo.Detalles_Movimientos", new[] { "Product_ProductID" });
+            DropIndex("dbo.Detalles_Movimientos", new[] { "movimientos_ID_Movimiento" });
+            DropIndex("dbo.Products", new[] { "Depositos_DepID" });
+            DropIndex("dbo.Products", new[] { "TypeCategoryID" });
+            DropIndex("dbo.Products", new[] { "GenCategoryID" });
+            DropIndex("dbo.Products", new[] { "MarcaID" });
             DropIndex("dbo.prodendeps", new[] { "Product_ProductID" });
             DropIndex("dbo.prodendeps", new[] { "Depositos_DepID" });
-            DropIndex("dbo.comprobantes", new[] { "idcomprobante" });
-            DropIndex("dbo.comprobantesdets", new[] { "Product_ProductID" });
-            DropIndex("dbo.comprobantesdets", new[] { "Comprobantes_idcomp" });
-            DropIndex("dbo.Products", new[] { "Depositos_DepID" });
-            DropColumn("dbo.Products", "Depositos_DepID");
-            DropColumn("dbo.Products", "vendido");
-            DropColumn("dbo.Products", "stock");
             DropTable("dbo.CartItems");
             DropTable("dbo.historials");
+            DropTable("dbo.TypeCategories");
             DropTable("dbo.Orders");
             DropTable("dbo.OrderDetails");
+            DropTable("dbo.Marcas");
+            DropTable("dbo.GeneroCategories");
+            DropTable("dbo.movimientos");
+            DropTable("dbo.Detalles_Movimientos");
+            DropTable("dbo.Products");
             DropTable("dbo.prodendeps");
             DropTable("dbo.depositos");
-            DropTable("dbo.tipocomprobantes");
-            DropTable("dbo.comprobantes");
-            DropTable("dbo.comprobantesdets");
             DropTable("dbo.Cards");
         }
     }

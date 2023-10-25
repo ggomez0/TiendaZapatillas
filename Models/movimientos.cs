@@ -6,10 +6,10 @@ using System.Web;
 
 namespace TiendaZapatillas.Models
 {
-    public class comprobantes
+    public class movimientos
     {
         [ScaffoldColumn(false), Key]
-        public int idcomp { get; set; }
+        public int ID_Movimiento { get; set; }
 
         [StringLength(10000), Display(Name = "Nombre")]
         public string Nombre { get; set; }
@@ -21,16 +21,12 @@ namespace TiendaZapatillas.Models
 
         public int? importe { get; set; }
 
-        public string fechacomprobante { get; set; }
+        public string fechamovimiento { get; set; }
         public DateTime dateTime { get; set; }
 
         public int? ProvID { get; set; }
         public bool? Pagado { get; set; }
 
-        public int? idcomprobante { get; set;}
-
-        public virtual tipocomprobantes Tipocomprobantes { get; set; }
-
-        public virtual ICollection<comprobantesdet> Comprobantesdets { get; set; }
+        public virtual ICollection<Detalles_Movimientos> Detalles_Movimientos { get; set; }
     }
 }

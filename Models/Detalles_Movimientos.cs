@@ -6,10 +6,10 @@ using System.Web;
 
 namespace TiendaZapatillas.Models
 {
-    public class comprobantesdet
+    public class Detalles_Movimientos
     {
-        [ScaffoldColumn(false), Key]
-        public int idcomprdet { get; set; }
+        [ScaffoldColumn(true), Key]
+        public int ID_Det_Movimientoss { get; set; }
 
         public int cantidad { get; set; }
         public int? precio { get; set; }
@@ -17,6 +17,6 @@ namespace TiendaZapatillas.Models
 
         public virtual Product Product { get; set; }
 
-        public virtual comprobantes Comprobantes { get; set; }
+        public virtual movimientos movimientos { get; set; }
     }
 }

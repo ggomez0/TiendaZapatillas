@@ -12,7 +12,7 @@
             <Columns>
                 <asp:TemplateField HeaderText="#">
                     <ItemTemplate>
-                        <asp:Label Text='<%# Eval("idcomp") %>' runat="server" />
+                        <asp:Label Text='<%# Eval("ID_Movimiento") %>' runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Tipo de movimiento">
@@ -37,7 +37,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField>
                     <ItemTemplate>
-                       <asp:ImageButton runat="server" ImageUrl="~/Images/plus.png" Height="20px" ID="btn_det_mov" OnClick="btn_det_mov_Click" CommandArgument='<%#Eval("idcomp") %>'  />
+                       <asp:ImageButton runat="server" ImageUrl="~/Images/plus.png" Height="20px" ID="btn_det_mov" OnClick="btn_det_mov_Click" CommandArgument='<%#Eval("ID_Movimiento") %>'  />
                     </ItemTemplate>
                 </asp:TemplateField>
 

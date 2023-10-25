@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Marcas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CategoriaAdmin.aspx.cs" Inherits="TiendaZapatillas.Admin.CategoriaAdmin" %>
+﻿<%@ Page Title="Marcas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionMarcas.aspx.cs" Inherits="TiendaZapatillas.Admin.GestionMarcas" %>
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">

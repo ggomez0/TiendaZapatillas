@@ -113,10 +113,10 @@ namespace TiendaZapatillas
                 cartCount.InnerText = cartStr;
             }
         }
-        public IQueryable<Category> GetCategories()
+        public IQueryable<Marca> GetMarcas()
         {
             var _db = new TiendaZapatillas.Models.ProductContext();
-            IQueryable<Category> query = _db.Categories;
+            IQueryable<Marca> query = _db.Marcas;
             return query;
         }
 

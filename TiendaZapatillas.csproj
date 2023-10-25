@@ -233,7 +233,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="AddToCart.aspx" />
     <Content Include="Admin\CategoriaTipo.aspx" />
-    <Content Include="Admin\CategoriaAdmin.aspx" />
+    <Content Include="Admin\GestionMarcas.aspx" />
     <Content Include="Admin\DepositosAdmin.aspx" />
     <Content Include="Admin\DetMovimiento.aspx" />
     <Content Include="Admin\detprodcat.aspx" />
@@ -522,12 +522,12 @@
     <Compile Include="Admin\CategoriaTipo.aspx.designer.cs">
       <DependentUpon>CategoriaTipo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\CategoriaAdmin.aspx.cs">
-      <DependentUpon>CategoriaAdmin.aspx</DependentUpon>
+    <Compile Include="Admin\GestionMarcas.aspx.cs">
+      <DependentUpon>GestionMarcas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CategoriaAdmin.aspx.designer.cs">
-      <DependentUpon>CategoriaAdmin.aspx</DependentUpon>
+    <Compile Include="Admin\GestionMarcas.aspx.designer.cs">
+      <DependentUpon>GestionMarcas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\DepositosAdmin.aspx.cs">
       <DependentUpon>DepositosAdmin.aspx</DependentUpon>
@@ -629,41 +629,33 @@
       <DependentUpon>ProductosGerente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logic\AddCards.cs" />
-    <Compile Include="Logic\addcomprobante.cs" />
+    <Compile Include="Logic\addmovimiento.cs" />
     <Compile Include="Logic\adddep.cs" />
     <Compile Include="Logic\addhistorial.cs" />
     <Compile Include="Logic\AddOrder.cs" />
     <Compile Include="Logic\AddOrderDetails.cs" />
     <Compile Include="Logic\addprodendep.cs" />
     <Compile Include="Logic\Addtipocat.cs" />
-    <Compile Include="Logic\AddCategories.cs" />
+    <Compile Include="Logic\Add_Marcas.cs" />
     <Compile Include="Logic\Ordenarlista.cs" />
     <Compile Include="Logic\ShoppingCartActions.cs" />
-    <Compile Include="Migrations\202310200252151_fdvwefvf.cs" />
-    <Compile Include="Migrations\202310200252151_fdvwefvf.Designer.cs">
-      <DependentUpon>202310200252151_fdvwefvf.cs</DependentUpon>
+    <Compile Include="Migrations\202310251850330_djiwdnwovcdccdv.cs" />
+    <Compile Include="Migrations\202310251850330_djiwdnwovcdccdv.Designer.cs">
+      <DependentUpon>202310251850330_djiwdnwovcdccdv.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310200252500_fdvwefvfg.cs" />
-    <Compile Include="Migrations\202310200252500_fdvwefvfg.Designer.cs">
-      <DependentUpon>202310200252500_fdvwefvfg.cs</DependentUpon>
+    <Compile Include="Migrations\202310251851180_djiwdnwovcdccdvc.cs" />
+    <Compile Include="Migrations\202310251851180_djiwdnwovcdccdvc.Designer.cs">
+      <DependentUpon>202310251851180_djiwdnwovcdccdvc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310200254260_fdvwefvfv.cs" />
-    <Compile Include="Migrations\202310200254260_fdvwefvfv.Designer.cs">
-      <DependentUpon>202310200254260_fdvwefvfv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310200309396_fdvwefvfvddd.cs" />
-    <Compile Include="Migrations\202310200309396_fdvwefvfvddd.Designer.cs">
-      <DependentUpon>202310200309396_fdvwefvfvddd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310250558417_jidejo.cs" />
-    <Compile Include="Migrations\202310250558417_jidejo.Designer.cs">
-      <DependentUpon>202310250558417_jidejo.cs</DependentUpon>
+    <Compile Include="Migrations\202310251858035_djiwdnwovcdccdvcs.cs" />
+    <Compile Include="Migrations\202310251858035_djiwdnwovcdccdvcs.Designer.cs">
+      <DependentUpon>202310251858035_djiwdnwovcdccdvcs.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cards.cs" />
     <Compile Include="Models\CartItem.cs" />
-    <Compile Include="Models\comprobantes.cs" />
-    <Compile Include="Models\comprobantesdet.cs" />
+    <Compile Include="Models\movimientos.cs" />
+    <Compile Include="Models\Detalles_Movimientos.cs" />
     <Compile Include="Models\depositos.cs" />
     <Compile Include="Models\GeneroCategory.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -674,7 +666,7 @@
     </Compile>
     <Compile Include="Logic\AddProducts.cs" />
     <Compile Include="Logic\RoleActions.cs" />
-    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\historial.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Order.cs" />
@@ -683,7 +675,6 @@
     <Compile Include="Models\ProductContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Respuesta.cs" />
-    <Compile Include="Models\tipocomprobantes.cs" />
     <Compile Include="Models\TypeCategory.cs" />
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
@@ -745,20 +736,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310200252151_fdvwefvf.resx">
-      <DependentUpon>202310200252151_fdvwefvf.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310251850330_djiwdnwovcdccdv.resx">
+      <DependentUpon>202310251850330_djiwdnwovcdccdv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310200252500_fdvwefvfg.resx">
-      <DependentUpon>202310200252500_fdvwefvfg.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310251851180_djiwdnwovcdccdvc.resx">
+      <DependentUpon>202310251851180_djiwdnwovcdccdvc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310200254260_fdvwefvfv.resx">
-      <DependentUpon>202310200254260_fdvwefvfv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310200309396_fdvwefvfvddd.resx">
-      <DependentUpon>202310200309396_fdvwefvfvddd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310250558417_jidejo.resx">
-      <DependentUpon>202310250558417_jidejo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310251858035_djiwdnwovcdccdvcs.resx">
+      <DependentUpon>202310251858035_djiwdnwovcdccdvcs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
