@@ -41,7 +41,7 @@
             <asp:TextBox ID="txtdescmarca" runat="server"></asp:TextBox>
         </td>
         <td>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Font-Bold="true" Text="Descripcion requerida" ControlToValidate="txtdescmarca" SetFocusOnError="true" Display="Dynamic" ValidationGroup="VG1"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Font-Bold="true" Text="*Descripcion requerida" ControlToValidate="txtdescmarca" SetFocusOnError="true" Display="Dynamic" ValidationGroup="VG1"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -63,7 +63,7 @@
             <asp:FileUpload ID="imgaddmarca" runat="server" />
         </td>
         <td>
-            <asp:RequiredFieldValidator ValidationGroup="VG1" ID="RequiredFieldValidator440" runat="server" Text="* Imagen requerida." ControlToValidate="imgaddmarca" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ValidationGroup="VG1" ID="RequiredFieldValidator440" runat="server" Text="*Imagen requerida." ControlToValidate="imgaddmarca" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -71,10 +71,10 @@
             <asp:Label runat="server">URL:</asp:Label>
         </td>
         <td>
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txturlmarca" runat="server"></asp:TextBox>
         </td>
         <td>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Font-Bold="true" Text="*Nombre de Marca requerida" ControlToValidate="AddCategoria" SetFocusOnError="true" Display="Dynamic" ValidationGroup="VG1"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Font-Bold="true" Text="*URL requerido" ControlToValidate="txturlmarca" SetFocusOnError="true" Display="Dynamic" ValidationGroup="VG1"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>

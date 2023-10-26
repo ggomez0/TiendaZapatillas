@@ -42,10 +42,10 @@ namespace TiendaZapatillas.Checkout
                 bool addSuccess1 = order.AddOrders(DateTime.Now, firstName.Text, lastName.Text, address.Text, phone.Text, email.Text, User.Identity.Name);
                 bool addSuccess = cards.AddCard(ccnumber.Text, Convert.ToInt32(cccvv.Text), ccexpiration.Text, ccname.Text);
                 int max = _db.Orders.Max(p => p.OrderId);
-                //this.sendemail(email.Text);
-                //this.sendemail1();
+                this.sendemail(email.Text);
+                this.sendemail1();
 
-            
+
                 using (TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions())
                 {
                     List<CartItem> myOrderList = usersShoppingCart.GetCartItems();
@@ -107,7 +107,7 @@ namespace TiendaZapatillas.Checkout
             System.Net.NetworkCredential credenciales = new System.Net.NetworkCredential();
 
             credenciales.UserName = "gaspargomez2000@outlook.com";
-            credenciales.Password = "jrhylwcrnquozwpq";
+            credenciales.Password = "fpibqmlctvjdfpiu";
 
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = credenciales;
@@ -132,7 +132,7 @@ namespace TiendaZapatillas.Checkout
             System.Net.NetworkCredential credenciales = new System.Net.NetworkCredential();
 
             credenciales.UserName = "gaspargomez2000@outlook.com";
-            credenciales.Password = "jrhylwcrnquozwpq";
+            credenciales.Password = "fpibqmlctvjdfpiu";
 
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = credenciales;

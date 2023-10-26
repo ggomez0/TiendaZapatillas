@@ -37,7 +37,7 @@ namespace TiendaZapatillas.Admin
                 {
                     // La categoría no existe, así que puedes agregarla.
                     AddMarca marca = new AddMarca();
-                    bool addSuccess = marca.AddMarcas(AddCategoria.Text,"a","Argentina","google.png","https://www.google.com");
+                    bool addSuccess = marca.AddMarcas(AddCategoria.Text,txtdescmarca.Text,txtpaismarca.Text,imgaddmarca.FileName,txturlmarca.Text);
 
                     if (addSuccess)
                     {

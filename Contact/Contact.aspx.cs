@@ -31,7 +31,7 @@ namespace TiendaZapatillas
             System.Net.NetworkCredential credenciales = new System.Net.NetworkCredential();
 
             credenciales.UserName = "gaspargomez2000@outlook.com";
-            credenciales.Password = "jrhylwcrnquozwpq";
+            credenciales.Password = "fpibqmlctvjdfpiu";
 
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = credenciales;

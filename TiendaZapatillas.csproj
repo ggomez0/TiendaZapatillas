@@ -599,17 +599,9 @@
     <Compile Include="Logic\Add_Marcas.cs" />
     <Compile Include="Logic\Ordenarlista.cs" />
     <Compile Include="Logic\ShoppingCartActions.cs" />
-    <Compile Include="Migrations\202310251850330_djiwdnwovcdccdv.cs" />
-    <Compile Include="Migrations\202310251850330_djiwdnwovcdccdv.Designer.cs">
-      <DependentUpon>202310251850330_djiwdnwovcdccdv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310251851180_djiwdnwovcdccdvc.cs" />
-    <Compile Include="Migrations\202310251851180_djiwdnwovcdccdvc.Designer.cs">
-      <DependentUpon>202310251851180_djiwdnwovcdccdvc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310251858035_djiwdnwovcdccdvcs.cs" />
-    <Compile Include="Migrations\202310251858035_djiwdnwovcdccdvcs.Designer.cs">
-      <DependentUpon>202310251858035_djiwdnwovcdccdvcs.cs</DependentUpon>
+    <Compile Include="Migrations\202310261816268_siojqdi.cs" />
+    <Compile Include="Migrations\202310261816268_siojqdi.Designer.cs">
+      <DependentUpon>202310261816268_siojqdi.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cards.cs" />
@@ -696,14 +688,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310251850330_djiwdnwovcdccdv.resx">
-      <DependentUpon>202310251850330_djiwdnwovcdccdv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310251851180_djiwdnwovcdccdvc.resx">
-      <DependentUpon>202310251851180_djiwdnwovcdccdvc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310251858035_djiwdnwovcdccdvcs.resx">
-      <DependentUpon>202310251858035_djiwdnwovcdccdvcs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310261816268_siojqdi.resx">
+      <DependentUpon>202310261816268_siojqdi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

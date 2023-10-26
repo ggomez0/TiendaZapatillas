@@ -3,7 +3,7 @@ namespace TiendaZapatillas.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class djiwdnwovcdccdvc : DbMigration
+    public partial class siojqdi : DbMigration
     {
         public override void Up()
         {
