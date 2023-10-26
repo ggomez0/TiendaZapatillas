@@ -5,7 +5,7 @@
     <asp:FormView ID="productDetail" runat="server" ItemType="TiendaZapatillas.Models.Product" SelectMethod ="GetProduct" RenderOuterTable="false">
         <ItemTemplate>
      <section class="py-5">
-            <div class="container px-4 px-lg-5 my-5">
+            <div class="container">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6">
                         <img class="card-img-top mb-5 mb-md-0" src="/Images/Thumbs/<%#:Item.ImagePath %>" alt="..." />
