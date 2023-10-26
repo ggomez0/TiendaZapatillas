@@ -4,7 +4,7 @@
   
     <asp:FormView ID="productDetail" runat="server" ItemType="TiendaZapatillas.Models.Product" SelectMethod ="GetProduct" RenderOuterTable="false">
         <ItemTemplate>
-     <section class="py-5">
+     <section class="">
             <div class="container">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6">
@@ -36,8 +36,8 @@
     </asp:FormView>
           <%--Productos relacionados--%>
            
-        <section class="py-5 bg-light">
-            <div class="container px-4 px-lg-5 mt-5">
+        <section class="bg-light">
+            <div class="container">
                 <h2 class="fw-bolder mb-4">Tambien tenemos estos productos</h2>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 

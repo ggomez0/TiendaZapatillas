@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Carro" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="TiendaZapatillas.ShoppingCart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container body-content">
+    <div class="container body-content" style="padding-top:3%">
     <div id="ShoppingCartTitle" runat="server" class="ContentHead"><h1>Carro de Compras</h1></div>
     <p></p> 
   
@@ -12,9 +12,9 @@
         <asp:BoundField DataField="Product.ProductName" HeaderText="Nombre" />        
         <asp:BoundField DataField="Product.UnitPrice" HeaderText="Precio Unitario" DataFormatString="{0:c}"/>     
         
-            <asp:TemplateField   HeaderText="Cantidad">            
-                <ItemTemplate>
-                    <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
+            <asp:TemplateField HeaderText="Cantidad">            
+                <ItemTemplate >
+                    <asp:TextBox style="margin:-10px 0 0 0"  ID="PurchaseQuantity" TextMode="Number" Width="40px" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
                 </ItemTemplate>        
         </asp:TemplateField>    
         
@@ -48,7 +48,7 @@
     <table> 
     <tr>
       <td>
-        <asp:Button class="btn btn-outline-dark flex-shrink-0" ID="UpdateBtn" runat="server" Text="Actualizar Carrito" OnClick="UpdateBtn_Click" />
+        <asp:Button class="btn btn-primary flex-shrink-0" ID="UpdateBtn" runat="server" Text="Actualizar" OnClick="UpdateBtn_Click" />
       </td>
       <td>
 
@@ -56,7 +56,7 @@
           <div style="margin-left:50px";>
           
              
-      <asp:Button runat="server" class="btn btn-outline-dark flex-shrink-0" ID="Pagarbtn" Text="Pagar Orden" onclick="Pagarbtn_Click" />
+      <asp:Button runat="server" class="btn btn-success" ID="Pagarbtn" Text="Pagar" onclick="Pagarbtn_Click" />
          
               </div>
       </td>

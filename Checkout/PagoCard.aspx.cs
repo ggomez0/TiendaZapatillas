@@ -42,8 +42,8 @@ namespace TiendaZapatillas.Checkout
                 bool addSuccess1 = order.AddOrders(DateTime.Now, firstName.Text, lastName.Text, address.Text, phone.Text, email.Text, User.Identity.Name);
                 bool addSuccess = cards.AddCard(ccnumber.Text, Convert.ToInt32(cccvv.Text), ccexpiration.Text, ccname.Text);
                 int max = _db.Orders.Max(p => p.OrderId);
-                this.sendemail(email.Text);
-                this.sendemail1();
+                //this.sendemail(email.Text);
+                //this.sendemail1();
 
             
                 using (TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions())
@@ -95,7 +95,7 @@ namespace TiendaZapatillas.Checkout
         {
             int max = _db.Orders.Max(p => p.OrderId);
             MailMessage mensaje = new MailMessage();
-            mensaje.From = new MailAddress("gaspargomez2000@outlook.com", "GamerSalta");
+            mensaje.From = new MailAddress("gaspargomez2000@outlook.com", "AltasLlantas");
             mensaje.To.Add(txt1);
             mensaje.Subject = string.Format("Gracias por la compra - Orden #{0}", max);
 
@@ -120,7 +120,7 @@ namespace TiendaZapatillas.Checkout
         {
             int max = _db.Orders.Max(p => p.OrderId);
             MailMessage mensaje = new MailMessage();
-            mensaje.From = new MailAddress("gaspargomez2000@outlook.com", "GamerSalta");
+            mensaje.From = new MailAddress("gaspargomez2000@outlook.com", "AltasLlantas");
             mensaje.To.Add("gaspargomez2000@outlook.com");
             mensaje.Subject = string.Format("Venta Realizada - Orden #{0}", max);
 
