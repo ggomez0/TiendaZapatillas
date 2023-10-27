@@ -35,7 +35,7 @@
         }
     </style>
 
-    <div class="game-board">
+    <div class="game-board" style="padding-top:6%;">
         <a class="btn btn-dark rounded-3" href="GestionMarcas.aspx" runat="server">
             <asp:Image ImageUrl="~/Images/marcas20.png" runat="server" Height="170px" />
             <span>Marcas</span>

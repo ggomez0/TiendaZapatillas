@@ -5,7 +5,7 @@
      
          <table><tr><td>
       <asp:DropDownList ID="DropDownList1" runat="server" AppendDataBoundItems="true" DataSourceID="SqlDataSource2" DataTextField="MarcaName" DataValueField="MarcaName">
-        <asp:ListItem Text="Todas las Categorias" Value="" />
+        <asp:ListItem Text="Todas las marcas" Value="" />
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaZapatillas %>"
         SelectCommand="select distinct MarcaName from Products p inner join Marcas c on c.MarcaID=p.MarcaID"></asp:SqlDataSource>
@@ -35,7 +35,10 @@
                                 <td>
                                     <a href="ProductDetails.aspx?productID=<%#:Eval("ProductID")%>">
                                         <div class="" style="width: 18rem;">       
-                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>"  style="height:10rem; object-fit:contain;" />
+                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>"  style="height:15em; object-fit:contain;" />
+                                          
+                                          
+                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("Imagen_marca") %>"  style="height:2rem; object-fit:contain;" />
                                          </a>
 
                                             <div class="card-body">
@@ -67,8 +70,11 @@
                             <tr>
                                 <td>
                                     <a href="ProductDetails.aspx?productID=<%#:Eval("ProductID")%>">
-                                        <div class="" style="width: 18rem;">       
-                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>"  style="height:10rem; object-fit:contain;" />
+                                         <div class="" style="width: 18rem;">       
+                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>"  style="height:15rem; object-fit:contain;" />
+                                          
+                                          
+                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("Imagen_marca") %>"  style="height:2rem; object-fit:contain;" />
                                          </a>
 
                                             <div class="card-body">
@@ -118,8 +124,11 @@
                             <tr>
                                 <td>
                                     <a href="ProductDetails.aspx?productID=<%#:Eval("ProductID")%>">
-                                        <div class="" style="width: 18rem;">       
-                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>"  style="height:10rem; object-fit:contain;" />
+                                         <div class="" style="width: 18rem;">       
+                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>"  style="height:15em; object-fit:contain;" />
+                                          
+                                          
+                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("Imagen_marca") %>"  style="height:2rem; object-fit:contain;" />
                                          </a>
 
                                             <div class="card-body">
@@ -151,8 +160,11 @@
                             <tr>
                                 <td>
                                     <a href="ProductDetails.aspx?productID=<%#:Eval("ProductID")%>">
-                                        <div class="" style="width: 18rem;">       
-                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>"  style="height:10rem; object-fit:contain;" />
+                                         <div class="" style="width: 18rem;">       
+                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>"  style="height:15rem; object-fit:contain;" />
+                                          
+                                          
+                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("Imagen_marca") %>"  style="height:2rem; object-fit:contain;" />
                                          </a>
 
                                             <div class="card-body">
@@ -202,7 +214,7 @@
     </asp:ListView>
    
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TiendaZapatillas %>"
-        SelectCommand="SELECT [ProductID], [ImagePath], [ProductName], [UnitPrice] from Products p inner join Marcas c on c.MarcaID=p.MarcaID inner join TypeCategories ty on ty.TypeCategoryID=p.TypeCategoryID inner join GeneroCategories gc on gc.GenCategoryID=p.GenCategoryID WHERE ([ProductName] LIKE '%' + @ProductName + '%') AND (MarcaName = @MarcaName OR ISNULL(@MarcaName,'') = '') AND (GeneroName = @GeneroName OR ISNULL(@GeneroName,'') = '') AND (TypeCategoryName = @TypeCategoryName OR ISNULL(@TypeCategoryName,'') = '') ">
+        SelectCommand="SELECT [ProductID], [ImagePath], [ProductName], [UnitPrice], [Imagen_marca] from Products p inner join Marcas c on c.MarcaID=p.MarcaID inner join TypeCategories ty on ty.TypeCategoryID=p.TypeCategoryID inner join GeneroCategories gc on gc.GenCategoryID=p.GenCategoryID WHERE ([ProductName] LIKE '%' + @ProductName + '%') AND (MarcaName = @MarcaName OR ISNULL(@MarcaName,'') = '') AND (GeneroName = @GeneroName OR ISNULL(@GeneroName,'') = '') AND (TypeCategoryName = @TypeCategoryName OR ISNULL(@TypeCategoryName,'') = '') ">
         <SelectParameters>
 
             <asp:ControlParameter ControlID="txtsearch" Name="ProductName" PropertyName="Text" Type="String" ConvertEmptyStringToNull="false" />

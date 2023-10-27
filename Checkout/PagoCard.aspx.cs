@@ -90,31 +90,86 @@ namespace TiendaZapatillas.Checkout
             }
         }
 
-
         private void sendemail(string txt1)
         {
             int max = _db.Orders.Max(p => p.OrderId);
+            Order order = _db.Orders.SingleOrDefault(o => o.OrderId == max); // Supongamos que tienes una entidad "Order" que contiene los detalles de la orden.
+            List<OrderDetail> orderItems = _db.OrderDetails.Where(oi => oi.OrderId == max).ToList(); // Supongamos que tienes una entidad "OrderItem" que contiene los productos de la orden.
+
             MailMessage mensaje = new MailMessage();
             mensaje.From = new MailAddress("gaspargomez2000@outlook.com", "AltasLlantas");
             mensaje.To.Add(txt1);
             mensaje.Subject = string.Format("Gracias por la compra - Orden #{0}", max);
+            mensaje.IsBodyHtml = true; // Habilitamos el formato HTML
 
-            mensaje.IsBodyHtml = false;
-            mensaje.Body = ("Hola, has realizado la compra en GamerSalta con exito. Ingresando a este link https://localhost:44351/Account/ordersusers con tu cuenta veras todas tus ordenes realizadas y sus detalles..");
+            // Cuerpo del correo
+            string body = @"
+        <html>
+        <head>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        </style>
+        </head>
+        <body>
+        <h1 style='color: #007ACC;'>¡Gracias por tu compra en Altas Llantas!</h1>
+        <p>Hola, has realizado la compra en Altas Llantas con éxito. A continuación, encontrarás los detalles de tu compra:</p>
+
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>";
+
+            foreach (var item in orderItems)
+            {
+
+                body += $@"
+            <tr>
+                <td>{item.ProductName}</td>
+                <td>{item.Quantity}</td>
+                <td>${item.UnitPrice:0.00}</td>
+                <td>${item.totalprod:0.00}</td>
+            </tr>";
+            }
+
+            body += $@"
+        </table>
+        <p>Total de la compra: ${order.Total:0.00}</p>
+        <p>Para ver todas tus órdenes y detalles, ingresa a <a href='https://localhost:44351/Account/ordersusers'>tu cuenta</a>.</p>
+        </body>
+        </html>
+    ";
+
+
+            mensaje.Body = body;
 
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.office365.com";
             System.Net.NetworkCredential credenciales = new System.Net.NetworkCredential();
-
             credenciales.UserName = "gaspargomez2000@outlook.com";
             credenciales.Password = "fpibqmlctvjdfpiu";
-
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = credenciales;
             smtp.Port = 587;
             smtp.EnableSsl = true;
             smtp.Send(mensaje);
         }
+
 
         private void sendemail1()
         {

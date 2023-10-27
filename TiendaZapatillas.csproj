@@ -273,6 +273,7 @@
     <Content Include="Images\resize-7-512.png" />
     <Content Include="Images\statistics-512.png" />
     <Content Include="Images\supermercado2010.png" />
+    <Content Include="Images\Thumbs\adidaslogo.png" />
     <Content Include="Images\Thumbs\i7.jpg" />
     <Content Include="Images\logo.ico" />
     <Content Include="Images\lupa.png" />
@@ -288,6 +289,7 @@
     <Content Include="Images\Thumbs\hie.jpg" />
     <Content Include="Images\Thumbs\mlm.jpg" />
     <Content Include="Images\Thumbs\mnla.jpg" />
+    <Content Include="Images\Thumbs\nikelogo.png" />
     <Content Include="Images\Thumbs\prs.jpg" />
     <Content Include="Images\Thumbs\sinimagen.jpg" />
     <Content Include="Images\Thumbs\spf.png" />

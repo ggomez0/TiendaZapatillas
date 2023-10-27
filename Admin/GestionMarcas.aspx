@@ -131,28 +131,32 @@
                                                         </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Descripcion">
                                                             <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
+                                                                <asp:Label Text='<%# Eval("Description") %>'
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Pais Origen">
                                                             <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
+                                                                <asp:Label Text='<%# Eval("paisorigen") %>'
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Logo">
+
+                                             <asp:TemplateField HeaderText="Logo">
                                                             <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
-                                                                    runat="server" />
+
+                                                                <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("Imagen_marca") %>" style="
+                                                                object-fit:contain; width:5em; padding:15%" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
+                                      
                                             <asp:TemplateField HeaderText="Web">
-                                                            <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
-                                                                    runat="server" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
+                                                        <ItemTemplate>
+                                                            <a href='<%# Eval("paginaweb_marca") %>'>
+                                                                <asp:Label Text='<%# Eval("paginaweb_marca") %>' runat="server" />
+                                                            </a>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                               <asp:TemplateField HeaderStyle-Width="10px" >
                                                             <ItemTemplate>
                                                                     <asp:ImageButton ImageUrl="~/Images/lupa.png"
@@ -200,6 +204,98 @@
                                                                     runat="server" Font-Bold="true"
                                                                     Text="* Nombre de marca requerida"
                                                                     ControlToValidate="txtCategoryNameedit"
+                                                                    SetFocusOnError="true" Display="Dynamic"
+                                                                    ValidationGroup="VG2"></asp:RequiredFieldValidator>
+                                                                                               
+                                                                                       </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:Label
+                                                                                                    runat="server">
+                                                                                                    Descripcion:</asp:Label>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <asp:TextBox TextMode="MultiLine"
+                                                                                                    ID="txteditdescription"
+                                                                                                    Text='<%# Eval("Description") %>'
+                                                                                                    runat="server" />
+                                                                                                     </td></tr><tr></tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
+                                                                    runat="server" Font-Bold="true"
+                                                                    Text="* Descripcion de marca requerida"
+                                                                    ControlToValidate="txteditdescription"
+                                                                    SetFocusOnError="true" Display="Dynamic"
+                                                                    ValidationGroup="VG2"></asp:RequiredFieldValidator>
+                                                                                               
+                                                                                       </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:Label
+                                                                                                    runat="server">
+                                                                                                    Pais de Origen:</asp:Label>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <asp:TextBox
+                                                                                                    ID="txteditpais"
+                                                                                                    Text='<%# Eval("paisorigen") %>'
+                                                                                                    runat="server" />
+                                                                                                     </td></tr><tr></tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6"
+                                                                    runat="server" Font-Bold="true"
+                                                                    Text="* Pais requerido"
+                                                                    ControlToValidate="txteditpais"
+                                                                    SetFocusOnError="true" Display="Dynamic"
+                                                                    ValidationGroup="VG2"></asp:RequiredFieldValidator>
+                                                                                               
+                                                                                       </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:Label
+                                                                                                    runat="server">
+                                                                                                    Imagen:</asp:Label>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <asp:TextBox
+                                                                                                    ID="txteditimagen"
+                                                                                                    Text='<%# Eval("Imagen_marca") %>'
+                                                                                                    runat="server" />
+                                                                                                     </td></tr><tr></tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7"
+                                                                    runat="server" Font-Bold="true"
+                                                                    Text="* Imagen requerida"
+                                                                    ControlToValidate="txteditimagen"
+                                                                    SetFocusOnError="true" Display="Dynamic"
+                                                                    ValidationGroup="VG2"></asp:RequiredFieldValidator>
+                                                                                               
+                                                                                       </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:Label
+                                                                                                    runat="server">
+                                                                                                    Pagina WEB:</asp:Label>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <asp:TextBox TextMode="Url"
+                                                                                                    ID="txtediturl"
+                                                                                                    Text='<%# Eval("paginaweb_marca") %>'
+                                                                                                    runat="server" />
+                                                                                                     </td></tr><tr></tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8"
+                                                                    runat="server" Font-Bold="true"
+                                                                    Text="* URL requerida"
+                                                                    ControlToValidate="txtediturl"
                                                                     SetFocusOnError="true" Display="Dynamic"
                                                                     ValidationGroup="VG2"></asp:RequiredFieldValidator>
                                                                                                

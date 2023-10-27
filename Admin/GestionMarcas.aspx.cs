@@ -21,7 +21,7 @@ namespace TiendaZapatillas.Admin
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
+                this.databasecrud(connectionString, "SELECT * from Marcas", gvcattab);
 
             }
 
@@ -29,33 +29,62 @@ namespace TiendaZapatillas.Admin
 
         protected void AddCat_Click(object sender, EventArgs e)
         {
-            
-            using (ProductContext _db = new ProductContext())
-            {
-                // Verificar si ya existe una categoría con el mismo nombre.
-                if (!_db.Marcas.Any(c => c.MarcaName == AddCategoria.Text))
-                {
-                    // La categoría no existe, así que puedes agregarla.
-                    AddMarca marca = new AddMarca();
-                    bool addSuccess = marca.AddMarcas(AddCategoria.Text,txtdescmarca.Text,txtpaismarca.Text,imgaddmarca.FileName,txturlmarca.Text);
+            Boolean fileOK = false;
+            String path = Server.MapPath("~/Images/");
 
-                    if (addSuccess)
+            if (imgaddmarca.HasFile)
+            {
+                String fileExtension = System.IO.Path.GetExtension(imgaddmarca.FileName).ToLower();
+                String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
+
+                for (int i = 0; i < allowedExtensions.Length; i++)
+                {
+                    if (fileExtension == allowedExtensions[i])
                     {
-                        lbladdcatstatus.Text = "La categoría se agregó exitosamente.";
+                        fileOK = true;
+                    }
+                }
+            }
+
+            if (fileOK)
+            {
+                try
+                {
+                    imgaddmarca.PostedFile.SaveAs(path + "Thumbs/" + imgaddmarca.FileName);
+                }
+                catch (Exception ex)
+                {
+                    lblErrorMessage.Text = ex.Message;
+                }
+
+
+                using (ProductContext _db = new ProductContext())
+                {
+                    // Verificar si ya existe una categoría con el mismo nombre.
+                    if (!_db.Marcas.Any(c => c.MarcaName == AddCategoria.Text))
+                    {
+                        // La categoría no existe, así que puedes agregarla.
+                        AddMarca marca = new AddMarca();
+                        bool addSuccess = marca.AddMarcas(AddCategoria.Text, txtdescmarca.Text, txtpaismarca.Text, imgaddmarca.FileName, txturlmarca.Text);
+
+                        if (addSuccess)
+                        {
+                            lbladdcatstatus.Text = "La categoría se agregó exitosamente.";
+                        }
+                        else
+                        {
+                            lbladdcatstatus.Text = "No se pudo agregar la categoría a la base de datos";
+                        }
+
+                        // Luego, redirige la página.
+                        string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
+                        Response.Redirect(pageUrl + "?ProductAction=addcat");
                     }
                     else
                     {
-                        lbladdcatstatus.Text = "No se pudo agregar la categoría a la base de datos";
+                        // La categoría ya existe, muestra un mensaje de error.
+                        lbladdcatstatus.Text = "La categoría ya existe en la base de datos y no se puede agregar nuevamente.";
                     }
-
-                    // Luego, redirige la página.
-                    string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
-                    Response.Redirect(pageUrl + "?ProductAction=addcat");
-                }
-                else
-                {
-                    // La categoría ya existe, muestra un mensaje de error.
-                    lbladdcatstatus.Text = "La categoría ya existe en la base de datos y no se puede agregar nuevamente.";
                 }
             }
         }
@@ -67,13 +96,13 @@ namespace TiendaZapatillas.Admin
         protected void gvcattab_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvcattab.EditIndex = e.NewEditIndex;
-            this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
+            this.databasecrud(connectionString, "SELECT * from Marcas", gvcattab);
         }
 
         protected void gvcattab_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvcattab.EditIndex = -1;
-            this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
+            this.databasecrud(connectionString, "SELECT * from Marcas", gvcattab);
         }
 
         protected void gvcattab_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -81,13 +110,17 @@ namespace TiendaZapatillas.Admin
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                string query = "UPDATE Marcas SET MarcaName=@ProductName WHERE MarcaID = @ProductID";
+                string query = "UPDATE Marcas SET MarcaName=@MarcaName,Description=@Description,paisorigen=@paisorigen,Imagen_marca=@Imagen_marca,paginaweb_marca=@paginaweb_marca WHERE MarcaID = @ProductID";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                sqlCmd.Parameters.AddWithValue("@ProductName", (gvcattab.Rows[e.RowIndex].FindControl("txtCategoryNameedit") as TextBox).Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@MarcaName", (gvcattab.Rows[e.RowIndex].FindControl("txtCategoryNameedit") as TextBox).Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@Description", (gvcattab.Rows[e.RowIndex].FindControl("txteditdescription") as TextBox).Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@paisorigen", (gvcattab.Rows[e.RowIndex].FindControl("txteditpais") as TextBox).Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@Imagen_marca", (gvcattab.Rows[e.RowIndex].FindControl("txteditimagen") as TextBox).Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@paginaweb_marca", (gvcattab.Rows[e.RowIndex].FindControl("txtediturl") as TextBox).Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
                 sqlCmd.ExecuteNonQuery();
                 gvcattab.EditIndex = -1;
-                this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
+                this.databasecrud(connectionString, "SELECT * from Marcas", gvcattab);
                 lblSuccessMessage.Text = "Marcas actualizada con éxito";
                 lblErrorMessage.Text = "";  
             }
@@ -109,7 +142,7 @@ namespace TiendaZapatillas.Admin
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvcattab.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
-                    this.databasecrud(connectionString, "SELECT MarcaID, MarcaName from Marcas", gvcattab);
+                    this.databasecrud(connectionString, "SELECT * from Marcas", gvcattab);
                     lblSuccessMessage.Text = "Marcas eliminado con exito";
                     lblErrorMessage.Text = "";
 
