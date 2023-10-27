@@ -202,7 +202,7 @@
                 </tr>
                 <tr runat="server" style="position:center;">
                     <td runat="server">
-                        <asp:DataPager ID="DataPager1" runat="server" PageSize="24">
+                        <asp:DataPager ID="DataPager1" runat="server" PageSize="4">
                             <Fields >
                                     <asp:NumericPagerField ButtonCount="5" NumericButtonCssClass="page-item" CurrentPageLabelCssClass="page-item disabled" NextPreviousButtonCssClass="page-item" />
                             </Fields>

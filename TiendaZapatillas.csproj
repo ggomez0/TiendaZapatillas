@@ -246,6 +246,8 @@
     <Content Include="Admin\Menu.aspx" />
     <Content Include="Gerente\ProductosGerente.aspx" />
     <Content Include="Images\carousel1.png" />
+    <Content Include="Images\carousel2zapas.png" />
+    <Content Include="Images\carousel3zapas.jpg" />
     <Content Include="Images\categorias7.png" />
     <Content Include="Images\categories.png" />
     <Content Include="Images\clasificacion2010.png" />
@@ -257,10 +259,13 @@
     <Content Include="Images\email.png" />
     <Content Include="Images\estadisticas7.png" />
     <Content Include="Images\Facebook.png" />
+    <Content Include="Images\fulladidascrazyfast.jpg" />
     <Content Include="Images\gabinetesdefault.jpg" />
     <Content Include="Images\Google.png" />
+    <Content Include="Images\imagenregistrozapas.jpg" />
     <Content Include="Images\ingreso-egreso7.png" />
     <Content Include="Images\investigacion2010.png" />
+    <Content Include="Images\logoiconzapas.jpg" />
     <Content Include="Images\marcas20.png" />
     <Content Include="Images\monitoresdefault.jpg" />
     <Content Include="Images\perifericosdefault.jpg" />

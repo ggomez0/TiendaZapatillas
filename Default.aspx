@@ -1,51 +1,51 @@
 ﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TiendaZapatillas.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <div id="carouselExampleSlidesOnly" class="carousel container" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" >
-              <img class="d-block img-fluid" src="Images/carousel1.png" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="Images/carousel1.png" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="Images/carousel1.png" alt="Third slide">
-            </div>
-          </div>
-         </div>
-         <p>
-
-         </p>
+    <style>
+        /* Estilo para centrar vertical y horizontalmente */
+        .centered-image {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    
+    <div class="centered-image">
+        <a href="https://localhost:44351/ProductDetails?productID=10">
+            <img class="d-block img-fluid" src="Images/fulladidascrazyfast.jpg" alt="First slide">
+        </a>
+    </div>
+    <br /><br />
     <div class="container">
-         <div class="row">
-  <div class="col-sm">
-    <div class="card">
-          <img class="card-img-top" src="Images/gabinetesdefault.jpg" style="width:100%; height:250px" alt="Card image cap">
-
-      <div class="card-body">
-        <h5 class="card-title text-center">Gabinetes</h5>
-
-      </div>
+        <div class="row">
+            <div class="col-sm">
+                <a href="ProductList.aspx?Adidas=Adidas">
+                    <div class="image-container" style="height:70%; width:70%;">
+                        <img class="card-img-top" src="Images/Thumbs/adidaslogo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"></h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm">
+                <a href="ProductList.aspx?Nike=Nike">
+                    <div class="image-container" style="height:70%; width:70%;">
+                        <img class="card-img-top" src="Images/Thumbs/nikelogo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"></h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm">
+                <a href="ProductList.aspx?NewBalance=NewBalance">
+                    <div class="image-container" style="height:70%; width:70%;">
+                        <img class="card-img-top" src="Images/Thumbs/newbalancelogo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"></h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-          <img class="card-img-top" src="Images/perifericosdefault.jpg" style="width:100%; height:250px;"  alt="Card image cap">
-
-      <div class="card-body">
-        <h5 class="card-title text-center">Perifericos</h5>
-      </div>
-    </div>
-  </div>
-             <div class="col-sm">
-    <div class="card">
-          <img class="card-img-top" src="Images/monitoresdefault.jpg" style="width:100%; height:250px;"  alt="Card image cap">
-
-      <div class="card-body">
-        <h5 class="card-title text-center">Monitores</h5>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 </asp:Content>

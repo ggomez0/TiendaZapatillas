@@ -36,7 +36,7 @@
     </asp:FormView>
           <%--Productos relacionados--%>
            
-        <section class="bg-light">
+        <section class="">
             <div class="container">
                 <h2 class="fw-bolder mb-4">Tambien tenemos estos productos</h2>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">

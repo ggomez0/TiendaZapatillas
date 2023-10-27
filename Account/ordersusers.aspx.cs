@@ -30,7 +30,7 @@ namespace TiendaZapatillas.Account
             SqlCommand cmd = new SqlCommand();
             DataTable dataTable = new DataTable();
             SqlDataAdapter sqlDA; cnn.Open();
-            cmd.CommandText = "select OrderId, OrderDate from Orders where Username = @CurrentUser";
+            cmd.CommandText = "select * from Orders where Username = @CurrentUser";
             cmd.Parameters.AddWithValue("@CurrentUser", User.Identity.Name);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;

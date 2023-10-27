@@ -13,6 +13,7 @@ namespace TiendaZapatillas.Models
         public int IDCARD { get; set; }
         public string NameCard { get; set; }
         
+        //[CreditCard]
         public string CardNumber { get; set; }
         public string ExpDate { get; set; }
 

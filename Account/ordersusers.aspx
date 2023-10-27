@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Ordenes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ordersusers.aspx.cs" Inherits="TiendaZapatillas.Account.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <div class="container">
-         <h1>Ordenes realizadas</h1>
+         <h1>Compras realizadas</h1>
          <asp:GridView ID="gvorderuser" CssClass="grid" class="table thead-dark" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="true" Width="100%"  BorderStyle="None">
              
              <Columns>
@@ -15,6 +15,11 @@
                             <asp:Label Text='<%# Eval("OrderDate") %>' runat="server" />
                         </ItemTemplate>
                 </asp:TemplateField> 
+                <%-- <asp:TemplateField HeaderText="Ubicacion">
+                        <ItemTemplate>
+                            <asp:Label Text='<%# Eval("Address") %>' runat="server" />
+                        </ItemTemplate>
+                </asp:TemplateField> --%>
                
                 <asp:TemplateField HeaderText="Detalles">
                         <ItemTemplate>

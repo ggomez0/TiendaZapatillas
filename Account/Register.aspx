@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Registrarse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TiendaZapatillas.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-  <div class="container">
+  <div class="container" style="padding-top:2%">
       <div class="row">
           <div class="col-md-6">
     <h2><%: Title %>.</h2>
@@ -49,8 +49,8 @@
     </div>
  </div>
        
-      <div class="col-md-5">
-         <img style="width:120%;" src="https://918429.smushcdn.com/2325059/wp-content/uploads/2021/07/empleados-con-chaleco-recorriendo-un-almacen.jpg?lossy=1&amp;strip=1&amp;webp=1" alt="Buena logística de almacén, fortaleza durante picos de demanda"/>
+      <div class="col">
+          <img src="../Images/imagenregistrozapas.jpg"  style="max-height:500px"/>
           </div>
    </div></div>
 

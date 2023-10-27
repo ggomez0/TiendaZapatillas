@@ -22,7 +22,7 @@ namespace TiendaZapatillas.Admin
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "SELECT p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName,p.Description as Description,p.UnitPrice as" +
+                this.databasecrud(connectionString, "SELECT ca.MarcaName, p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName,p.Description as Description,p.UnitPrice as" +
                     " UnitPrice, ca.MarcaName as CategoryName, g.GeneroName as GeneroName, t.TypeCategoryName as TypeCategoryName FROM Products p INNER JOIN GeneroCategories g ON" +
                     " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
                     " inner join Marcas ca on ca.MarcaID=p.MarcaID", gridproductos);
@@ -217,11 +217,7 @@ namespace TiendaZapatillas.Admin
                     lblconfirmardep.Text = ex.Message;
                 }
 
-                using (ProductContext _db = new ProductContext())
-                {
-                    // Verificar si ya existe una categoría con el mismo nombre.
-                    if (!_db.Products.Any(c => c.ProductName == AddProductName.Text))
-                    {
+               
                         // Add product data to DB.
                         AddProducts products = new AddProducts();
                         bool addSuccess = products.AddProduct(AddProductName.Text, AddProductDescription.Text,
@@ -237,8 +233,8 @@ namespace TiendaZapatillas.Admin
                         {
                             LabelAddStatus.Text = "No se pudo agregar el producto";
                         }
-                    }
-                }
+                    
+                
             }
             else
             {

@@ -195,7 +195,7 @@
                                                         </asp:TemplateField>
                                                         <asp:TemplateField HeaderText="Marca">
                                                             <ItemTemplate>
-                                                                <asp:Label Text='<%# Eval("CategoryName") %>'
+                                                                <asp:Label Text='<%# Eval("MarcaName") %>'
                                                                     runat="server" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
