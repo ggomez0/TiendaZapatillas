@@ -125,31 +125,9 @@ namespace TiendaZapatillas.Checkout
         </head>
         <body>
         <h1 style='color: #007ACC;'>¡Gracias por tu compra en Altas Llantas!</h1>
-        <p>Hola, has realizado la compra en Altas Llantas con éxito. A continuación, encontrarás los detalles de tu compra:</p>
+        <p>Hola, has realizado la compra en Altas Llantas con éxito. </p>
 
-        <table>
-            <tr>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio Unitario</th>
-                <th>Total</th>
-            </tr>";
 
-            foreach (var item in orderItems)
-            {
-
-                body += $@"
-            <tr>
-                <td>{item.ProductName}</td>
-                <td>{item.Quantity}</td>
-                <td>${item.UnitPrice:0.00}</td>
-                <td>${item.totalprod:0.00}</td>
-            </tr>";
-            }
-
-            body += $@"
-        </table>
-        <p>Total de la compra: ${order.Total:0.00}</p>
         <p>Para ver todas tus órdenes y detalles, ingresa a <a href='https://localhost:44351/Account/ordersusers'>tu cuenta</a>.</p>
         </body>
         </html>
