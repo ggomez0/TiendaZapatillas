@@ -606,10 +606,6 @@
     <Compile Include="Logic\Add_Marcas.cs" />
     <Compile Include="Logic\Ordenarlista.cs" />
     <Compile Include="Logic\ShoppingCartActions.cs" />
-    <Compile Include="Migrations\202310261816268_siojqdi.cs" />
-    <Compile Include="Migrations\202310261816268_siojqdi.Designer.cs">
-      <DependentUpon>202310261816268_siojqdi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cards.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -693,11 +689,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310261816268_siojqdi.resx">
-      <DependentUpon>202310261816268_siojqdi.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
