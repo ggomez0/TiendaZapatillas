@@ -233,8 +233,18 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="AddToCart.aspx" />
     <Content Include="Admin\CategoriaTipo.aspx" />
+    <Content Include="Admin\DepositosAdmin.aspx" />
+    <Content Include="Admin\DetMovimiento.aspx" />
     <Content Include="Admin\GestionMarcas.aspx" />
     <Content Include="Admin\detprodcat.aspx" />
+    <Content Include="Admin\IngEgrAdmin.aspx" />
+    <Content Include="Admin\Nuevo_Movimiento.aspx" />
+    <Content Include="Gerente\ClientesAdmin.aspx" />
+    <Content Include="Gerente\detallesordenes.aspx" />
+    <Content Include="Gerente\EstadisticasAdmin.aspx" />
+    <Content Include="Gerente\gvordenesusuarios.aspx" />
+    <Content Include="Gerente\ordorduser.aspx" />
+    <Content Include="Admin\Productos_en_deposito.aspx" />
     <Content Include="Admin\ProductosAdmin.aspx" />
     <Content Include="Checkout\CheckoutComplete.aspx" />
     <Content Include="Checkout\CheckoutReview.aspx" />
@@ -245,6 +255,8 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Admin\Menu.aspx" />
     <Content Include="Gerente\ProductosGerente.aspx" />
+    <Content Include="Gerente\Reportes.aspx" />
+    <Content Include="Gerente\Transacciones.aspx" />
     <Content Include="Images\carousel1.png" />
     <Content Include="Images\carousel2zapas.png" />
     <Content Include="Images\carousel3zapas.jpg" />
@@ -527,6 +539,20 @@
     <Compile Include="Admin\CategoriaTipo.aspx.designer.cs">
       <DependentUpon>CategoriaTipo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\DepositosAdmin.aspx.cs">
+      <DependentUpon>DepositosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DepositosAdmin.aspx.designer.cs">
+      <DependentUpon>DepositosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DetMovimiento.aspx.cs">
+      <DependentUpon>DetMovimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DetMovimiento.aspx.designer.cs">
+      <DependentUpon>DetMovimiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\GestionMarcas.aspx.cs">
       <DependentUpon>GestionMarcas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -540,6 +566,62 @@
     </Compile>
     <Compile Include="Admin\detprodcat.aspx.designer.cs">
       <DependentUpon>detprodcat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IngEgrAdmin.aspx.cs">
+      <DependentUpon>IngEgrAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IngEgrAdmin.aspx.designer.cs">
+      <DependentUpon>IngEgrAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Nuevo_Movimiento.aspx.cs">
+      <DependentUpon>Nuevo_Movimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Nuevo_Movimiento.aspx.designer.cs">
+      <DependentUpon>Nuevo_Movimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\ClientesAdmin.aspx.cs">
+      <DependentUpon>ClientesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente\ClientesAdmin.aspx.designer.cs">
+      <DependentUpon>ClientesAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\detallesordenes.aspx.cs">
+      <DependentUpon>detallesordenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente\detallesordenes.aspx.designer.cs">
+      <DependentUpon>detallesordenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\EstadisticasAdmin.aspx.cs">
+      <DependentUpon>EstadisticasAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente\EstadisticasAdmin.aspx.designer.cs">
+      <DependentUpon>EstadisticasAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\gvordenesusuarios.aspx.cs">
+      <DependentUpon>gvordenesusuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente\gvordenesusuarios.aspx.designer.cs">
+      <DependentUpon>gvordenesusuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\ordorduser.aspx.cs">
+      <DependentUpon>ordorduser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente\ordorduser.aspx.designer.cs">
+      <DependentUpon>ordorduser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Productos_en_deposito.aspx.cs">
+      <DependentUpon>Productos_en_deposito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Productos_en_deposito.aspx.designer.cs">
+      <DependentUpon>Productos_en_deposito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ProductosAdmin.aspx.cs">
       <DependentUpon>ProductosAdmin.aspx</DependentUpon>
@@ -597,6 +679,20 @@
     </Compile>
     <Compile Include="Gerente\ProductosGerente.aspx.designer.cs">
       <DependentUpon>ProductosGerente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente\Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\Transacciones.aspx.cs">
+      <DependentUpon>Transacciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente\Transacciones.aspx.designer.cs">
+      <DependentUpon>Transacciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logic\AddCards.cs" />
     <Compile Include="Logic\addmovimiento.cs" />

@@ -12,7 +12,7 @@ using TiendaZapatillas.Models;
 
 namespace TiendaZapatillas.Admin
 {
-    public partial class prodendep : System.Web.UI.Page
+    public partial class Productos_en_deposito : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

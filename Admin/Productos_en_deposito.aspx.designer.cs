@@ -11,25 +11,25 @@ namespace TiendaZapatillas.Admin
 {
 
 
-    public partial class proddeprov
+    public partial class Producto_en_deposito
     {
 
         /// <summary>
-        /// Control lblord.
+        /// Control pedidoid.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblord;
+        protected global::System.Web.UI.WebControls.FormView pedidoid;
 
         /// <summary>
-        /// Control gvprodprov.
+        /// Control gvprodendep.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvprodprov;
+        protected global::System.Web.UI.WebControls.GridView gvprodendep;
     }
 }

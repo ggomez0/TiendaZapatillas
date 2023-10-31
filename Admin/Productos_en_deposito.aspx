@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="prodendep.aspx.cs" Inherits="TiendaZapatillas.Admin.prodendep" %>
+﻿<%@ Page Title="Detalles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Productos_en_deposito.aspx.cs" Inherits="TiendaZapatillas.Admin.Producto_en_deposito" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
          <asp:FormView ID="pedidoid" runat="server" ItemType="TiendaZapatillas.Models.depositos" SelectMethod ="GetDeposito" RenderOuterTable="false" >
