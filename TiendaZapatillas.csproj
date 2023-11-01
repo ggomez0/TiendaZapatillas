@@ -256,7 +256,6 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Admin\Menu.aspx" />
     <Content Include="Gerente\ProductosGerente.aspx" />
-    <Content Include="Gerente\Reportes.aspx" />
     <Content Include="Gerente\Transacciones.aspx" />
     <Content Include="Images\carousel1.png" />
     <Content Include="Images\carousel2zapas.png" />
@@ -687,13 +686,6 @@
     </Compile>
     <Compile Include="Gerente\ProductosGerente.aspx.designer.cs">
       <DependentUpon>ProductosGerente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Gerente\Reportes.aspx.cs">
-      <DependentUpon>Reportes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Gerente\Reportes.aspx.designer.cs">
-      <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gerente\Transacciones.aspx.cs">
       <DependentUpon>Transacciones.aspx</DependentUpon>

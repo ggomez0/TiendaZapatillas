@@ -20,7 +20,7 @@ namespace TiendaZapatillas.Gerente
         {
             if(!IsPostBack)
             {
-                this.databasecrud("TiendaZapatillas", "SELECT * from Orders order by OrderDate desc", tablatrans);
+                this.databasecrud("TiendaZapatillas", "SELECT * from Orders order by OrderId desc", tablatrans);
 
             }
         }
