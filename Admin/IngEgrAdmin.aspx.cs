@@ -17,48 +17,14 @@ namespace TiendaZapatillas.Admin
     public partial class IngEgrAdmin : System.Web.UI.Page
     {
         private ProductContext _db = new ProductContext();
-        string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "select * from movimientos c inner join depositos d on c.stringn=d.DepID where not Nombre='NULL' order by ID_Movimiento desc", gvhistorial);
-
-
-
+                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "select * from movimientos c inner join depositos d on c.stringn=d.DepID " +
+                    "where not Nombre='NULL' order by ID_Movimiento desc", gvhistorial);
             }
         }
-
-        void databasecrud(string conexion, string sqlcomando, GridView tablag)
-        {
-            DataTable dtbl = new DataTable();
-            using (SqlConnection sqlCon = new SqlConnection(conexion))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter(sqlcomando, sqlCon);
-                sqlDa.Fill(dtbl);
-            }
-            if (dtbl.Rows.Count > 0)
-            {
-                tablag.DataSource = dtbl;
-                tablag.DataBind();
-            }
-            else
-            {
-                dtbl.Rows.Add(dtbl.NewRow());
-                tablag.DataSource = dtbl;
-                tablag.DataBind();
-                tablag.Rows[0].Cells.Clear();
-                tablag.Rows[0].Cells.Add(new TableCell());
-                tablag.Rows[0].Cells[0].ColumnSpan = dtbl.Columns.Count;
-                tablag.Rows[0].Cells[0].Text = "No se encontraron registros!";
-                tablag.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
-            }
-            tablag.UseAccessibleHeader = true;
-            tablag.HeaderRow.TableSection = TableRowSection.TableHeader;
-        }
-
-  
 
         protected void btnmov_Click(object sender, EventArgs e)
         {

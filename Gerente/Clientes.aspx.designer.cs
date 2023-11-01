@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Gerente
 {
 
 
-    public partial class ClientesAdmin
+    public partial class Clientes
     {
 
         /// <summary>

@@ -17,11 +17,12 @@ namespace TiendaZapatillas.Admin
         private ProductContext _db = new ProductContext();
         string connectionString = ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ConnectionString;
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
+                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
 
             }
 
@@ -55,13 +56,13 @@ namespace TiendaZapatillas.Admin
         protected void gvtipotab_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvtipotab.EditIndex = e.NewEditIndex;
-            this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
+            DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
         }
 
         protected void gvtipotab_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvtipotab.EditIndex = -1;
-            this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
+            DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
         }
 
         protected void gvtipotab_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -78,7 +79,7 @@ namespace TiendaZapatillas.Admin
                     sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvtipotab.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
                     gvtipotab.EditIndex = -1;
-                    this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
+                    DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT TypeCategoryID, TypeCategoryName from TypeCategories", gvtipotab);
                     lblSuccessMessage.Text = "Categoria actualizado con exito";
                     lblErrorMessage.Text = "";
                 }
@@ -105,7 +106,7 @@ namespace TiendaZapatillas.Admin
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvtipotab.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
-                    this.databasecrud(connectionString, "SELECT TypeCategoryID, TypeategoryName from TypeCategories", gvtipotab);
+                    DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT TypeCategoryID, TypeategoryName from TypeCategories", gvtipotab);
                     lblSuccessMessage.Text = "Categoria eliminado con exito";
                     lblErrorMessage.Text = "";
 
@@ -130,35 +131,6 @@ namespace TiendaZapatillas.Admin
         {
             int id4 = Convert.ToInt32((sender as ImageButton).CommandArgument);
             Response.Redirect("~/Admin/detprodcat.aspx?id4=" + id4);
-        }
-
-        void databasecrud(string conexion, string sqlcomando, GridView tablag)
-        {
-            DataTable dtbl = new DataTable();
-            using (SqlConnection sqlCon = new SqlConnection(conexion))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter(sqlcomando, sqlCon);
-                sqlDa.Fill(dtbl);
-            }
-            if (dtbl.Rows.Count > 0)
-            {
-                tablag.DataSource = dtbl;
-                tablag.DataBind();
-            }
-            else
-            {
-                dtbl.Rows.Add(dtbl.NewRow());
-                tablag.DataSource = dtbl;
-                tablag.DataBind();
-                tablag.Rows[0].Cells.Clear();
-                tablag.Rows[0].Cells.Add(new TableCell());
-                tablag.Rows[0].Cells[0].ColumnSpan = dtbl.Columns.Count;
-                tablag.Rows[0].Cells[0].Text = "No se encontraron Tipos de calzado..!";
-                tablag.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
-            }
-            tablag.UseAccessibleHeader = true;
-            tablag.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
 

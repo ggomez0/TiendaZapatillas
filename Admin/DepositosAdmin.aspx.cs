@@ -23,7 +23,7 @@ namespace TiendaZapatillas.Admin
         {
             if(!IsPostBack)
             {
-                this.databasecrud(connectionString, "SELECT * FROM depositos", gvdep);
+                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM depositos", gvdep);
                 
 
             }
@@ -91,13 +91,13 @@ namespace TiendaZapatillas.Admin
         protected void gvdep_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvdep.EditIndex = e.NewEditIndex;
-            this.databasecrud(connectionString, "SELECT * FROM depositos", gvdep);
+            DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM depositos", gvdep);
         }
 
         protected void gvdep_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvdep.EditIndex = -1;
-            this.databasecrud(connectionString, "SELECT * FROM depositos", gvdep);
+            DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM depositos", gvdep);
         }
 
         protected void gvdep_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -116,7 +116,7 @@ namespace TiendaZapatillas.Admin
                     sqlCmd.Parameters.AddWithValue("@DepID", Convert.ToInt32(gvdep.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
                     gvdep.EditIndex = -1;
-                    this.databasecrud(connectionString, "SELECT * FROM depositos", gvdep);
+                    DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM depositos", gvdep);
                     lblSuccessMessage.Text = "Deposito actualizado con exito";
                     lblErrorMessage.Text = "";
                 }
@@ -130,34 +130,6 @@ namespace TiendaZapatillas.Admin
 
         }
 
-        void databasecrud(string conexion, string sqlcomando, GridView tablag)
-        {
-            DataTable dtbl = new DataTable();
-            using (SqlConnection sqlCon = new SqlConnection(conexion))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter(sqlcomando, sqlCon);
-                sqlDa.Fill(dtbl);
-            }
-            if (dtbl.Rows.Count > 0)
-            {
-                tablag.DataSource = dtbl;
-                tablag.DataBind();
-            }
-            else
-            {
-                dtbl.Rows.Add(dtbl.NewRow());
-                tablag.DataSource = dtbl;
-                tablag.DataBind();
-                tablag.Rows[0].Cells.Clear();
-                tablag.Rows[0].Cells.Add(new TableCell());
-                tablag.Rows[0].Cells[0].ColumnSpan = dtbl.Columns.Count;
-                tablag.Rows[0].Cells[0].Text = "No se encontraron categorias..!";
-                tablag.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
-            }
-            tablag.UseAccessibleHeader = true;
-            tablag.HeaderRow.TableSection = TableRowSection.TableHeader;
-        }
 
         protected void gvdep_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -170,7 +142,7 @@ namespace TiendaZapatillas.Admin
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gvdep.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
-                    this.databasecrud(connectionString, "SELECT * FROM depositos", gvdep);
+                    DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM depositos", gvdep);
                     lblSuccessMessage.Text = "Deposito eliminado con exito";
                     lblErrorMessage.Text = "";
 

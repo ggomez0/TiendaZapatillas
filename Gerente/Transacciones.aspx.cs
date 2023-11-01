@@ -12,7 +12,7 @@ using System.Configuration;
 using System.Web.Services;
 using System.Web.Script.Services;
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Gerente
 {
     public partial class TransaccionesAdmin : System.Web.UI.Page
     {
@@ -20,11 +20,11 @@ namespace TiendaZapatillas.Admin
         {
             if(!IsPostBack)
             {
-                this.SearchCustomers("TiendaZapatillas", "SELECT * from Orders", tablatrans);
+                this.databasecrud("TiendaZapatillas", "SELECT * from Orders order by OrderDate desc", tablatrans);
 
             }
         }
-        private void SearchCustomers(string conexion, string comando, GridView tabla)
+        private void databasecrud(string conexion, string comando, GridView tabla)
         {
             string constr = ConfigurationManager.ConnectionStrings[conexion].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
@@ -47,7 +47,7 @@ namespace TiendaZapatillas.Admin
         protected void imgordenes_Click(object sender, ImageClickEventArgs e)
         {
             int id2 = Convert.ToInt32((sender as ImageButton).CommandArgument);
-            Response.Redirect("~/Admin/detallesordenes.aspx?id2=" + id2);
+            Response.Redirect("~/Gerente/Detalles_Transacciones.aspx?id2=" + id2);
 
         }
     }

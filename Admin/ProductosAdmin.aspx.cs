@@ -22,7 +22,7 @@ namespace TiendaZapatillas.Admin
         {
             if (!IsPostBack)
             {
-                this.databasecrud(connectionString, "SELECT ca.MarcaName, p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName,p.Description as Description,p.UnitPrice as" +
+                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT ca.MarcaName, p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName,p.Description as Description,p.UnitPrice as" +
                     " UnitPrice, ca.MarcaName as CategoryName, g.GeneroName as GeneroName, t.TypeCategoryName as TypeCategoryName FROM Products p INNER JOIN GeneroCategories g ON" +
                     " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
                     " inner join Marcas ca on ca.MarcaID=p.MarcaID", gridproductos);
@@ -71,7 +71,7 @@ namespace TiendaZapatillas.Admin
                         sqlCmd.Parameters.AddWithValue("@stock", (gridproductos.FooterRow.FindControl("txtstockFooter") as TextBox).Text.Trim());
 
                         sqlCmd.ExecuteNonQuery();
-                        this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
+                        DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM Products", gridproductos);
                         lblSuccessMessage.Text = "Nuevo Producto Agregado";
                         lblErrorMessage.Text = "";
                     }
@@ -87,14 +87,14 @@ namespace TiendaZapatillas.Admin
         protected void gridproductos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gridproductos.EditIndex = e.NewEditIndex;
-            this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
+            DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM Products", gridproductos);
 
         }
 
         protected void gridproductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gridproductos.EditIndex = -1;
-            this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
+            DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM Products", gridproductos);
 
         }
 
@@ -119,7 +119,7 @@ namespace TiendaZapatillas.Admin
                     sqlCmd.ExecuteNonQuery();
                     gridproductos.EditIndex = -1;
                     //Cambiar esto tambien para q actualice la tabla
-                    this.databasecrud(connectionString, "SELECT p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName, p.Description as Description, p.UnitPrice as" +
+                    DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT p.ProductID as ProductID, p.ImagePath as ImagePath, p.ProductName as ProductName, p.Description as Description, p.UnitPrice as" +
                     " UnitPrice, ca.CategoryName as CategoryName, g.GeneroName as GeneroName, t.TypeCategoryName as TypeCategoryName FROM Products p INNER JOIN GeneroCategories g ON" +
                     " p.GenCategoryID = g.GenCategoryID INNER JOIN TypeCategories t ON p.TypeCategoryID = t.TypeCategoryID" +
                     " inner join Marcas ca on ca.MarcaID=p.MarcaID", gridproductos);
@@ -147,7 +147,7 @@ namespace TiendaZapatillas.Admin
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gridproductos.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();
-                    this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
+                    DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM Products", gridproductos);
 
                     lblSuccessMessage.Text = "Producto eliminado con exito";
                     lblErrorMessage.Text = "";
@@ -179,7 +179,7 @@ namespace TiendaZapatillas.Admin
                 sqlCmd.Parameters.AddWithValue("@ProductID", Convert.ToInt32(gridproductos.DataKeys[e.RowIndex].Value.ToString()));
                 sqlCmd.ExecuteNonQuery();
                 gridproductos.EditIndex = -1;
-                this.databasecrud(connectionString, "SELECT * FROM Products", gridproductos);
+                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * FROM Products", gridproductos);
 
                 lblSuccessMessage.Text = "Producto actualizado con exito";
                 lblErrorMessage.Text = "";

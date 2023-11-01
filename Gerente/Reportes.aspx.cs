@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Gerente
 {
     public partial class Reportes : System.Web.UI.Page
     {
@@ -22,34 +22,33 @@ namespace TiendaZapatillas.Admin
         {
             if(!IsPostBack)
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string result = "select sum(totalprod) from OrderDetails";
-                    SqlCommand showresult = new SqlCommand(result, conn);
-                    conn.Open();
-                    string nummov = showresult.ExecuteScalar().ToString();
-                    lbling.Text += nummov;
-                    conn.Close();
-                }
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string result = "select max(OrderId) from Orders";
-                    //((SELECT SUM(d.totalprod) AS Expr1 FROM dbo.Orders AS o INNER JOIN dbo.OrderDetails AS d ON o.OrderId = d.OrderId WHERE YEAR(c.fechacomprobante) = YEAR(o.OrderDate)) AND (MONTH(c.fechacomprobante) = MONTH(o.OrderDate))) - SUM(importe))
-                    SqlCommand showresult = new SqlCommand(result, conn);
-                    conn.Open();
-                    string nummov1 = showresult.ExecuteScalar().ToString();
-                    lblped.Text += nummov1;
-                    conn.Close();
-                }
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string result = "select sum(importe) from comprobantes where idcomprobante=4";
-                    SqlCommand showresult = new SqlCommand(result, conn);
-                    conn.Open();
-                    string nummov2 = showresult.ExecuteScalar().ToString();
-                    lblegr.Text += nummov2;
-                    conn.Close();
-                }
+                //using (SqlConnection conn = new SqlConnection(connectionString))
+                //{
+                //    string result = "select sum(totalprod) from OrderDetails";
+                //    SqlCommand showresult = new SqlCommand(result, conn);
+                //    conn.Open();
+                //    string nummov = showresult.ExecuteScalar().ToString();
+                //    lbling.Text += nummov;
+                //    conn.Close();
+                //}
+                //using (SqlConnection conn = new SqlConnection(connectionString))
+                //{
+                //    string result = "select max(OrderId) from Orders";
+                //    SqlCommand showresult = new SqlCommand(result, conn);
+                //    conn.Open();
+                //    string nummov1 = showresult.ExecuteScalar().ToString();
+                //    lblped.Text += nummov1;
+                //    conn.Close();
+                //}
+                //using (SqlConnection conn = new SqlConnection(connectionString))
+                //{
+                //    string result = "select sum(id) from orders";
+                //    SqlCommand showresult = new SqlCommand(result, conn);
+                //    conn.Open();
+                //    string nummov2 = showresult.ExecuteScalar().ToString();
+                //    lblegr.Text += nummov2;
+                //    conn.Close();
+                //}
             }
         }
         protected string datosql1()

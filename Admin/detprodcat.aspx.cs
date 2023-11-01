@@ -18,28 +18,11 @@ namespace TiendaZapatillas.Admin
             {
                 string nID = Request.QueryString["id4"];
                 lblcatprod.Text += nID;
-                mostrarorder(nID);
+                DatabaseUtility.mostrarorder("TiendaZapatillas", "select ProductID as #,ProductName as Producto, " +
+                    "Description as Descripcion, Unitprice as Precio from Products where MarcaID = @catid",gvdetprodcat,nID,"@catid");
             }
         }
 
-        private void mostrarorder(string ido)
-        {
-            SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ToString());
-            SqlCommand cmd = new SqlCommand();
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDA; cnn.Open();
-            cmd.CommandText = "select ProductID as #,ProductName as Producto, Description as Descripcion, Unitprice as Precio from Products where MarcaID = @catid";
-            cmd.Parameters.AddWithValue("@catid", ido);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-            sqlDA = new SqlDataAdapter(cmd);
-            sqlDA.Fill(dataTable);
-            gvdetprodcat.DataSource = dataTable;
-            gvdetprodcat.DataBind();
-            cnn.Close();
-            gvdetprodcat.UseAccessibleHeader = true;
-            gvdetprodcat.HeaderRow.TableSection = TableRowSection.TableHeader;
-        }
     }
 }
         

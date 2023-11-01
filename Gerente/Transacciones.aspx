@@ -1,6 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transacciones.aspx.cs" Inherits="TiendaZapatillas.Admin.TransaccionesAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transacciones.aspx.cs" Inherits="TiendaZapatillas.Gerente.TransaccionesAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
+        <br />
+        <h2>Transacciones realizadas en la pagina</h2>
+        <br />
                                                 <asp:UpdatePanel runat="server">
                                                     <ContentTemplate>
                                                         <asp:gridview class="table thead-dark" CssClass="grid"
@@ -40,12 +43,9 @@
                                                                             Height="20px" />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateField>
-
                                                             </Columns>
-
                                                         </asp:GridView>
                                                     </ContentTemplate>
                                                 </asp:UpdatePanel>
                                             </div>
-
 </asp:Content>

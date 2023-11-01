@@ -19,7 +19,8 @@ namespace TiendaZapatillas.Admin
             if (!IsPostBack)
             {
                 string nID = Request.QueryString["id"];
-                mostrarorder(nID);
+                DatabaseUtility.mostrarorder("TiendaZapatillas", "select IngID, ProductName as Nombre, cantingreso as Cantidad from prodendeps p inner join " +
+                "Products pr on p.Product_ProductID=pr.ProductID where p.Depositos_DepID = @idorder", gvprodendep,nID, "@idorder");
             }
         }
 
@@ -37,30 +38,6 @@ namespace TiendaZapatillas.Admin
             }
             return query;
         }
-
-        private void mostrarorder(string ido)
-        {
-            SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ToString());
-            SqlCommand cmd = new SqlCommand();
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDA; cnn.Open();
-            cmd.CommandText = "select IngID, ProductName as Nombre, cantingreso as Cantidad from prodendeps p inner join " +
-                "Products pr on p.Product_ProductID=pr.ProductID where p.Depositos_DepID = @idorder";
-            cmd.Parameters.AddWithValue("@idorder", ido);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-            sqlDA = new SqlDataAdapter(cmd);
-            sqlDA.Fill(dataTable);
-            gvprodendep.DataSource = dataTable;
-            gvprodendep.DataBind();
-            cnn.Close();
-            gvprodendep.UseAccessibleHeader = true;
-            gvprodendep.HeaderRow.TableSection = TableRowSection.TableHeader;
-        }
-
-
-
-
     }
     
 }

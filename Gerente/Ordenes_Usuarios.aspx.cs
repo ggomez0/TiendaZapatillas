@@ -18,27 +18,8 @@ namespace TiendaZapatillas.Gerente
             {
                 string nID = Request.QueryString["id1"];
                 lblord.Text += nID;
-                mostrarorder(nID);
+                DatabaseUtility.mostrarorder("TiendaZapatillas", "select * from Orders where Username = @idorder", gvordenesusuario, nID,"@idorder");
             }
-        }
-
-        private void mostrarorder(string ido)
-        {
-            SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ToString());
-            SqlCommand cmd = new SqlCommand();
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDA; cnn.Open();
-            cmd.CommandText = "select * from Orders where Username = @idorder";
-            cmd.Parameters.AddWithValue("@idorder", ido);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-            sqlDA = new SqlDataAdapter(cmd);
-            sqlDA.Fill(dataTable);
-            gvordenesusuario.DataSource = dataTable;
-            gvordenesusuario.DataBind();
-            cnn.Close();
-            gvordenesusuario.UseAccessibleHeader = true;
-            gvordenesusuario.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
         protected void imgbtn1_Click(object sender, ImageClickEventArgs e)

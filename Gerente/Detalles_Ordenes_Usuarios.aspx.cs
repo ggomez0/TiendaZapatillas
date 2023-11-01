@@ -18,30 +18,11 @@ namespace TiendaZapatillas.Gerente
             {
                 string nID = Request.QueryString["id"];
                 lblord.Text += nID;
-                mostrarorder(nID);
-            }
-        }
-
-        private void mostrarorder(string ido)
-        {
-            SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["TiendaZapatillas"].ToString());
-            SqlCommand cmd = new SqlCommand();
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDA; cnn.Open();
-            cmd.CommandText = "select OrderDetailId as '#',ProductName as 'Producto', " +
+                DatabaseUtility.mostrarorder("TiendaZapatillas", "select OrderDetailId as '#',ProductName as 'Producto', " +
                 "Quantity as 'Cantidad', UnitPrice as 'Precio Unit.'," +
                 " totalprod as 'Total' from OrderDetails od inner join Orders o on od.OrderId=o.OrderId where " +
-                "od.OrderID = @idorder";
-            cmd.Parameters.AddWithValue("@idorder", ido);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-            sqlDA = new SqlDataAdapter(cmd);
-            sqlDA.Fill(dataTable);
-            gvordord.DataSource = dataTable;
-            gvordord.DataBind();
-            cnn.Close();
-            gvordord.UseAccessibleHeader = true;
-            gvordord.HeaderRow.TableSection = TableRowSection.TableHeader;
+                "od.OrderID = @idorder", gvordord, nID, "@idorder");
+            }
         }
     }
 }

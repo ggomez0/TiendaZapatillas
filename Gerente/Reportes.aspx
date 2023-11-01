@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Reportes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="TiendaZapatillas.Admin.Reportes" %>
+﻿<%@ Page Title="Reportes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="TiendaZapatillas.Gerente.Reportes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['corechart'] });
+        <%--google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
         google.charts.setOnLoadCallback(drawChart1);
         google.charts.setOnLoadCallback(drawChart2);
@@ -57,7 +57,7 @@
             var chart3 = new google.visualization.ColumnChart(document.getElementById('chart2'));
             chart3.draw(data3, options3);
 
-        }
+        }--%>
     </script>
 <%--////////////////////////////////////////////////////////////////--%>
     <div class="container">
@@ -80,14 +80,14 @@
       </div>
     </div>
     </div>
-      <div class="col-sm">
+      <%--<div class="col-sm">
            <div class="card">
       <div class="card-body" style="margin-left: auto; margin-right: auto; text-align: center;">
         <h5 class="card-title text-center">Egresos</h5>
         <asp:Label runat="server" ID="lblegr" Text="-$" forecolor="Red"  Font-Bold="true" Font-Size="3em"></asp:Label>
       </div>
     </div>
-    </div>
+    </div>--%>
   </div>
 
             <div id="chart1" style="width: 95%; height: 500px;"></div>

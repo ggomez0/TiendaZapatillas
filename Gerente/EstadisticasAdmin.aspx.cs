@@ -12,7 +12,7 @@ using System.Configuration;
 using System.Web.Services;
 using System.Web.Script.Services;
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Gerente
 {
     public partial class EstadisticasAdmin : System.Web.UI.Page
     {
@@ -20,32 +20,9 @@ namespace TiendaZapatillas.Admin
         {
             if(!IsPostBack)
             {
-                this.SearchCustomers("TiendaZapatillas", "SELECT ProductName, stock, vendido from Products", gvstat);
-
+                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * from Products order by vendido desc ", Grid_top_productos);
+                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * from Products", Grid_top_clientes);
             }
-
-
         }
-
-        private void SearchCustomers(string conexion, string comando, GridView tabla)
-        {
-            string constr = ConfigurationManager.ConnectionStrings[conexion].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(comando, con))
-                {
-                    using (DataTable dt = new DataTable())
-                    {
-                        sda.Fill(dt);
-                        tabla.DataSource = dt;
-                        tabla.DataBind();
-                    }
-                }
-            }
-            //Required for jQuery DataTables to work.
-            tabla.UseAccessibleHeader = true;
-            tabla.HeaderRow.TableSection = TableRowSection.TableHeader;
-        }
-
     }
 }

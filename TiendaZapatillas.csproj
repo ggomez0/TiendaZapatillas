@@ -239,8 +239,8 @@
     <Content Include="Admin\detprodcat.aspx" />
     <Content Include="Admin\IngEgrAdmin.aspx" />
     <Content Include="Admin\Nuevo_Movimiento.aspx" />
-    <Content Include="Gerente\ClientesAdmin.aspx" />
-    <Content Include="Gerente\detallesordenes.aspx" />
+    <Content Include="Gerente\Clientes.aspx" />
+    <Content Include="Gerente\Detalles_Transacciones.aspx" />
     <Content Include="Gerente\EstadisticasAdmin.aspx" />
     <Content Include="Gerente\Ordenes_Usuarios.aspx" />
     <Content Include="Gerente\MenuGerente.aspx" />
@@ -582,19 +582,19 @@
     <Compile Include="Admin\Nuevo_Movimiento.aspx.designer.cs">
       <DependentUpon>Nuevo_Movimiento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Gerente\ClientesAdmin.aspx.cs">
-      <DependentUpon>ClientesAdmin.aspx</DependentUpon>
+    <Compile Include="Gerente\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Gerente\ClientesAdmin.aspx.designer.cs">
-      <DependentUpon>ClientesAdmin.aspx</DependentUpon>
+    <Compile Include="Gerente\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Gerente\detallesordenes.aspx.cs">
-      <DependentUpon>detallesordenes.aspx</DependentUpon>
+    <Compile Include="Gerente\Detalles_Transacciones.aspx.cs">
+      <DependentUpon>Detalles_Transacciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Gerente\detallesordenes.aspx.designer.cs">
-      <DependentUpon>detallesordenes.aspx</DependentUpon>
+    <Compile Include="Gerente\Detalles_Transacciones.aspx.designer.cs">
+      <DependentUpon>Detalles_Transacciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gerente\EstadisticasAdmin.aspx.cs">
       <DependentUpon>EstadisticasAdmin.aspx</DependentUpon>
@@ -711,6 +711,7 @@
     <Compile Include="Logic\addprodendep.cs" />
     <Compile Include="Logic\Addtipocat.cs" />
     <Compile Include="Logic\Add_Marcas.cs" />
+    <Compile Include="Logic\DatabaseUtility.cs" />
     <Compile Include="Logic\Ordenarlista.cs" />
     <Compile Include="Logic\ShoppingCartActions.cs" />
     <Compile Include="Migrations\Configuration.cs" />

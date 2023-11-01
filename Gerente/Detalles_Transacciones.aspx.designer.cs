@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Gerente
 {
 
 
-    public partial class detallesordenes
+    public partial class Detalles_Transacciones
     {
 
         /// <summary>
@@ -24,12 +24,12 @@ namespace TiendaZapatillas.Admin
         protected global::System.Web.UI.WebControls.Label lblord;
 
         /// <summary>
-        /// Control gvdetallesordenes.
+        /// Control Grid_Det_Transaccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvdetallesordenes;
+        protected global::System.Web.UI.WebControls.GridView Grid_Det_Transaccion;
     }
 }
