@@ -8,9 +8,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Gerente
 {
-    public partial class gvordenesusuarios : System.Web.UI.Page
+    public partial class Ordenes_Usuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace TiendaZapatillas.Admin
         protected void imgbtn1_Click(object sender, ImageClickEventArgs e)
         {
             int id = Convert.ToInt32((sender as ImageButton).CommandArgument);
-            Response.Redirect("~/Admin/ordorduser.aspx?id=" + id);
+            Response.Redirect("~/Gerente/Detalles_Ordenes_Usuarios.aspx?id=" + id);
         }
 
     }

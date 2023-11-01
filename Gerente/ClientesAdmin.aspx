@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientesAdmin.aspx.cs" Inherits="TiendaZapatillas.Admin.ClientesAdmin" %>
+﻿<%@ Page Title="Clientes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientesAdmin.aspx.cs" Inherits="TiendaZapatillas.Admin.ClientesAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <div class="container">
                                                     <asp:UpdatePanel runat="server">

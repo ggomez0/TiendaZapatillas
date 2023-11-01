@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductosGerente.aspx.cs" Inherits="TiendaZapatillas.Gerente.ProductosGerente" %>
+﻿<%@ Page Title="Productos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductosGerente.aspx.cs" Inherits="TiendaZapatillas.Gerente.ProductosGerente" %>
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -28,12 +28,12 @@
                                     runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <%--<asp:TemplateField HeaderText="ImagePath">
+                        <asp:TemplateField HeaderText="ImagePath">
                             <ItemTemplate>
                                 <asp:Label Text='<%# Eval("ImagePath") %>'
                                     runat="server" />
                             </ItemTemplate>
-                        </asp:TemplateField>--%>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio">
                             <ItemTemplate>
                                 <asp:Label Text='<%# Eval("UnitPrice") %>'
@@ -43,7 +43,7 @@
                   
                         <asp:TemplateField HeaderText="Categoria">
                             <ItemTemplate>
-                                <asp:Label Text='<%# Eval("CategoryName") %>'
+                                <asp:Label Text='<%# Eval("MarcaName") %>'
                                     runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>

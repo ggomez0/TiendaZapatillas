@@ -21,12 +21,10 @@
 
                                                             <tr>
                                                                 <td>
-                                                                    <asp:Label ID="lblnomdep" runat="server">Nombre:
-                                                                    </asp:Label>
+                                                                    <asp:Label runat="server" >Nombre:</asp:Label>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:TextBox ID="txtnomdep" runat="server">
-                                                                    </asp:TextBox>
+                                                                    <asp:TextBox ID="txtnomdep" runat="server"/>
                                                                     <asp:RequiredFieldValidator
                                                                         ValidationGroup="VG12"
                                                                         ID="RequiredFieldValidator7" runat="server"
@@ -38,8 +36,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <asp:Label ID="lbldescdep" runat="server">
-                                                                        Descripcion:</asp:Label>
+                                                                    <asp:Label runat="server">Descripcion:</asp:Label>
                                                                 </td>
                                                                 <td>
                                                                     <asp:TextBox ID="txtdescdep" runat="server">
@@ -73,7 +70,7 @@
 
                                                             <tr>
                                                                 <td>
-                                                                    <asp:Label ID="imgdep" runat="server">Imagen:
+                                                                    <asp:Label runat="server">Imagen:
                                                                     </asp:Label>
                                                                 </td>
                                                                 <td>
@@ -88,10 +85,6 @@
                                                                 </td>
                                                             </tr>
                                                         </table>
-
-
-
-
 
                                                 <asp:Button ID="btnagregardep" runat="server" Text="Agregar Deposito"
                                                     OnClick="btnagregardep_Click" CssClass="btn btn-success rounded-3" CausesValidation="true"
@@ -142,7 +135,7 @@
                                                             <ItemTemplate>
 
                                                                 <img class="card-img-top" src="/Images/Thumbs/<%#:Eval("ImagePath") %>" style="
-                                                                object-fit:fill; width:10em" />
+                                                                object-fit:fill; width:7em" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField>
@@ -176,17 +169,12 @@
                                                                                     <table>
                                                                                         <tr>
                                                                                             <td>
-                                                                                                <asp:Label
-                                                                                                    ID="lbldepnameedit"
-                                                                                                    runat="server">
-                                                                                                    Nombre:
-                                                                                                </asp:Label>
-                                                                                            </td>
+                                                                                                <asp:Label runat="server">Nombre:</asp:Label>
+                                                                                            </td>   
                                                                                             <td>
                                                                                                 <asp:TextBox
                                                                                                     ID="txtdepnameedit"
                                                                                                     Text='<%# Eval("DepName") %>'
-                                                                                                    Width="50%"
                                                                                                     runat="server" ValidationGroup="VG31" />
 
 
@@ -195,13 +183,12 @@
                                                                                         <tr>
                                                                                             <td>
                                                                                                 <asp:Label
-                                                                                                    ID="lbldescdepedit"
                                                                                                     runat="server">
                                                                                                     Descripcion:</asp:Label>
                                                                                             </td>
                                                                                             <td>
                                                                                                 <asp:TextBox
-                                                                                                    ID="txtdesceditdep"
+                                                                                                    ID="txtdesceditdep" TextMode="MultiLine"
                                                                                                     Text='<%# Eval("Description") %>'
                                                                                                     runat="server" ValidationGroup="VG31" />
 
@@ -227,7 +214,6 @@
                                                                                             <td>
                                                                                                 <asp:TextBox
                                                                                                     ID="txtubieditdep"
-                                                                                                    TextMode="MultiLine"
                                                                                                     Text='<%# Eval("ubicacion") %>'
                                                                                                     runat="server" ValidationGroup="VG31" />
 
@@ -254,7 +240,6 @@
                                                                                                 <asp:TextBox
                                                                                                     ID="txtImagePathdep"
                                                                                                     Text='<%# Eval("ImagePath") %>'
-                                                                                                    Width="85%"
                                                                                                     runat="server" ValidationGroup="VG31" />
                                                                                                 <asp:RequiredFieldValidator
                                                                                                     ValidationGroup="VG31"
@@ -281,13 +266,11 @@
                                                                                       <asp:Button ID="btncerrareditdep" runat="server"
                                                                             Text="Cerrar" CssClass="btn btn-danger rounded-3"
                                                                             ValidationGroup="VG32" />
-
                                                                         </div>
                                                                       <asp:Label ID="lbldepedit"
                                                                                         runat="server" Text="">
                                                                                     </asp:Label>
                                                                     </asp:Panel>
-                                                               
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField>
@@ -296,17 +279,12 @@
                                                                 <asp:ImageButton ImageUrl="~/Images/delete.png"
                                                                     runat="server" CommandName="Delete"
                                                                     ValidationGroup="Vagosdep" ToolTip="Eliminar"
-                                                                    Width="20px" Height="20px" />
+                                                                    Width="1.6em" />
                                                             </ItemTemplate>                                                       
                                                         </asp:TemplateField>
-
                                                     </Columns>
-
                                                 </asp:GridView>
-                                      
-
         <asp:Label id="lblSuccessMessage" runat="server"></asp:Label>
         <asp:Label id="lblErrorMessage" runat="server"></asp:Label>
-
     </div>
 </asp:Content>

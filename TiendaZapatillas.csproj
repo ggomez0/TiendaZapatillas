@@ -242,8 +242,9 @@
     <Content Include="Gerente\ClientesAdmin.aspx" />
     <Content Include="Gerente\detallesordenes.aspx" />
     <Content Include="Gerente\EstadisticasAdmin.aspx" />
-    <Content Include="Gerente\gvordenesusuarios.aspx" />
-    <Content Include="Gerente\ordorduser.aspx" />
+    <Content Include="Gerente\Ordenes_Usuarios.aspx" />
+    <Content Include="Gerente\MenuGerente.aspx" />
+    <Content Include="Gerente\Detalles_Ordenes_Usuarios.aspx" />
     <Content Include="Admin\Productos_en_deposito.aspx" />
     <Content Include="Admin\ProductosAdmin.aspx" />
     <Content Include="Checkout\CheckoutComplete.aspx" />
@@ -602,19 +603,26 @@
     <Compile Include="Gerente\EstadisticasAdmin.aspx.designer.cs">
       <DependentUpon>EstadisticasAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Gerente\gvordenesusuarios.aspx.cs">
-      <DependentUpon>gvordenesusuarios.aspx</DependentUpon>
+    <Compile Include="Gerente\Ordenes_Usuarios.aspx.cs">
+      <DependentUpon>Ordenes_Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Gerente\gvordenesusuarios.aspx.designer.cs">
-      <DependentUpon>gvordenesusuarios.aspx</DependentUpon>
+    <Compile Include="Gerente\Ordenes_Usuarios.aspx.designer.cs">
+      <DependentUpon>Ordenes_Usuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Gerente\ordorduser.aspx.cs">
-      <DependentUpon>ordorduser.aspx</DependentUpon>
+    <Compile Include="Gerente\MenuGerente.aspx.cs">
+      <DependentUpon>MenuGerente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Gerente\ordorduser.aspx.designer.cs">
-      <DependentUpon>ordorduser.aspx</DependentUpon>
+    <Compile Include="Gerente\MenuGerente.aspx.designer.cs">
+      <DependentUpon>MenuGerente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente\Detalles_Ordenes_Usuarios.aspx.cs">
+      <DependentUpon>Detalles_Ordenes_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente\Detalles_Ordenes_Usuarios.aspx.designer.cs">
+      <DependentUpon>Detalles_Ordenes_Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Productos_en_deposito.aspx.cs">
       <DependentUpon>Productos_en_deposito.aspx</DependentUpon>

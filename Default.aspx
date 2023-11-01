@@ -9,7 +9,7 @@
     </style>
     
     <div class="centered-image">
-        <a href="https://localhost:44351/ProductDetails?productID=10">
+        <a href="ProductDetails.aspx?productID=10">
             <img class="d-block img-fluid" src="Images/fulladidascrazyfast.jpg" alt="First slide">
         </a>
     </div>

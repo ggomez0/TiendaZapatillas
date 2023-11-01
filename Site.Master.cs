@@ -75,7 +75,8 @@ namespace TiendaZapatillas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            rolnav.Visible = false;
+            roladminnav.Visible = false;
+            rolgerentenav.Visible = false;
             if (HttpContext.Current.User.IsInRole("ADMIN"))
             {
                 if (Session["RedirectedToAdmin"] == null)
@@ -84,39 +85,27 @@ namespace TiendaZapatillas
                     Response.Redirect("/Admin/Menu.aspx");
                 }
 
-                cartCount.Visible = false;
-                cartCountimg.Visible = false;
-                inicionav.Visible = false;
-                navnavdd.Visible = false;
-                contactnav.Visible = false;
-                titlenav.Visible = false;
-                rolnav.Visible = true;
-
+                HideNavigationElements();
+                roladminnav.Visible = true;
             }
             if (HttpContext.Current.User.IsInRole("GERENTE"))
             {
                 if (Session["RedirectedToGerente"] == null)
                 {
                     Session["RedirectedToGerente"] = true;
-                    Response.Redirect("/Gerente/ProductosGerente.aspx");
+                    Response.Redirect("/Gerente/MenuGerente.aspx");
                 }
 
-                cartCount.Visible = false;
-                cartCountimg.Visible = false;
-                inicionav.Visible = false;
-                contactnav.Visible = false;
-                titlenav.Visible = false;
-                rolnav.Visible = true;
+                HideNavigationElements();
+                rolgerentenav.Visible = true;
             }
         }
+
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
-            {
-                string cartStr = string.Format("{0}", usersShoppingCart.GetCount());
-                cartCount.InnerText = cartStr;
-            }
+            UpdateCartCount();
         }
+
         public IQueryable<Marca> GetMarcas()
         {
             var _db = new TiendaZapatillas.Models.ProductContext();
@@ -130,6 +119,24 @@ namespace TiendaZapatillas
             Session["RedirectedToAdmin"] = null;
             Session["RedirectedToGerente"] = null;
         }
-    }
 
+        private void HideNavigationElements()
+        {
+            cartCount.Visible = false;
+            cartCountimg.Visible = false;
+            inicionav.Visible = false;
+            navnavdd.Visible = false;
+            contactnav.Visible = false;
+            titlenav.Visible = false;
+        }
+
+        private void UpdateCartCount()
+        {
+            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+            {
+                string cartStr = string.Format("{0}", usersShoppingCart.GetCount());
+                cartCount.InnerText = cartStr;
+            }
+        }
+    }
 }

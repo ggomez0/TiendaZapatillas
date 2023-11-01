@@ -42,15 +42,6 @@ namespace TiendaZapatillas.Admin
         protected global::System.Web.UI.WebControls.Panel Panel3;
 
         /// <summary>
-        /// Control lblnomdep.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblnomdep;
-
-        /// <summary>
         /// Control txtnomdep.
         /// </summary>
         /// <remarks>
@@ -67,15 +58,6 @@ namespace TiendaZapatillas.Admin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
-
-        /// <summary>
-        /// Control lbldescdep.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbldescdep;
 
         /// <summary>
         /// Control txtdescdep.
@@ -121,15 +103,6 @@ namespace TiendaZapatillas.Admin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
-
-        /// <summary>
-        /// Control imgdep.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label imgdep;
 
         /// <summary>
         /// Control FileUpload1.

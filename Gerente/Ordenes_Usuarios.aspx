@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Orden" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="gvordenesusuarios.aspx.cs" Inherits="TiendaZapatillas.Admin.gvordenesusuarios" %>
+﻿<%@ Page Title="Orden" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ordenes_Usuarios.aspx.cs" Inherits="TiendaZapatillas.Gerente.Ordenes_Usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
        <div class="container">
         <asp:Label runat="server" Font-Size="2em" Font-Bold="true" ForeColor="Black" ID="lblord">ORDENES REALIZADAS POR EL USUARIO </asp:Label>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Menu" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="TiendaZapatillas._Default" %>
+﻿<%@ Page Title="Menu" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MenuGerente.aspx.cs" Inherits="TiendaZapatillas.Gerente.MenuGerente" %>
 
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
@@ -35,17 +35,17 @@
     </style>
 
     <div class="game-board">
-        <a class="btn btn-dark rounded-3" href="GestionMarcas.aspx" runat="server">
-            <asp:Image ImageUrl="~/Images/marcas20.png" runat="server" Height="170px" />
-            <span>Marcas</span>
+        <a class="btn btn-dark rounded-3" href="ClientesAdmin.aspx" runat="server">
+            <asp:Image ImageUrl="~/Images/marcas0.png" runat="server" Height="170px" />
+            <span>Clientes</span>
         </a>
         <a class="btn btn-dark rounded-3" runat="server" href="CategoriaTipo.aspx">
             <asp:Image ImageUrl="~/Images/tipos20.png" runat="server" Height="170px" />
-            <span>Tipo de zapatillas</span>
+            <span>Reportes</span>
         </a>
         <a class="btn btn-dark rounded-3" href="ProductosAdmin.aspx" runat="server">
             <asp:Image ImageUrl="~/Images/productos20.png" runat="server" Height="170px" />
-            <span>Productos</span>
+            <span>Transacciones</span>
         </a>
         <a class="btn btn-dark rounded-3" href="IngEgrAdmin.aspx" runat="server">
             <asp:Image ImageUrl="~/Images/productos20.png" runat="server" Height="170px" />

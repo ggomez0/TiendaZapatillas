@@ -48,7 +48,7 @@ namespace TiendaZapatillas.Admin
         protected void imgord_Click(object sender, ImageClickEventArgs e)
         {
             string id1 = (sender as ImageButton).CommandArgument;
-            Response.Redirect("~/Admin/gvordenesusuarios.aspx?id1=" + id1);
+            Response.Redirect("~/Admin/Ordenes_Usuarios.aspx?id1=" + id1);
 
         }
     }

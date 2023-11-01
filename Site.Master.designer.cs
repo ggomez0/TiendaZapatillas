@@ -24,13 +24,22 @@ namespace TiendaZapatillas
         protected global::System.Web.UI.HtmlControls.HtmlAnchor titlenav;
 
         /// <summary>
-        /// Control rolnav.
+        /// Control roladminnav.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor rolnav;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor roladminnav;
+
+        /// <summary>
+        /// Control rolgerentenav.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor rolgerentenav;
 
         /// <summary>
         /// Control inicionav.

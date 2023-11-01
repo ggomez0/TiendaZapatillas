@@ -11,7 +11,7 @@ namespace TiendaZapatillas.Admin
 {
 
 
-    public partial class Producto_en_deposito
+    public partial class Productos_en_deposito
     {
 
         /// <summary>

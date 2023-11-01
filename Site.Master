@@ -43,57 +43,42 @@
         </asp:ScriptManager>
 
 
- <nav class="navbar navbar-expand-lg navbar-light"> 
-      <a class="navbar-brand" runat="server" href="~/" id="titlenav"  title="Inicio" style="font-size:2em; 
-            font-family:sans-serif">   
-          
-      <img style="height:80px" runat="server" src="~/Images/logoiconzapas.jpg"/>
-        </a>
-
-      <a class="navbar-brand" runat="server" href="~/Admin/Menu.aspx" id="rolnav"  title="Menu" style="font-size:2em; 
-            font-family:sans-serif;">
-           
-      <img style="height:80px" runat="server" src="~/Images/logoiconzapas.jpg"/>
-
-        </a>
-
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" runat="server" href="~/" id="titlenav" title="Inicio" style="font-size:2em; font-family:sans-serif">
+        <img style="height:80px" runat="server" src="~/Images/logoiconzapas.jpg" />
+    </a>
+    <a class="navbar-brand" runat="server" href="~/Admin/Menu.aspx" id="roladminnav" title="Menu" style="font-size:2em; font-family:sans-serif;">
+        <img style="height:80px" runat="server" src="~/Images/logoiconzapas.jpg" />
+    </a>
+    <a class="navbar-brand" runat="server" href="~/Gerente/MenuGerente.aspx" id="rolgerentenav" title="Menu" style="font-size:2em; font-family:sans-serif;">
+        <img style="height:80px" runat="server" src="~/Images/logoiconzapas.jpg" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" id="inicionav" runat="server" href="~/">Inicio    
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-
-      
-            
-             <li class="nav-item">
-             <a class="nav-link active"  id="navnavdd" runat="server" href="~/ProductList">Productos</a>
-          </li>
-     
-          <li class="nav-item">
-             <a class="nav-link active" id="contactnav" runat="server" href="~/Contact/Contact">Contacto</a>
-          </li>
-
-          <%--carrito--%>
-
-          <li>    
-              <a href="~/ShoppingCart" runat="server">
-                <img src="Images/shopping-cart.png" runat="server" id="cartCountimg" style="height:30px; width:30px;"/>
-             </a>
-          </li>  
-
-          <li class="nav-item">
-            <a class="nav-link active" runat="server" href="~/ShoppingCart" ID="cartCount"/>          
-          </li>
-          
-    
-         
-      </ul>
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link active" id="inicionav" runat="server" href="~/">Inicio
+                    <span class="visually-hidden">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="navnavdd" runat="server" href="~/ProductList">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="contactnav" runat="server" href="~/Contact/Contact">Contacto</a>
+            </li>
+            <li>
+                <a href="~/ShoppingCart" runat="server">
+                    <img src="Images/shopping-cart.png" runat="server" id="cartCountimg" style="height:30px; width:30px;" />
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" runat="server" href="~/ShoppingCart" ID="cartCount"></a>
+            </li>
+        </ul>
         
         <div>
 

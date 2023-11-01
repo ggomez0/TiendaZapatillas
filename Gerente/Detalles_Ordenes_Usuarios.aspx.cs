@@ -8,9 +8,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TiendaZapatillas.Admin
+namespace TiendaZapatillas.Gerente
 {
-    public partial class ordorduser : System.Web.UI.Page
+    public partial class Detalles_Ordenes_Usuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +28,7 @@ namespace TiendaZapatillas.Admin
             SqlCommand cmd = new SqlCommand();
             DataTable dataTable = new DataTable();
             SqlDataAdapter sqlDA; cnn.Open();
-            cmd.CommandText = "select OrderDetailId as 'ID',ProductName as 'Producto', " +
+            cmd.CommandText = "select OrderDetailId as '#',ProductName as 'Producto', " +
                 "Quantity as 'Cantidad', UnitPrice as 'Precio Unit.'," +
                 " totalprod as 'Total' from OrderDetails od inner join Orders o on od.OrderId=o.OrderId where " +
                 "od.OrderID = @idorder";
