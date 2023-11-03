@@ -22,12 +22,10 @@ namespace TiendaZapatillas.Gerente
             {
                 DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT o.OrderID as ID, o.OrderDate as Date, o.UserName as usuarion," +
                     " SUM(od.totalprod) as Total FROM Orders o INNER JOIN OrderDetails od ON od.OrderId = o.OrderId " +
-                    "GROUP BY o.OrderID, o.OrderDate, o.UserName order by o.OrderId desc;", tablatrans);
-
+                    "GROUP BY o.OrderID, o.OrderDate, o.UserName order by o.OrderID desc", tablatrans);
             }
         }
-    
-
+       
         protected void imgordenes_Click(object sender, ImageClickEventArgs e)
         {
             int id2 = Convert.ToInt32((sender as ImageButton).CommandArgument);

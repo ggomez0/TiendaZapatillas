@@ -47,13 +47,14 @@
             <asp:Image ImageUrl="~/Images/productos20.png" runat="server" Height="170px" />
             <span>Productos</span>
         </a>
-        <a class="btn btn-dark rounded-3" href="IngEgrAdmin.aspx" runat="server" >
-            <asp:Image ImageUrl="~/Images/inventory.png" runat="server" Height="170px" />
-            <span>Stock</span>
-        </a>
+        
         <a class="btn btn-dark rounded-3" href="DepositosAdmin.aspx" runat="server">
             <asp:Image ImageUrl="~/Images/warehouse.png" runat="server" Height="170px" />
             <span>Depositos</span>
+        </a>
+        <a class="btn btn-dark rounded-3" href="IngEgrAdmin.aspx" runat="server" >
+            <asp:Image ImageUrl="~/Images/inventory.png" runat="server" Height="170px" />
+            <span>Stock</span>
         </a>
       
     </div>

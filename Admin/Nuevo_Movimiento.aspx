@@ -27,6 +27,15 @@
                                                                 <asp:ListItem>Retirar</asp:ListItem>
 
                                                             </asp:RadioButtonList>
+                                                          <asp:RequiredFieldValidator
+                                                                ID="rfvRadioList"
+                                                                runat="server"
+                                                                ControlToValidate="rblistlist"
+                                                                InitialValue=""
+                                                                ErrorMessage="Por favor, seleccione una opción"
+                                                                ForeColor="Red"
+                                                                Display="Dynamic" ValidationGroup="VG21">
+                                                            </asp:RequiredFieldValidator>
                                                             </td>
                                                         </tr>
                                                     <tr>
@@ -39,6 +48,7 @@
                                                                 SelectMethod="GetDepositos" DataTextField="DepName"
                                                                 DataValueField="DepID" Width="190px">
                                                             </asp:DropDownList>
+
                                                        </td>
                                                         </tr>
                                                     <tr>
@@ -57,7 +67,7 @@
                                                         </table>
                                         
 
-<asp:Button runat="server" ID="btnagregarprodmov" Text="Agregar Producto" CssClass="btn btn-success" />
+                    <asp:Button runat="server" ID="btnagregarprodmov" Text="Agregar Producto" CssClass="btn btn-success" />
                                              
 
 
@@ -128,7 +138,7 @@
         </asp:GridView>
 
 
-            <asp:Button ID="btnguardarmov" OnClick="btnguardarmov_Click"  CssClass="btn btn-info rounded-3" runat="server"  Text="Guardar movimiento"/>
+            <asp:Button ID="btnguardarmov" CausesValidation="true" ValidationGroup="VG21" OnClick="btnguardarmov_Click"  CssClass="btn btn-info rounded-3" runat="server"  Text="Guardar movimiento"/>
         </div>
 
     <asp:Label runat="server" ID="lblSuccessMessage"></asp:Label>

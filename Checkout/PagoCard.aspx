@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Pago" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PagoCard.aspx.cs" Inherits="TiendaZapatillas.Checkout.PagoCard" %>
+﻿<%@ Page Title="Pago" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PagoCard.aspx.cs" Inherits="TiendaZapatillas.Checkout.PagoCard" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <div class="container">
@@ -84,7 +85,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="cc-number">Numero de tarjeta</label>
-                         <asp:TextBox runat="server" class="form-control" id="ccnumber" placeholder="" required=""/>
+                         <asp:TextBox runat="server" class="form-control" id="ccnumber" MaxLength="16" MinLength="16"  placeholder="" required=""/>
                        
                         <div class="invalid-feedback"> Numero de tarjeta requerido </div>
                     </div>
@@ -92,13 +93,13 @@
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <label for="cc-expiration">Expiracion</label>
-                         <asp:TextBox runat="server" class="form-control" id="ccexpiration" placeholder="05/22" required=""/>
+                         <asp:TextBox runat="server" class="form-control" id="ccexpiration" placeholder="05/27" MaxLength="5" MinLength="5" required=""/>
                         
                         <div class="invalid-feedback"> Fecha de expiracion requerida </div>
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="cc-cvv">CVV</label>
-                        <asp:TextBox runat="server" class="form-control" id="cccvv" placeholder="132" required=""/>
+                        <asp:TextBox runat="server" class="form-control" id="cccvv" MaxLength="3" MinLength="3" placeholder="132" required=""/>
                
                         <div class="invalid-feedback"> CVV requerido </div>
                     </div>

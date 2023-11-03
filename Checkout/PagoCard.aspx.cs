@@ -42,8 +42,7 @@ namespace TiendaZapatillas.Checkout
                 bool addSuccess1 = order.AddOrders(DateTime.Now, firstName.Text, lastName.Text, address.Text, phone.Text, email.Text, User.Identity.Name);
                 bool addSuccess = cards.AddCard(ccnumber.Text, Convert.ToInt32(cccvv.Text), ccexpiration.Text, ccname.Text);
                 int max = _db.Orders.Max(p => p.OrderId);
-                this.sendemail(email.Text);
-                this.sendemail1();
+
 
 
                 using (TiendaZapatillas.Logic.ShoppingCartActions usersShoppingCart = new TiendaZapatillas.Logic.ShoppingCartActions())
@@ -59,7 +58,7 @@ namespace TiendaZapatillas.Checkout
 
 
                     }
-                    Response.Redirect("~/Checkout/CheckoutComplete.aspx?id=" + max);
+
 
                 }
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -72,12 +71,10 @@ namespace TiendaZapatillas.Checkout
                 }
                 if (addSuccess & addSuccess1)
                 {
-
-                    // Reload the page.
-                    string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
-
-
-
+                    this.sendemail(email.Text);
+                    this.sendemail1();
+                    Response.Redirect("~/Checkout/CheckoutComplete.aspx?id=" + max);
+                    
                 }
                 else
                 {

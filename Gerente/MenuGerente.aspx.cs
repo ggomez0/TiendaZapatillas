@@ -118,7 +118,9 @@ namespace TiendaZapatillas.Gerente
             SqlConnection redSQL = new SqlConnection(connectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "select a.userName as Cliente, sum(totalprod) as Compras from Aspnetusers a inner join Orders o on a.UserName=o.Username inner join OrderDetails od on od.OrderId=o.OrderId group by a.UserName";
+            cmd.CommandText = "select a.userName as Cliente, sum(totalprod) as Compras from Aspnetusers a " +
+                "inner join Orders o on a.UserName=o.Username inner join OrderDetails od on od.OrderId=o.OrderId " +
+                "group by a.UserName order by sum(totalprod) desc";
 
             cmd.CommandType = CommandType.Text;
             cmd.Connection = redSQL;

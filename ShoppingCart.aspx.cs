@@ -9,16 +9,17 @@ using TiendaZapatillas.Logic;
 using System.Collections.Specialized;
 using System.Collections;
 using System.Web.ModelBinding;
+using System.Data.SqlClient;
 
 namespace TiendaZapatillas
 {
     public partial class ShoppingCart : System.Web.UI.Page
     {
-        
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
             {
                 decimal cartTotal = 0;
@@ -53,7 +54,7 @@ namespace TiendaZapatillas
                 {
                     // Muestra el total
                     lblTotal.Text = String.Format("{0:c}", cartTotal);
-                    
+
                 }
                 else
                 {
@@ -122,10 +123,77 @@ namespace TiendaZapatillas
         protected void Pagarbtn_Click(object sender, EventArgs e)
         {
             UpdateCartItems();
-            Response.Redirect("~/Checkout/Pagocard.aspx?total=" + lblTotal.Text);
+            //if (ValidateStock())
+            //{
+            //    // Redirige al proceso de pago
+                Response.Redirect("~/Checkout/Pagocard.aspx?total=" + lblTotal.Text);
+            }
+            //else
+            //{
+            //    ShoppingCartTitle.InnerText = "El producto no tiene tanto stock";
+
+            //}
+        
+
+        private bool ValidateStock()
+        {
+            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+            {
+                List<CartItem> cartItems = usersShoppingCart.GetCartItems();
+                bool valid = true;
+
+                foreach (GridViewRow row in CartList.Rows)
+                {
+                    int productId = Convert.ToInt32(CartList.DataKeys[row.RowIndex].Value);
+                    int requestedQuantity = Convert.ToInt32(((TextBox)row.FindControl("PurchaseQuantity")).Text);
+
+                    // Obtén la cantidad en stock para el producto actual (debes implementar este método)
+                    int stockQuantity = GetStockQuantity(productId);
+
+                    if (requestedQuantity > stockQuantity)
+                    {
+                        // La cantidad solicitada es mayor que el stock disponible, muestra un mensaje de error
+                        ShoppingCartTitle.InnerText = "El producto no tiene tanto stock";
+                        valid = false;
+                        // Puedes mostrar un mensaje de error o tomar alguna acción aquí
+                    }
+                }
+
+                return valid;
+            }
         }
 
-      
-            
+        // Método para obtener la cantidad en stock desde la base de datos (debes implementarlo)
+        private int GetStockQuantity(int productId)
+        {
+            int stockQuantity = 0; // Inicializa la cantidad en stock
+
+            string connectionString = "TiendaZapatillas"; 
+            string query = "SELECT stock FROM Products WHERE ProductID = @ProductId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProductId", productId);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            stockQuantity = reader.GetInt32(0); // La columna 0 contiene la cantidad en stock
+                        }
+                    }
+                }
+            }
+
+            return stockQuantity;
         }
+
+
+
+
     }
+}

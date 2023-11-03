@@ -146,6 +146,7 @@
             lengthMenu: [[5, 10, -1], [5, 10, "Todos"]],
             bFilter: true,
             bSort: true,
+            order:false,
             bPaginate: true,
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por pagina",

@@ -6,7 +6,7 @@
   
     <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
         ItemType="TiendaZapatillas.Models.CartItem" SelectMethod="GetShoppingCartItems" 
-        CssClass="table table-striped" >   
+        CssClass="table table-striped" DataKeyNames="ProductId" >   
         <Columns>
         <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID"/>        
         <asp:BoundField DataField="Product.ProductName" HeaderText="Nombre" />        
@@ -14,7 +14,7 @@
         
             <asp:TemplateField HeaderText="Cantidad">            
                 <ItemTemplate >
-                    <asp:TextBox style="margin:-10px 0 0 0"  ID="PurchaseQuantity" TextMode="Number" Width="40px" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
+                    <asp:TextBox style="margin:-10px 0 0 0"  ID="PurchaseQuantity" TextMode="Number" Width="40px" min="1" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
                 </ItemTemplate>        
         </asp:TemplateField>    
         
