@@ -21,7 +21,7 @@ namespace TiendaZapatillas.Gerente
             if(!IsPostBack)
             {
                 DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * from Products order by vendido desc ", Grid_top_productos);
-                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * from Products", Grid_top_clientes);
+                //DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * from Products", Grid_top_clientes);
             }
         }
     }

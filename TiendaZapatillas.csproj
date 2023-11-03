@@ -275,6 +275,7 @@
     <Content Include="Images\Google.png" />
     <Content Include="Images\imagenregistrozapas.jpg" />
     <Content Include="Images\ingreso-egreso7.png" />
+    <Content Include="Images\inventory.png" />
     <Content Include="Images\investigacion2010.png" />
     <Content Include="Images\logoiconzapas.jpg" />
     <Content Include="Images\marcas20.png" />
@@ -318,6 +319,7 @@
     <Content Include="Images\Thumbs\zapasnike2.png" />
     <Content Include="Images\tipos20.png" />
     <Content Include="Images\transa7.png" />
+    <Content Include="Images\warehouse.png" />
     <Content Include="Images\whatsapp.png" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />

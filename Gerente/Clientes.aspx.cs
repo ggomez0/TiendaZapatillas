@@ -24,6 +24,8 @@ namespace TiendaZapatillas.Gerente
                 DatabaseUtility.DatabaseCrud("defaultconnection", "SELECT a.Email, a.UserName, COALESCE(c.Name, 'CLIENTES') AS Rol FROM aspnetusers a " +
                     "LEFT JOIN aspnetuserroles b ON a.Id = b.UserId " +
                     "LEFT JOIN aspnetroles c ON b.RoleId = c.Id;", tablausers);
+                DatabaseUtility.DatabaseCrud("defaultconnection", "SELECT o.UserName as Cliente, sum(totalprod) as Compras FROM aspnetusers a inner join Orders" +
+                    " o on a.UserName=o.Username inner join OrderDetails od on od.OrderId=o.OrderId group by o.username", Grid_top_clientes);
 
             }
         }

@@ -20,29 +20,13 @@ namespace TiendaZapatillas.Gerente
         {
             if(!IsPostBack)
             {
-                this.databasecrud("TiendaZapatillas", "SELECT * from Orders order by OrderId desc", tablatrans);
+                DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT o.OrderID as ID, o.OrderDate as Date, o.UserName as usuarion," +
+                    " SUM(od.totalprod) as Total FROM Orders o INNER JOIN OrderDetails od ON od.OrderId = o.OrderId " +
+                    "GROUP BY o.OrderID, o.OrderDate, o.UserName order by o.OrderId desc;", tablatrans);
 
             }
         }
-        private void databasecrud(string conexion, string comando, GridView tabla)
-        {
-            string constr = ConfigurationManager.ConnectionStrings[conexion].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(comando, con))
-                {
-                    using (DataTable dt = new DataTable())
-                    {
-                        sda.Fill(dt);
-                        tabla.DataSource = dt;
-                        tabla.DataBind();
-                    }
-                }
-            }
-            //Required for jQuery DataTables to work.
-            tabla.UseAccessibleHeader = true;
-            tabla.HeaderRow.TableSection = TableRowSection.TableHeader;
-        }
+    
 
         protected void imgordenes_Click(object sender, ImageClickEventArgs e)
         {

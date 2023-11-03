@@ -111,7 +111,7 @@
                                         <div class="text-xs font-weight-bold text-uppercase mb-1">
                                             Ventas (Ultimo Mes)</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                            <asp:Label ID="lblordmes" runat="server">N°</asp:Label>
+                                            <asp:Label ID="lblordmes" runat="server"></asp:Label>
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -130,7 +130,7 @@
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">
                                                 Ventas (Anual)</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <asp:Label ID="lblordanio" runat="server" Text="N° "></asp:Label>
+                                                <asp:Label ID="lblordanio" runat="server" Text=""></asp:Label>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -149,7 +149,7 @@
                         <div class="card shadow mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <a href="~/Gerente/Transacciones.aspx" style="text-decoration:none" runat="server">
-                                    <h6 class="m-0 font-weight-bold text-primary">Graficos de los ingresos</h6> 
+                                    <h6 class="m-0 font-weight-bold text-primary">Ingresos por ventas</h6> 
                                     </a>
                             </div>
                             <div class="card-body">
