@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pago" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PagoCard.aspx.cs" Inherits="TiendaZapatillas.Checkout.PagoCard" %>
+﻿<%@ Page Title="Pago" EnableEventValidation="false" evLanguage="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PagoCard.aspx.cs" Inherits="TiendaZapatillas.Checkout.PagoCard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

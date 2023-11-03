@@ -16,6 +16,9 @@
     <link href="~/Images/logo.ico" rel="shortcut icon" type="image/x-icon" />    
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/b-2.2.3/b-html5-2.2.3/r-2.3.0/sc-2.0.6/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="Content/bootstrap-icons.css"/>
+      <link rel="stylesheet" type="text/css" href="Content/bootstrap.css"/>
+      <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css"/>
+
 
 </head>
 <body>
