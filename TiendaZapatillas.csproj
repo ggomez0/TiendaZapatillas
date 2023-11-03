@@ -304,6 +304,9 @@
     <Content Include="Images\plusicon.png" />
     <Content Include="Images\shopping-cart.png" />
     <Content Include="Images\Thumbs\championlogo.png" />
+    <Content Include="Images\Thumbs\deposito.png" />
+    <Content Include="Images\Thumbs\deposito1.png" />
+    <Content Include="Images\Thumbs\deposito3.png" />
     <Content Include="Images\Thumbs\filalogo.jpg" />
     <Content Include="Images\Thumbs\filamenu.png" />
     <Content Include="Images\Thumbs\jordan1zapas.png" />
