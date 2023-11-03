@@ -2,6 +2,15 @@
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+        <%--<style>
+        .radio-button-list {
+            display: flex;
+        }
+
+        .radio-button-list label {
+            margin-right: 10px; /* Adjust the margin as needed to control spacing */
+        }
+    </style>--%>
     <div class="container">
      <h3>Realizar movimientos de stock</h3>
                                                 <table>
@@ -14,8 +23,8 @@
                                                       </td><td>
                                                             <asp:RadioButtonList ID="rblistlist" runat="server">
                                                                 
-                                                                <asp:ListItem>Ingreso</asp:ListItem>
-                                                                <asp:ListItem>Egreso</asp:ListItem>
+                                                                <asp:ListItem>Ingresar</asp:ListItem>
+                                                                <asp:ListItem>Retirar</asp:ListItem>
 
                                                             </asp:RadioButtonList>
                                                             </td>
@@ -28,7 +37,7 @@
                                                             <asp:DropDownList ID="ddlistdep" runat="server"
                                                                 ItemType="TiendaZapatillas.Models.depositos"
                                                                 SelectMethod="GetDepositos" DataTextField="DepName"
-                                                                DataValueField="DepID">
+                                                                DataValueField="DepID" Width="190px">
                                                             </asp:DropDownList>
                                                        </td>
                                                         </tr>
@@ -48,7 +57,7 @@
                                                         </table>
                                         
 
-<asp:Button runat="server" ID="btnagregarprodmov" Text="+ Producto" CssClass="btn btn-success" />
+<asp:Button runat="server" ID="btnagregarprodmov" Text="Agregar Producto" CssClass="btn btn-success" />
                                              
 
 
@@ -56,7 +65,7 @@
                             TargetControlID="btnagregarprodmov" CancelControlID="btncerrarprodmov" BackgroundCssClass="modalBackground">
                         </cc1:ModalPopupExtender>
                         <asp:Panel ID="Panel21" runat="server" CssClass="modalPopup" align="center"
-                            Style="background-color:white; border:solid; border-color:black;">
+                            Style="background-color:white; border:solid; border-color:black; width:1200px">
                             <div style="padding:20px">
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
@@ -69,12 +78,13 @@
             <asp:TemplateField>
                 <ItemTemplate>
                     
-                      <asp:Button ID="Button5" CssClass="btn btn-success rounded-3"  runat="server" Text="+" CommandName="Update"/>
+                      <asp:Button ID="Button5" CssClass="btn btn-success rounded-3"  runat="server" Text="+" CausesValidation="true" ValidationGroup="btnaddprod" CommandName="Update"/>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField>
                     <ItemTemplate>
-                    <asp:TextBox ID="txtcantpedido" runat="server" TextMode="Number" Width="50px"></asp:TextBox>
+                    <asp:TextBox ID="txtcantpedido" runat="server" TextMode="Number" Width="50px" min="1"></asp:TextBox>
+                       
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

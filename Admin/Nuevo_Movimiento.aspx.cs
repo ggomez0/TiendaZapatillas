@@ -51,7 +51,7 @@ namespace TiendaZapatillas.Admin
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "insert into Detalles_Movimientos(cantidad,Product_ProductID,movimientos_ID_Movimientos) values (@cantped,@product,@idpedido);";
+                    string query = "insert into Detalles_Movimientos(cantidad,Product_ProductID,movimientos_ID_Movimiento) values (@cantped,@product,@idpedido);";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                     sqlCmd.Parameters.AddWithValue("@cantped", Convert.ToInt32((gvproductoslista.Rows[e.RowIndex].FindControl("txtcantpedido") as TextBox).Text.Trim()));
                     sqlCmd.Parameters.AddWithValue("@idpedido", Convert.ToInt32((txtidmov.Text).ToString()));
@@ -183,7 +183,7 @@ namespace TiendaZapatillas.Admin
 
                     sqlCmd.ExecuteNonQuery();
                     gvproductoslista.EditIndex = -1;
-                    lblSuccessMessage.Text = "Agregado con exito";
+                    lblSuccessMessage.Text = "Eliminado con exito";
                     lblErrorMessage.Text = "";
                 }
             }

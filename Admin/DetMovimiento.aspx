@@ -4,9 +4,9 @@
          <asp:FormView ID="movID" runat="server" ItemType="TiendaZapatillas.Models.movimientos" SelectMethod ="GetMovimiento" RenderOuterTable="false" >
                             <ItemTemplate>
                                 <div>
-                                    <h1>Detalle del movimiento N° <%#:Item.ID_Movimiento %></h1>
+                                    <h1>Detalle del movimiento</h1>
+                                    <p> N° <%#:Item.ID_Movimiento %></p>
                                 </div>
-                                <br />
                                 <table>
                                    <tr>
                                        <td>
@@ -46,9 +46,9 @@
                        
         <asp:GridView runat="server" CssClass="grid" BorderStyle="None" ID="gv_detmov" ShowHeaderWhenEmpty="true" AutoGenerateColumns="false">
             <Columns>
-                         <asp:TemplateField HeaderText="#">
+                         <asp:TemplateField HeaderText="ID Producto">
                     <ItemTemplate>
-                        <asp:Label Text='<%# Eval("ID_Det_Movimientos") %>' runat="server" />
+                        <asp:Label Text='<%# Eval("ProductID") %>' runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
              

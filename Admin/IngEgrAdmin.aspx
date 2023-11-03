@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <h3>Movimientos de productos</h3>
+        <p>Realiza ingresos o egresos de stock de productos sobre los depositos</p>
             <asp:Button ID="btnmov" CssClass="btn btn-success rounded-3" runat="server"
                             Text="Realizar Movimiento" OnClick="btnmov_Click"/>
                        

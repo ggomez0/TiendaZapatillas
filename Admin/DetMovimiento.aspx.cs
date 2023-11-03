@@ -22,7 +22,7 @@ namespace TiendaZapatillas.Admin
                 string nID = Request.QueryString["id"];
                 DatabaseUtility.DatabaseCrud("TiendaZapatillas", "SELECT * from Detalles_Movimientos cd " +
                     "inner join products p on p.ProductID=cd.Product_ProductID" +
-                    " where movimientos_ID_Movimento=" + nID, gv_detmov);
+                    " where movimientos_ID_Movimiento=" + nID, gv_detmov);
 
 
             }
