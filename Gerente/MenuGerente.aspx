@@ -186,7 +186,7 @@
                             <div
                                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <a href="~/Gerente/Clientes.aspx" style="text-decoration:none" runat="server">
-                                    <h6 class="m-0 font-weight-bold text-primary">TOP Clientes</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Clientes (Usuario Final)</h6>
                                 </a>
            
                             </div>
